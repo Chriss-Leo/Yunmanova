@@ -1,42 +1,66 @@
 'use client'
-import { useHeaderTheme } from '@/providers/HeaderTheme'
+
+import { List, X } from '@phosphor-icons/react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import React, { useEffect, useState } from 'react'
-
-import type { Header } from '@/payload-types'
+import { useState } from 'react'
 
 import { Logo } from '@/components/Logo/Logo'
-import { HeaderNav } from './Nav'
+import { navigation } from '@/data/site'
 
-interface HeaderClientProps {
-  data: Header
-}
-
-export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
-  /* Storing the value in a useState to avoid hydration errors */
-  const [theme, setTheme] = useState<string | null>(null)
-  const { headerTheme, setHeaderTheme } = useHeaderTheme()
+export function HeaderClient() {
   const pathname = usePathname()
-
-  useEffect(() => {
-    setHeaderTheme(null)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [pathname])
-
-  useEffect(() => {
-    if (headerTheme && headerTheme !== theme) setTheme(headerTheme)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [headerTheme])
+  const [open, setOpen] = useState(false)
 
   return (
-    <header className="container relative z-20   " {...(theme ? { 'data-theme': theme } : {})}>
-      <div className="py-8 flex justify-between">
-        <Link href="/">
-          <Logo loading="eager" priority="high" className="invert dark:invert-0" />
+    <header className="site-header">
+      <div className="site-container header-inner">
+        <Link href="/" aria-label="云码智创科技首页" className="brand-link">
+          <Logo loading="eager" priority="high" className="brand-logo" />
         </Link>
-        <HeaderNav data={data} />
+
+        <nav className="desktop-nav" aria-label="主导航">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={pathname === item.href ? 'page' : undefined}
+              className="nav-link"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+
+        <Link href="/contact" className="header-cta">
+          联系我们
+        </Link>
+
+        <button
+          type="button"
+          className="menu-button"
+          aria-label={open ? '关闭菜单' : '打开菜单'}
+          aria-expanded={open}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? <X size={22} /> : <List size={22} />}
+        </button>
       </div>
+
+      {open && (
+        <nav className="mobile-nav" aria-label="移动端主导航">
+          {navigation.map((item) => (
+            <Link
+              key={item.href}
+              href={item.href}
+              aria-current={pathname === item.href ? 'page' : undefined}
+              onClick={() => setOpen(false)}
+            >
+              {item.label}
+            </Link>
+          ))}
+        </nav>
+      )}
     </header>
   )
 }

@@ -8,7 +8,12 @@ next-env.d.ts
 .vercel
 
 # Payload default media upload directory
-public/media/
+public/media/*
+!public/media/enterprise-team.webp
+!public/media/energy-dashboard.webp
+!public/media/case-energy.webp
+!public/media/case-enterprise.webp
+!public/media/case-ai.webp
 
 public/robots.txt
 public/sitemap*.xml

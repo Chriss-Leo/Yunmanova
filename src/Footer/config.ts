@@ -10,6 +10,22 @@ export const Footer: GlobalConfig = {
   },
   fields: [
     {
+      name: 'contactEmail',
+      type: 'email',
+      defaultValue: 'chrisleo.yu.cn@gmail.com',
+      required: true,
+      label: '联系邮箱',
+    },
+    {
+      name: 'wechatQRCode',
+      type: 'upload',
+      relationTo: 'media',
+      label: '微信二维码',
+      admin: {
+        description: '建议上传清晰的正方形二维码图片。未上传时前台显示替换提示。',
+      },
+    },
+    {
       name: 'navItems',
       type: 'array',
       fields: [
