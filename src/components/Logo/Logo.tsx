@@ -8,16 +8,19 @@ interface Props {
 }
 
 export const Logo = (props: Props) => {
-  const { priority: priorityFromProps, className } = props
+  const { loading, priority: priorityFromProps, className } = props
 
   return (
-    <Image
-      alt="云码智创科技"
-      width={260}
-      height={49}
-      priority={priorityFromProps === 'high'}
-      className={className}
-      src="/brand/yunma-logo-trimmed.png"
-    />
+    <span className={['official-logo-frame', className].filter(Boolean).join(' ')}>
+      <Image
+        alt="云码智创科技"
+        width={1536}
+        height={1024}
+        loading={priorityFromProps === 'high' ? undefined : loading}
+        priority={priorityFromProps === 'high'}
+        className="official-logo-image"
+        src="/brand/yunma-logo-official.png"
+      />
+    </span>
   )
 }

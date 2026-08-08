@@ -64,14 +64,13 @@ export default function HomePage() {
             />
             <div className="hero-dashboard">
               <Image
-                src="/media/energy-dashboard.webp"
-                alt="能源运营管理平台产品界面示意"
-                width={1280}
-                height={800}
+                src="/media/ai-agent-console-light.png"
+                alt="AI Agent 工作流编排与任务运行界面"
+                width={1672}
+                height={941}
                 priority
                 sizes="(max-width: 768px) 86vw, 44vw"
               />
-              <span>产品界面为能力示意</span>
             </div>
           </div>
         </div>

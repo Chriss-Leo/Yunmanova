@@ -20,7 +20,7 @@ export function HeaderClient() {
         </Link>
 
         <nav className="desktop-nav" aria-label="主导航">
-          {navigation.map((item) => (
+          {navigation.filter((item) => item.href !== '/contact').map((item) => (
             <Link
               key={item.href}
               href={item.href}

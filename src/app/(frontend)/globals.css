@@ -276,32 +276,49 @@ body {
   top: 0;
   z-index: 40;
   height: 72px;
-  border-bottom: 1px solid rgba(223, 228, 225, 0.86);
-  background: rgba(248, 249, 248, 0.94);
+  border-bottom: 0;
+  background: var(--ym-surface);
   backdrop-filter: blur(16px);
 }
 
 .header-inner {
   height: 72px;
   display: grid;
-  grid-template-columns: 270px 1fr 120px;
+  grid-template-columns: minmax(250px, 300px) 1fr auto;
   align-items: center;
   gap: 24px;
 }
 
 .brand-link {
   display: inline-flex;
+  align-items: center;
   width: fit-content;
 }
 
-.brand-logo {
-  width: 224px;
+.official-logo-frame {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  aspect-ratio: 1238 / 262;
+}
+
+.official-logo-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 124.08%;
+  max-width: none;
   height: auto;
+  transform: translate(-8.203%, -33.984%);
+}
+
+.brand-logo {
+  width: 258px;
 }
 
 .desktop-nav {
   display: flex;
-  justify-content: center;
+  justify-content: flex-end;
   align-items: center;
   gap: clamp(18px, 2.25vw, 36px);
   white-space: nowrap;
@@ -344,6 +361,10 @@ body {
   font-weight: 620;
   white-space: nowrap;
   transition: transform 180ms ease, background-color 180ms ease, color 180ms ease, box-shadow 180ms ease;
+}
+
+.site-header .header-cta {
+  margin-left: 18px;
 }
 
 .header-cta,
@@ -550,17 +571,6 @@ body {
   display: block;
   width: 100%;
   height: auto;
-}
-
-.hero-dashboard span {
-  position: absolute;
-  right: 12px;
-  bottom: 10px;
-  border-radius: 6px;
-  padding: 4px 7px;
-  background: rgba(8, 17, 13, 0.8);
-  color: rgba(255,255,255,.85);
-  font-size: 11px;
 }
 
 .section-space {
@@ -1566,13 +1576,14 @@ body {
 
 @media (max-width: 1100px) {
   .header-inner {
-    grid-template-columns: 220px 1fr 104px;
+    grid-template-columns: 224px 1fr auto;
     gap: 16px;
   }
-  .brand-logo { width: 194px; }
+  .brand-logo { width: 214px; }
   .desktop-nav { gap: 16px; }
   .nav-link { font-size: 13px; }
   .header-cta { padding-inline: 16px; }
+  .site-header .header-cta { margin-left: 8px; }
   .hero-copy { padding-right: 38px; }
   .case-card-2,
   .case-card-3 { grid-template-columns: 1fr; }
@@ -1633,7 +1644,7 @@ body {
 
 @media (max-width: 640px) {
   .site-container { width: min(100% - 32px, 1400px); }
-  .brand-logo { width: 190px; }
+  .brand-logo { width: 202px; }
   .home-hero { padding-bottom: 72px; }
   .hero-copy { padding-top: 54px; }
   .hero-copy h1 { max-width: none; font-size: 42px; line-height: 1.12; }
@@ -1641,7 +1652,6 @@ body {
   .hero-media { min-height: 420px; }
   .hero-photo { object-position: 54% center; }
   .hero-dashboard { left: 7%; bottom: -46px; width: 86%; }
-  .hero-dashboard span { display: none; }
   .section-space { padding-block: 76px; }
   .section-heading { display: grid; margin-bottom: 36px; }
   .section-heading h2,
