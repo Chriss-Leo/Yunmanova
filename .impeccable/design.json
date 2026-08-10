@@ -1,53 +1,48 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-08-08T18:50:29Z",
+  "generatedAt": "2026-08-10T10:22:24Z",
   "title": "Design System: 云码智创科技",
   "extensions": {
     "colorMeta": {
-      "forest-authority": {
+      "forest-action": {
         "role": "primary",
-        "displayName": "Forest Authority",
-        "tonalRamp": ["oklch(18% 0.055 160)", "oklch(27% 0.07 160)", "oklch(36% 0.08 160)", "oklch(46% 0.075 160)", "oklch(58% 0.065 160)", "oklch(70% 0.05 160)", "oklch(83% 0.03 160)", "oklch(94% 0.012 160)"]
+        "displayName": "Forest Action",
+        "tonalRamp": ["oklch(17% 0.05 160)", "oklch(27% 0.07 160)", "oklch(37% 0.08 160)", "oklch(48% 0.075 160)", "oklch(59% 0.063 160)", "oklch(71% 0.047 160)", "oklch(83% 0.029 160)", "oklch(95% 0.009 160)"]
       },
-      "forest-authority-strong": {
+      "forest-deep": {
         "role": "primary",
-        "displayName": "Forest Authority Strong",
-        "tonalRamp": ["oklch(15% 0.045 160)", "oklch(23% 0.06 160)", "oklch(32% 0.07 160)", "oklch(43% 0.067 160)", "oklch(55% 0.057 160)", "oklch(68% 0.044 160)", "oklch(82% 0.027 160)", "oklch(94% 0.01 160)"]
+        "displayName": "Forest Deep",
+        "tonalRamp": ["oklch(15% 0.043 160)", "oklch(23% 0.058 160)", "oklch(33% 0.068 160)", "oklch(44% 0.064 160)", "oklch(56% 0.054 160)", "oklch(69% 0.041 160)", "oklch(82% 0.025 160)", "oklch(95% 0.007 160)"]
       },
-      "forest-authority-soft": {
+      "forest-soft": {
         "role": "secondary",
-        "displayName": "Forest Authority Soft",
-        "tonalRamp": ["oklch(18% 0.032 160)", "oklch(29% 0.04 160)", "oklch(41% 0.043 160)", "oklch(54% 0.04 160)", "oklch(67% 0.034 160)", "oklch(78% 0.025 160)", "oklch(87% 0.016 160)", "oklch(95% 0.007 160)"]
+        "displayName": "Forest Soft",
+        "tonalRamp": ["oklch(17% 0.018 160)", "oklch(29% 0.024 160)", "oklch(42% 0.026 160)", "oklch(55% 0.024 160)", "oklch(68% 0.02 160)", "oklch(80% 0.014 160)", "oklch(90% 0.008 160)", "oklch(96% 0.003 160)"]
       },
-      "cool-white": {
+      "white": {
         "role": "neutral",
-        "displayName": "Cool White",
-        "tonalRamp": ["oklch(15% 0.006 155)", "oklch(27% 0.006 155)", "oklch(40% 0.006 155)", "oklch(54% 0.006 155)", "oklch(68% 0.005 155)", "oklch(80% 0.004 155)", "oklch(90% 0.003 155)", "oklch(98% 0.002 155)"]
-      },
-      "surface-white": {
-        "role": "neutral",
-        "displayName": "Surface White",
+        "displayName": "White",
         "tonalRamp": ["oklch(15% 0 0)", "oklch(28% 0 0)", "oklch(42% 0 0)", "oklch(56% 0 0)", "oklch(70% 0 0)", "oklch(82% 0 0)", "oklch(92% 0 0)", "oklch(100% 0 0)"]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Surface Soft",
+        "tonalRamp": ["oklch(15% 0.004 160)", "oklch(28% 0.004 160)", "oklch(42% 0.004 160)", "oklch(56% 0.004 160)", "oklch(70% 0.003 160)", "oklch(82% 0.003 160)", "oklch(92% 0.002 160)", "oklch(99% 0.001 160)"]
       },
       "graphite": {
         "role": "neutral",
         "displayName": "Graphite",
-        "tonalRamp": ["oklch(15% 0.006 155)", "oklch(27% 0.006 155)", "oklch(40% 0.006 155)", "oklch(53% 0.005 155)", "oklch(66% 0.004 155)", "oklch(78% 0.003 155)", "oklch(89% 0.002 155)", "oklch(96% 0.001 155)"]
+        "tonalRamp": ["oklch(15% 0.01 155)", "oklch(27% 0.011 155)", "oklch(40% 0.011 155)", "oklch(53% 0.009 155)", "oklch(66% 0.007 155)", "oklch(78% 0.005 155)", "oklch(89% 0.003 155)", "oklch(96% 0.001 155)"]
       },
       "graphite-muted": {
         "role": "neutral",
         "displayName": "Graphite Muted",
         "tonalRamp": ["oklch(16% 0.01 155)", "oklch(28% 0.012 155)", "oklch(41% 0.012 155)", "oklch(54% 0.011 155)", "oklch(67% 0.009 155)", "oklch(79% 0.007 155)", "oklch(89% 0.004 155)", "oklch(96% 0.002 155)"]
       },
-      "quiet-sage": {
-        "role": "secondary",
-        "displayName": "Quiet Sage",
-        "tonalRamp": ["oklch(17% 0.022 155)", "oklch(29% 0.029 155)", "oklch(42% 0.031 155)", "oklch(55% 0.029 155)", "oklch(68% 0.025 155)", "oklch(79% 0.019 155)", "oklch(88% 0.012 155)", "oklch(95% 0.006 155)"]
-      },
-      "quiet-sage-line": {
+      "graphite-line": {
         "role": "neutral",
-        "displayName": "Quiet Sage Line",
-        "tonalRamp": ["oklch(16% 0.012 155)", "oklch(28% 0.015 155)", "oklch(41% 0.016 155)", "oklch(54% 0.015 155)", "oklch(67% 0.013 155)", "oklch(79% 0.01 155)", "oklch(89% 0.006 155)", "oklch(95% 0.003 155)"]
+        "displayName": "Graphite Line",
+        "tonalRamp": ["oklch(16% 0.008 155)", "oklch(28% 0.01 155)", "oklch(41% 0.011 155)", "oklch(54% 0.01 155)", "oklch(67% 0.008 155)", "oklch(79% 0.006 155)", "oklch(89% 0.004 155)", "oklch(95% 0.002 155)"]
       },
       "brand-cyan": {
         "role": "tertiary",
@@ -56,33 +51,28 @@
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "Inner-page statements and the largest decision-setting headlines." },
-      "headline": { "displayName": "Headline", "purpose": "Section openings and major explanatory turns." },
-      "title": { "displayName": "Title", "purpose": "Service rows, cards, and compact content groups." },
-      "body": { "displayName": "Body", "purpose": "Explanatory copy held to a readable measure." },
-      "label": { "displayName": "Label", "purpose": "Navigation, field labels, tags, and compact metadata." }
+      "display": { "displayName": "Display", "purpose": "The split-hero promise and highest-level business statement." },
+      "headline": { "displayName": "Headline", "purpose": "Engineering proof, product value, panorama, delivery, and contact headings." },
+      "title": { "displayName": "Title", "purpose": "Delivery steps and compact information groups." },
+      "body": { "displayName": "Body", "purpose": "Restrained enterprise explanations held near 32em." },
+      "label": { "displayName": "Label", "purpose": "Section eyebrows, proof labels, and compact metadata." }
     },
     "shadows": [
-      { "name": "control-lift", "value": "0 12px 30px rgba(11, 85, 61, 0.18)", "purpose": "Primary controls at rest; pair with only a one-pixel hover lift." },
-      { "name": "proof-overlay", "value": "0 32px 70px rgba(28, 39, 34, 0.17), 0 2px 8px rgba(28, 39, 34, 0.08)", "purpose": "Product interface panels that physically overlap photography." },
-      { "name": "media-lift", "value": "0 26px 60px rgba(25, 42, 34, 0.15)", "purpose": "Large standalone interface imagery." },
-      { "name": "floating-seal", "value": "0 16px 40px rgba(25, 42, 34, 0.13)", "purpose": "Compact credibility notes attached to a larger visual." },
-      { "name": "mobile-menu", "value": "0 18px 30px rgba(17, 24, 20, 0.08)", "purpose": "The temporary navigation layer below the sticky header." }
+      { "name": "control-lift", "value": "0 12px 30px rgba(11, 85, 61, 0.18)", "purpose": "Primary action buttons only." },
+      { "name": "product-stack", "value": "0 26px 56px rgba(24, 47, 38, 0.18)", "purpose": "Platform panels, APP shells, and mini-program shells in the product composition." },
+      { "name": "mobile-menu", "value": "0 18px 30px rgba(17, 24, 20, 0.08)", "purpose": "The locked Header’s temporary navigation layer." }
     ],
     "motion": [
-      { "name": "state-standard", "value": "180ms ease", "purpose": "Buttons, navigation, and compact state transitions." },
-      { "name": "field-standard", "value": "160ms ease", "purpose": "Input borders, focus rings, and footer links." },
-      { "name": "proof-image", "value": "700ms cubic-bezier(.16, 1, .3, 1)", "purpose": "Subtle image scale on proof-card hover." },
+      { "name": "interaction-standard", "value": "180ms ease", "purpose": "Hover, focus, and active feedback for compact controls." },
+      { "name": "accordion-toggle", "value": "immediate state change", "purpose": "FAQ disclosure feedback without ornamental entrance animation." },
+      { "name": "content-visible-default", "value": "SSR visible", "purpose": "Core page content renders visibly without client-side reveal gates." },
       { "name": "reduced-motion", "value": "0.01ms", "purpose": "Near-instant fallback when the user prefers reduced motion." }
     ],
     "breakpoints": [
-      { "name": "sm", "value": "640px" },
-      { "name": "md", "value": "768px" },
-      { "name": "marketing-collapse", "value": "900px" },
-      { "name": "lg", "value": "1024px" },
-      { "name": "navigation-tighten", "value": "1100px" },
-      { "name": "xl", "value": "1280px" },
-      { "name": "2xl", "value": "1376px" }
+      { "name": "mobile", "value": "767px" },
+      { "name": "tablet", "value": "1024px" },
+      { "name": "header-collapse", "value": "900px" },
+      { "name": "container", "value": "1200px" }
     ]
   },
   "components": [
@@ -90,92 +80,118 @@
       "name": "Primary Button",
       "kind": "button",
       "refersTo": "button-primary",
-      "description": "The default action for consultation, form submission, and high-confidence next steps.",
-      "html": "<button class=\"ds-btn-primary\">联系我们 <span aria-hidden=\"true\">→</span></button>",
-      "css": ".ds-btn-primary { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:46px; padding:0 21px; border:0; border-radius:10px; background:var(--ym-green, #0b553d); color:#fff; font-family:'Noto Sans SC Variable', Arial, sans-serif; font-size:15px; font-weight:620; box-shadow:0 12px 30px rgba(11,85,61,.18); cursor:pointer; transition:transform 180ms ease, background-color 180ms ease, box-shadow 180ms ease; } .ds-btn-primary:hover { background:var(--ym-green-strong, #073f2e); transform:translateY(-1px); } .ds-btn-primary:active { transform:scale(.98); } .ds-btn-primary:focus-visible { outline:3px solid rgba(11,85,61,.32); outline-offset:3px; }"
+      "description": "The single forest action used for consultation and contact.",
+      "html": "<button class=\"ds-btn-primary\">预约咨询 <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary { display:inline-flex; min-height:48px; align-items:center; justify-content:center; gap:9px; padding:0 21px; border:0; border-radius:8px; background:#0d563e; color:#fff; font:620 14px/1.4 'Noto Sans SC Variable',Arial,sans-serif; box-shadow:0 12px 30px rgba(11,85,61,.18); cursor:pointer; transition:transform 180ms ease,background-color 180ms ease; } .ds-btn-primary:hover { background:#073b2b; transform:translateY(-1px); } .ds-btn-primary:active { transform:scale(.98); } .ds-btn-primary:focus-visible { outline:3px solid rgba(13,86,62,.34); outline-offset:4px; }"
     },
     {
-      "name": "Light Button",
+      "name": "Outline Button",
       "kind": "button",
-      "refersTo": "button-light",
-      "description": "The inverse action used on Forest Authority panels.",
-      "html": "<div class=\"ds-dark-panel\"><button class=\"ds-btn-light\">联系我们 <span aria-hidden=\"true\">→</span></button></div>",
-      "css": ".ds-dark-panel { padding:28px; border-radius:14px; background:var(--ym-green, #0b553d); } .ds-btn-light { display:inline-flex; align-items:center; justify-content:center; gap:9px; min-height:46px; padding:0 21px; border:0; border-radius:10px; background:#f7fbf9; color:var(--ym-green-strong, #073f2e); font-family:'Noto Sans SC Variable', Arial, sans-serif; font-size:15px; font-weight:620; cursor:pointer; transition:transform 180ms ease, background-color 180ms ease; } .ds-btn-light:hover { background:#fff; transform:translateY(-1px); } .ds-btn-light:active { transform:scale(.98); } .ds-btn-light:focus-visible { outline:3px solid rgba(255,255,255,.62); outline-offset:3px; }"
+      "refersTo": "button-outline",
+      "description": "The paired secondary action in the connected split hero.",
+      "html": "<button class=\"ds-btn-outline\">了解服务 <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-outline { display:inline-flex; min-height:48px; align-items:center; justify-content:center; gap:9px; padding:0 21px; border:1px solid #8fa99c; border-radius:8px; background:rgba(255,255,255,.86); color:#073b2b; font:620 14px/1.4 'Noto Sans SC Variable',Arial,sans-serif; cursor:pointer; transition:transform 180ms ease,border-color 180ms ease,background-color 180ms ease; } .ds-btn-outline:hover { border-color:#0d563e; background:#fff; transform:translateY(-1px); } .ds-btn-outline:active { transform:scale(.98); } .ds-btn-outline:focus-visible { outline:3px solid rgba(13,86,62,.34); outline-offset:4px; }"
     },
     {
-      "name": "Text Link",
-      "kind": "button",
-      "refersTo": "text-link",
-      "description": "A lower-pressure editorial action that keeps the reading flow visible.",
-      "html": "<a class=\"ds-text-link\" href=\"#\">查看产品与服务 <span aria-hidden=\"true\">→</span></a>",
-      "css": ".ds-text-link { display:inline-flex; align-items:center; gap:8px; color:var(--ym-green, #0b553d); font-family:'Noto Sans SC Variable', Arial, sans-serif; font-size:16px; font-weight:620; text-decoration:none; text-underline-offset:5px; } .ds-text-link:hover { text-decoration:underline; } .ds-text-link:focus-visible { outline:3px solid rgba(11,85,61,.32); outline-offset:3px; border-radius:6px; } .ds-text-link:active { color:var(--ym-green-strong, #073f2e); }"
-    },
-    {
-      "name": "Text Field",
-      "kind": "input",
-      "refersTo": "input",
-      "description": "A quiet white input for enterprise inquiry details.",
-      "html": "<label class=\"ds-field\"><span>联系方式 *</span><input placeholder=\"邮箱、手机号或微信号\" /></label>",
-      "css": ".ds-field { display:grid; gap:9px; color:#313a35; font-family:'Noto Sans SC Variable', Arial, sans-serif; font-size:14px; font-weight:620; } .ds-field input { width:100%; height:50px; padding:0 15px; border:1px solid #c9d1cc; border-radius:10px; background:#fff; color:var(--ym-ink, #171b19); font:400 16px/1.5 'Noto Sans SC Variable', Arial, sans-serif; transition:border-color 160ms ease, box-shadow 160ms ease; } .ds-field input::placeholder { color:#747f79; } .ds-field input:hover { border-color:#aebbb4; } .ds-field input:focus-visible { border-color:var(--ym-green, #0b553d); box-shadow:0 0 0 3px rgba(11,85,61,.12); outline:none; }"
-    },
-    {
-      "name": "Navigation Link",
+      "name": "Locked Navigation",
       "kind": "nav",
       "refersTo": "navigation-link",
-      "description": "The centered desktop navigation state with a precise current-page marker.",
-      "html": "<nav class=\"ds-nav\" aria-label=\"主导航示例\"><a href=\"#\">产品与服务</a><a class=\"ds-current\" href=\"#\">案例</a><a href=\"#\">关于我们</a></nav>",
-      "css": ".ds-nav { display:flex; align-items:center; gap:30px; height:72px; padding:0 24px; border-bottom:1px solid rgba(223,228,225,.86); background:rgba(248,249,248,.94); font-family:'Noto Sans SC Variable', Arial, sans-serif; } .ds-nav a { position:relative; color:#343b37; font-size:14px; line-height:72px; text-decoration:none; transition:color 180ms ease; } .ds-nav a:hover, .ds-nav a.ds-current { color:var(--ym-green, #0b553d); } .ds-nav a.ds-current::after { content:''; position:absolute; height:2px; left:0; right:0; bottom:0; background:var(--ym-green, #0b553d); } .ds-nav a:focus-visible { outline:3px solid rgba(11,85,61,.32); outline-offset:3px; }"
+      "description": "A compact approved Header sample shown for reference only; its implementation is locked.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"主导航示例\"><a class=\"ds-current\" href=\"#\">首页</a><a href=\"#\">服务能力</a><a href=\"#\">案例与方案</a><a href=\"#\">关于我们</a></nav>",
+      "css": ".ds-nav { display:flex; height:72px; align-items:center; justify-content:center; gap:30px; border-bottom:1px solid #dfe4e1; background:#fff; font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-nav a { position:relative; color:#343b37; font-size:14px; line-height:72px; text-decoration:none; transition:color 180ms ease; } .ds-nav a:hover,.ds-nav a.ds-current { color:#0d563e; } .ds-nav a.ds-current::after { content:''; position:absolute; right:0; bottom:0; left:0; height:2px; background:#0d563e; } .ds-nav a:focus-visible { outline:3px solid rgba(13,86,62,.34); outline-offset:4px; }"
     },
     {
-      "name": "Solution Card",
-      "kind": "card",
-      "refersTo": "card",
-      "description": "A photographic proof card that names the applicable system before explaining it.",
-      "html": "<article class=\"ds-card\"><div class=\"ds-card-proof\" role=\"img\" aria-label=\"企业软件界面示意\"><span>WORKING SOFTWARE</span></div><div class=\"ds-card-copy\"><small>能源管理 / IoT / 数据可视化</small><h3>能源运营数字化平台</h3><p>统一设备、能耗、告警与运营数据，为管理团队提供清晰的决策界面。</p></div></article>",
-      "css": ".ds-card { overflow:hidden; border-radius:14px; background:var(--ym-bg, #f8f9f8); color:var(--ym-ink, #171b19); font-family:'Noto Sans SC Variable', Arial, sans-serif; } .ds-card-proof { display:grid; place-items:center; min-height:180px; background:linear-gradient(145deg, #dfece6, #eef3f0); color:var(--ym-green, #0b553d); font-size:12px; font-weight:620; letter-spacing:.08em; transition:transform 700ms cubic-bezier(.16,1,.3,1); } .ds-card:hover .ds-card-proof { transform:scale(1.025); } .ds-card-copy { padding:28px 30px 34px; } .ds-card small { color:var(--ym-green, #0b553d); font-size:13px; } .ds-card h3 { margin:10px 0 12px; font-size:25px; font-weight:630; line-height:1.3; } .ds-card p { margin:0; color:var(--ym-muted, #59625d); font-size:16px; line-height:1.65; } .ds-card:focus-within { outline:3px solid rgba(11,85,61,.32); outline-offset:3px; }"
+      "name": "Connected Split Hero",
+      "kind": "custom",
+      "refersTo": "split-hero",
+      "description": "A white copy field connected directly into enterprise review photography through a directional wash.",
+      "html": "<section class=\"ds-hero\"><div class=\"ds-hero-copy\"><h2>软件不是项目终点，<br>而是业务增长的基础设施</h2><p>我们为企业构建可靠、可扩展的软件与物联网平台，让系统持续创造价值。</p><div><button>预约咨询 →</button><a href=\"#\">了解服务 →</a></div></div><div class=\"ds-hero-photo\" role=\"img\" aria-label=\"企业团队评审系统\"></div></section>",
+      "css": ".ds-hero { display:grid; min-height:430px; grid-template-columns:44% 56%; overflow:hidden; background:#fff; color:#14201b; font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-hero-copy { position:relative; z-index:2; align-self:center; padding:48px; } .ds-hero-copy::after { content:''; position:absolute; top:0; bottom:0; left:100%; width:150px; background:linear-gradient(90deg,#fff,rgba(255,255,255,0)); pointer-events:none; } .ds-hero h2 { margin:0; font-size:38px; line-height:1.19; letter-spacing:-.035em; font-weight:680; } .ds-hero p { margin:24px 0 28px; color:#58645e; font-size:15px; line-height:1.8; } .ds-hero-copy div { display:flex; gap:14px; } .ds-hero button,.ds-hero a { min-height:44px; display:inline-flex; align-items:center; padding:0 17px; border-radius:8px; font-size:13px; font-weight:620; text-decoration:none; } .ds-hero button { border:0; background:#0d563e; color:#fff; } .ds-hero a { border:1px solid #8fa99c; color:#073b2b; } .ds-hero button:hover { background:#073b2b; } .ds-hero a:hover { border-color:#0d563e; } .ds-hero button:focus-visible,.ds-hero a:focus-visible { outline:3px solid rgba(13,86,62,.34); outline-offset:4px; } .ds-hero-photo { background:linear-gradient(135deg,#d7dfdb 0%,#758a80 46%,#26352f 100%); }"
     },
     {
-      "name": "FAQ Row",
+      "name": "Engineering Proof Banner",
+      "kind": "custom",
+      "refersTo": "engineering-proof",
+      "description": "A static dark engineering-team photograph with right-side white proof copy.",
+      "html": "<section class=\"ds-engineering\"><div class=\"ds-engineering-photo\"></div><div class=\"ds-engineering-copy\"><h3>真实项目，真实交付</h3><p>专业的工程团队与严谨的交付流程，保障系统稳定、可靠、可持续演进。</p><a href=\"#\"><i>▶</i> 查看团队协作</a></div></section>",
+      "css": ".ds-engineering { display:grid; min-height:300px; grid-template-columns:62% 38%; background:#09130f; color:#fff; font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-engineering-photo { background:linear-gradient(135deg,#26332e,#0c1713); } .ds-engineering-copy { display:flex; flex-direction:column; justify-content:center; padding:42px; background:linear-gradient(90deg,rgba(4,14,12,.6),rgba(4,14,12,.94)); } .ds-engineering h3 { margin:0; font-size:34px; line-height:1.14; font-weight:650; } .ds-engineering p { margin:18px 0 22px; color:#d8e1dd; font-size:14px; line-height:1.75; } .ds-engineering a { display:inline-flex; align-items:center; gap:10px; color:#f4f8f6; font-size:13px; font-weight:610; text-decoration:none; } .ds-engineering i { display:grid; width:38px; height:38px; place-items:center; border:1px solid rgba(255,255,255,.6); border-radius:50%; font-style:normal; transition:transform 180ms ease,background-color 180ms ease; } .ds-engineering a:hover i { background:#0d563e; transform:scale(1.05); } .ds-engineering a:focus-visible { outline:3px solid rgba(255,255,255,.55); outline-offset:4px; }"
+    },
+    {
+      "name": "Layered Product System",
+      "kind": "custom",
+      "refersTo": "product-panel",
+      "description": "Two 9px platform panels behind three authentic 24px device shells.",
+      "html": "<div class=\"ds-products\"><div class=\"ds-platform ds-platform-a\"><span>PLATFORM LOGIN</span></div><div class=\"ds-platform ds-platform-b\"><span>OPERATIONS</span></div><div class=\"ds-phone ds-phone-a\"><b>动态电价</b><i></i><i></i></div><div class=\"ds-phone ds-phone-b\"><b>企业服务</b><i></i><i></i></div><div class=\"ds-phone ds-phone-c\"><b>城市小程序</b><i></i><i></i></div></div>",
+      "css": ".ds-products { position:relative; min-height:430px; overflow:hidden; background:#fff; font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-platform,.ds-phone { position:absolute; overflow:hidden; background:#fff; box-shadow:0 26px 56px rgba(24,47,38,.18); } .ds-platform { bottom:44px; width:34%; height:240px; border-radius:9px; display:grid; place-items:center; background:#14211c; color:#87cbb2; font-size:11px; letter-spacing:.08em; } .ds-platform-a { left:0; } .ds-platform-b { left:22%; bottom:56px; } .ds-phone { top:10px; width:18%; height:360px; padding:24px 12px; border:7px solid #111714; border-radius:24px; color:#14201b; } .ds-phone b { font-size:12px; } .ds-phone i { display:block; height:68px; margin-top:14px; border-radius:9px; background:#edf4f0; } .ds-phone-a { left:42%; background:#161b19; color:#fff; } .ds-phone-b { left:62%; border-color:#e5e8e6; } .ds-phone-c { right:0; top:32px; border-color:#e2e7e4; }"
+    },
+    {
+      "name": "Energy Panorama",
+      "kind": "custom",
+      "refersTo": "energy-panorama",
+      "description": "A square-edged energy landscape with left proof copy and a five-item bottom scenario rail.",
+      "html": "<section class=\"ds-panorama\"><div class=\"ds-panorama-copy\"><small>我们服务的行业与场景</small><h3>让系统场景更简单<br>让关键决策更智能</h3><p>构建面向未来的数字底座，支撑企业持续增长。</p></div><div class=\"ds-panorama-rail\"><span>能源与电力</span><span>设施与设备管理</span><span>城市服务</span><span>文旅与社区</span><span>更多行业</span></div></section>",
+      "css": ".ds-panorama { position:relative; min-height:390px; overflow:hidden; background:linear-gradient(90deg,rgba(3,22,18,.86),rgba(3,22,18,.16)),linear-gradient(145deg,#395b51,#17352c 58%,#0b1d17); color:#fff; font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-panorama-copy { max-width:430px; padding:62px 48px 110px; } .ds-panorama small { color:#c7d9d0; font-size:12px; } .ds-panorama h3 { margin:14px 0 18px; font-size:36px; line-height:1.17; letter-spacing:-.035em; font-weight:650; } .ds-panorama p { color:#d7e1dd; font-size:14px; line-height:1.75; } .ds-panorama-rail { position:absolute; right:0; bottom:0; left:0; display:grid; grid-template-columns:repeat(5,1fr); border-top:1px solid rgba(255,255,255,.24); background:rgba(4,31,23,.47); } .ds-panorama-rail span { min-height:72px; display:flex; align-items:center; justify-content:center; border-left:1px solid rgba(255,255,255,.17); color:#eef5f1; font-size:12px; font-weight:570; }"
+    },
+    {
+      "name": "Five-Step Delivery Path",
+      "kind": "custom",
+      "refersTo": "delivery-path",
+      "description": "Five compact icon steps connected by one-pixel lines and circular joints.",
+      "html": "<ol class=\"ds-path\"><li><i>◉</i><b>01 理解业务</b><span>明确问题与边界</span></li><li><i>▤</i><b>02 定义产品</b><span>形成可执行方案</span></li><li><i>▣</i><b>03 设计开发</b><span>持续校准方向</span></li><li><i>▢</i><b>04 验证上线</b><span>稳定进入业务</span></li><li><i>↻</i><b>05 持续演进</b><span>支持长期发展</span></li></ol>",
+      "css": ".ds-path { display:grid; grid-template-columns:repeat(5,1fr); gap:24px; margin:0; padding:24px 0; list-style:none; background:#fff; color:#14201b; font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-path li { position:relative; display:grid; gap:10px; } .ds-path li:not(:last-child)::after { content:''; position:absolute; top:23px; left:55px; width:calc(100% - 38px); height:1px; background:#bfcac4; } .ds-path i { position:relative; z-index:2; display:grid; width:46px; height:46px; place-items:center; border-radius:13px; background:#edf4f0; color:#0d563e; font-style:normal; } .ds-path b { color:#0d563e; font-size:14px; font-weight:650; } .ds-path span { color:#65716b; font-size:12px; line-height:1.7; }"
+    },
+    {
+      "name": "Two-Column FAQ",
       "kind": "custom",
       "refersTo": "faq-row",
-      "description": "A divider-led disclosure row for practical pre-engagement questions.",
-      "html": "<div class=\"ds-faq\"><button type=\"button\" aria-expanded=\"true\"><span>项目过程中如何保证沟通和质量？</span><span aria-hidden=\"true\">−</span></button><p>通过固定沟通节奏、阶段演示、需求与缺陷追踪，让进度、风险与决策保持透明。</p></div>",
-      "css": ".ds-faq { border-top:1px solid var(--ym-line, #dfe4e1); border-bottom:1px solid var(--ym-line, #dfe4e1); color:var(--ym-ink, #171b19); font-family:'Noto Sans SC Variable', Arial, sans-serif; } .ds-faq button { display:flex; align-items:center; justify-content:space-between; width:100%; min-height:82px; gap:20px; padding:0; border:0; background:transparent; color:inherit; text-align:left; font:590 18px/1.4 'Noto Sans SC Variable', Arial, sans-serif; cursor:pointer; } .ds-faq button span:last-child { color:var(--ym-green, #0b553d); font-size:22px; } .ds-faq button:hover { color:var(--ym-green-strong, #073f2e); } .ds-faq button:focus-visible { outline:3px solid rgba(11,85,61,.32); outline-offset:3px; } .ds-faq p { max-width:64ch; margin:0; padding:0 42px 28px 0; color:var(--ym-muted, #59625d); font-size:16px; line-height:1.8; }"
+      "description": "A left message paired with a right accordion that is closed by default.",
+      "html": "<section class=\"ds-faq-layout\"><div><small>常见问题</small><h3>你关心的问题，我们已经准备好答案</h3></div><div class=\"ds-faq-list\"><button aria-expanded=\"false\">项目开发周期通常需要多久？ <span>＋</span></button><button aria-expanded=\"false\">如何保障系统的安全性与数据隐私？ <span>＋</span></button><button aria-expanded=\"false\">是否支持与现有系统集成？ <span>＋</span></button></div></section>",
+      "css": ".ds-faq-layout { display:grid; grid-template-columns:1.1fr .9fr; gap:72px; padding:48px; background:#fafcfb; color:#14201b; font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-faq-layout small { color:#0d563e; font-size:12px; font-weight:620; } .ds-faq-layout h3 { max-width:19em; margin:12px 0 0; font-size:28px; line-height:1.22; letter-spacing:-.03em; font-weight:650; } .ds-faq-list { border-top:1px solid #cfd8d3; } .ds-faq-list button { display:flex; width:100%; min-height:58px; align-items:center; justify-content:space-between; border:0; border-bottom:1px solid #d8dfdb; background:transparent; color:#37443e; font:590 14px/1.4 'Noto Sans SC Variable',Arial,sans-serif; text-align:left; cursor:pointer; } .ds-faq-list button:hover { color:#0d563e; } .ds-faq-list button:focus-visible { outline:3px solid rgba(13,86,62,.34); outline-offset:4px; }"
+    },
+    {
+      "name": "Forest Contact Close",
+      "kind": "custom",
+      "refersTo": "contact-close",
+      "description": "A forest panorama close with one action, factual contact details, and a slim white legal footer.",
+      "html": "<div class=\"ds-contact-wrap\"><section class=\"ds-contact\"><div><h3>准备好一起创造价值了吗？</h3><p>无论你有明确需求，还是正在探索方向，我们都乐意成为你的技术伙伴。</p><a href=\"#\">联系我们 →</a></div><address><span>邮箱咨询<br><b>chrisleo.yu.cn@gmail.com</b></span><span>服务范围<br><b>面向全国企业客户</b></span></address></section><footer>© 云码智创科技 版权所有</footer></div>",
+      "css": ".ds-contact-wrap { font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-contact { display:grid; min-height:260px; grid-template-columns:.88fr 1.12fr; gap:72px; align-items:center; padding:48px; background:linear-gradient(90deg,rgba(1,58,41,.88),rgba(1,58,41,.72)),linear-gradient(145deg,#315f4f,#0a3326); color:#fff; } .ds-contact h3 { margin:0; font-size:31px; line-height:1.18; font-weight:650; } .ds-contact p { max-width:34em; margin:16px 0 22px; color:#d7e8e0; font-size:14px; line-height:1.75; } .ds-contact a { display:inline-flex; min-height:47px; align-items:center; padding:0 18px; border-radius:8px; background:#fff; color:#073b2b; font-size:13px; font-weight:620; text-decoration:none; } .ds-contact a:hover { transform:translateY(-1px); } .ds-contact a:focus-visible { outline:3px solid rgba(255,255,255,.6); outline-offset:4px; } .ds-contact address { display:grid; gap:18px; font-style:normal; color:#bcd4c8; font-size:11px; } .ds-contact address b { color:#f3f8f5; font-size:14px; font-weight:500; } .ds-contact-wrap footer { min-height:58px; display:flex; align-items:center; padding:0 48px; background:#fff; color:#68736d; font-size:12px; }"
     }
   ],
   "narrative": {
-    "northStar": "The Working Review Room",
-    "overview": "The Working Review Room is a calm enterprise setting where decision-makers, product teams, and engineers inspect the same real system together. The visual language replaces generic technology decoration with evidence: photographed collaboration, visible product interfaces, concrete service structures, and deliberate process detail.\n\nThe mood is professional, credible, calm, and precise. Cool white space and graphite type keep the experience lucid; forest green controls establish authority without spectacle. Photographic proof carries the emotional weight, while interface imagery and orderly grids make the work feel inspectable. The system should remain refined and tactile, never glossy, futuristic, or theatrically “AI.”",
+    "northStar": "The Connected Enterprise Reference",
+    "overview": "The Connected Enterprise Reference is a faithful reconstruction of the approved enterprise website composition. Its authority comes from direct visual continuity: a white copy field connects into real review-room photography, a dark engineering-team banner proves delivery capability, and authentic platform, APP, and mini-program screens form the central product evidence.\n\nThe mood is professional, credible, compact, and operational. White space, graphite type, and one disciplined forest-green action color keep the page legible; full-width enterprise scenes give the story weight without turning it into spectacle. The reference composition is the authority. New work should preserve its proportions, density, visual order, and plainspoken confidence rather than reinterpret it through a new campaign concept.",
     "keyCharacteristics": [
-      "Image-led enterprise proof, with real collaboration and working software in the same visual world.",
-      "Cool white surfaces, graphite typography, and forest green actions used with restraint.",
-      "Soft 14px geometry, fine dividers, and generous spatial rhythm.",
-      "Clear editorial hierarchy that moves from offer to method, applicable systems, and contact.",
-      "Restrained motion and depth that clarify state, hierarchy, and material structure."
+      "A connected split hero where white copy and enterprise review photography read as one surface.",
+      "A dark engineering-team proof banner followed by authentic platform, APP, and mini-program interface layers.",
+      "A full-width renewable-energy panorama, five connected delivery steps, two-column FAQ, and forest contact close.",
+      "White, forest green, graphite, and the official cyan logo; no atmospheric transition palette.",
+      "Eight-pixel buttons, 9px platform panels, 24px phone shells, sparse dividers, and core content visible in SSR."
     ],
     "rules": [
-      { "name": "The Forest Means Action Rule", "body": "Reserve Forest Authority for decisions, active state, and meaningful proof; its restraint gives it authority.", "section": "colors" },
-      { "name": "The Cyan Stays in the Signature Rule", "body": "Brand Cyan belongs to identity moments and must not become a generic technology glow or gradient.", "section": "colors" },
-      { "name": "The Weight Builds Hierarchy Rule", "body": "Use the shared sans family across the interface and create distinction through measured weight and scale, not decorative type switching.", "section": "typography" },
-      { "name": "The Headline Must Breathe Rule", "body": "Balance major headings, keep them compact in measure, and preserve the implemented negative tracking at display sizes.", "section": "typography" },
-      { "name": "The Evidence Gets the Larger Column Rule", "body": "When copy and proof share a row, concise explanation yields visual area to photography or a working interface.", "section": "layout" },
-      { "name": "The First Viewport Is Surface-Specific Rule", "body": "Preserve the global visual world here, but keep each page’s first-viewport composition in its surface brief rather than promoting it into a universal template.", "section": "layout" },
-      { "name": "The Structure Before Shadow Rule", "body": "Establish depth with surface tone, edge, and overlap first; add shadow only when an element is materially raised.", "section": "elevation" },
-      { "name": "The Fourteen-Pixel Surface Rule", "body": "Use the shared 14px radius for major cards, proof frames, and CTA panels; do not introduce arbitrary large-radius containers.", "section": "shapes" }
+      { "name": "The One Forest Action Rule", "body": "Use one forest-green action family across buttons, links, checks, and process markers; do not introduce competing accents.", "section": "colors" },
+      { "name": "The Cyan Stays in the Signature Rule", "body": "Brand Cyan belongs to the official logo and must not become a glow, gradient, or general-purpose CTA color.", "section": "colors" },
+      { "name": "The Compact Authority Rule", "body": "Keep headlines strong and relatively compact; hierarchy comes from weight and placement, not oversized campaign typography.", "section": "typography" },
+      { "name": "The Reference Order Rule", "body": "Preserve the approved section order and proportion; it is part of the faithful reconstruction, not a pool of interchangeable modules.", "section": "layout" },
+      { "name": "The Locked Header Rule", "body": "Header logo, typography, navigation, spacing, and controls are read-only and outside homepage redesign scope.", "section": "layout" },
+      { "name": "The Product Stack Owns Shadow Rule", "body": "Keep editorial sections flat; use the broad structural shadow only where authentic interfaces overlap.", "section": "elevation" },
+      { "name": "The Device-Specific Geometry Rule", "body": "Use 9px for platform panels and 24px for phone shells; do not normalize authentic device layers into one generic card radius.", "section": "shapes" }
     ],
     "dos": [
-      "Do lead with real enterprise collaboration, visible software, concrete systems, and delivery methods.",
-      "Do give photography and product interfaces enough scale to function as proof.",
-      "Do use Forest Authority sparingly for controls, active state, icons, and decisive emphasis.",
-      "Do maintain cool whites, graphite hierarchy, fine structural dividers, and 14px surface geometry.",
-      "Do honor keyboard focus, WCAG AA contrast, and reduced-motion preferences."
+      "Do reproduce the approved reference’s connected hero, dark engineering banner, product stack, energy panorama, five-step path, FAQ split, forest contact band, and slim footer.",
+      "Do preserve real platform, APP, and mini-program screenshots as the central product evidence.",
+      "Do use White, Forest Action, Graphite, and the official cyan logo as the dominant palette.",
+      "Do use 8px button corners, 9px platform corners, and 24px phone-shell corners.",
+      "Do keep all core copy, images, proof labels, delivery steps, FAQ questions, and contact information visible from SSR.",
+      "Do limit motion to hover, focus, active, and accordion feedback, with reduced-motion support.",
+      "Do preserve the approved Header exactly as implemented."
     ],
     "donts": [
-      "Don't use cyberpunk, code rain, robots, neon AI imagery, or blue-purple technology gradients.",
-      "Don't turn Brand Cyan into a glow, wash, or general-purpose action color.",
-      "Don't substitute anonymous decorative abstractions for evidence of collaboration and working software.",
-      "Don't over-card the page or put every section inside a floating rounded container.",
-      "Don't use unverified client logos, metrics, testimonials, or interface mockups as claims of completed work."
+      "Don't replace the faithful reference reconstruction with atmospheric transitions, autoplay media, or a video-led primary narrative.",
+      "Don't add horizontal galleries, carousel controls, or unrelated case modules to the homepage.",
+      "Don't replace the connected split hero with a detached card, centered campaign hero, or full-screen media opening.",
+      "Don't round full-width image bands or normalize device-specific geometry into generic 14px cards.",
+      "Don't hide core content behind client-side reveal states, opacity, blur, or transform gates.",
+      "Don't alter the locked Header or invent client names, metrics, phone numbers, testimonials, or addresses."
     ]
   }
 }

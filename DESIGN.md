@@ -1,242 +1,245 @@
 ---
 name: "云码智创科技"
-description: "以真实协作与可工作的软件产品建立企业数字化信任。"
+description: "以连接式企业叙事、真实产品界面与克制森林绿建立软件交付信任。"
 colors:
-  forest-authority: "#0b553d"
-  forest-authority-strong: "#073f2e"
-  forest-authority-soft: "#d2e5dd"
-  cool-white: "#f8f9f8"
-  surface-white: "#ffffff"
-  graphite: "#171b19"
-  graphite-muted: "#59625d"
-  quiet-sage: "#e5f0eb"
-  quiet-sage-line: "#dfe4e1"
+  forest-action: "#0d563e"
+  forest-deep: "#073b2b"
+  forest-soft: "#edf4f0"
+  white: "#ffffff"
+  surface-soft: "#fafcfb"
+  graphite: "#14201b"
+  graphite-muted: "#65716b"
+  graphite-line: "#d8dfdb"
   brand-cyan: "#08aeea"
 typography:
   display:
     fontFamily: "Noto Sans SC Variable, Geist Sans, sans-serif"
-    fontSize: "clamp(48px, 6vw, 84px)"
-    fontWeight: 660
-    lineHeight: 1.06
-    letterSpacing: "-0.04em"
+    fontSize: "clamp(36px, 3.35vw, 52px)"
+    fontWeight: 680
+    lineHeight: 1.19
+    letterSpacing: "-0.035em"
   headline:
     fontFamily: "Noto Sans SC Variable, Geist Sans, sans-serif"
-    fontSize: "clamp(34px, 4vw, 58px)"
+    fontSize: "clamp(34px, 3.2vw, 48px)"
     fontWeight: 650
-    lineHeight: 1.12
-    letterSpacing: "-0.035em"
+    lineHeight: 1.14
+    letterSpacing: "-0.03em"
   title:
     fontFamily: "Noto Sans SC Variable, Geist Sans, sans-serif"
-    fontSize: "24px"
-    fontWeight: 620
-    lineHeight: 1.3
+    fontSize: "16px"
+    fontWeight: 630
+    lineHeight: 1.35
   body:
     fontFamily: "Noto Sans SC Variable, Geist Sans, sans-serif"
-    fontSize: "17px"
+    fontSize: "15px"
     fontWeight: 400
     lineHeight: 1.75
   label:
     fontFamily: "Noto Sans SC Variable, Geist Sans, sans-serif"
-    fontSize: "14px"
+    fontSize: "13px"
     fontWeight: 620
     lineHeight: 1.4
 rounded:
   detail: "6px"
-  compact: "9px"
-  control: "10px"
-  inset: "12px"
-  surface: "14px"
+  button: "8px"
+  panel: "9px"
+  field: "10px"
+  process: "13px"
+  phone: "24px"
   circle: "50%"
 spacing:
   xs: "8px"
-  sm: "14px"
+  sm: "12px"
   md: "16px"
   lg: "24px"
   xl: "32px"
-  "2xl": "48px"
-  section: "clamp(88px, 9vw, 144px)"
+  "2xl": "64px"
 components:
   button-primary:
-    backgroundColor: "{colors.forest-authority}"
-    textColor: "{colors.surface-white}"
+    backgroundColor: "{colors.forest-action}"
+    textColor: "{colors.white}"
     typography: "{typography.label}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.button}"
     padding: "0 21px"
-    height: "46px"
+    height: "48px"
   button-primary-hover:
-    backgroundColor: "{colors.forest-authority-strong}"
-    textColor: "{colors.surface-white}"
-  button-light:
-    backgroundColor: "{colors.cool-white}"
-    textColor: "{colors.forest-authority-strong}"
+    backgroundColor: "{colors.forest-deep}"
+    textColor: "{colors.white}"
+  button-outline:
+    backgroundColor: "{colors.white}"
+    textColor: "{colors.forest-deep}"
     typography: "{typography.label}"
-    rounded: "{rounded.control}"
+    rounded: "{rounded.button}"
     padding: "0 21px"
-    height: "46px"
-  input:
-    backgroundColor: "{colors.surface-white}"
+    height: "48px"
+  product-panel:
+    backgroundColor: "{colors.white}"
     textColor: "{colors.graphite}"
-    rounded: "{rounded.control}"
-    padding: "0 15px"
-    height: "50px"
-  card:
-    backgroundColor: "{colors.surface-white}"
+    rounded: "{rounded.panel}"
+  device-card:
+    backgroundColor: "{colors.white}"
     textColor: "{colors.graphite}"
-    rounded: "{rounded.surface}"
-    padding: "28px 30px 34px"
+    rounded: "{rounded.phone}"
 ---
 
 # Design System: 云码智创科技
 
 ## Overview
 
-**Creative North Star: "The Working Review Room"**
+**Creative North Star: "The Connected Enterprise Reference"**
 
-The Working Review Room is a calm enterprise setting where decision-makers, product teams, and engineers inspect the same real system together. The visual language replaces generic technology decoration with evidence: photographed collaboration, visible product interfaces, concrete service structures, and deliberate process detail.
+The Connected Enterprise Reference is a faithful reconstruction of the approved enterprise website composition. Its authority comes from direct visual continuity: a white copy field connects into real review-room photography, a dark engineering-team banner proves delivery capability, and authentic platform, APP, and mini-program screens form the central product evidence.
 
-The mood is professional, credible, calm, and precise. Cool white space and graphite type keep the experience lucid; forest green controls establish authority without spectacle. Photographic proof carries the emotional weight, while interface imagery and orderly grids make the work feel inspectable. The system should remain refined and tactile, never glossy, futuristic, or theatrically “AI.”
+The mood is professional, credible, compact, and operational. White space, graphite type, and one disciplined forest-green action color keep the page legible; full-width enterprise scenes give the story weight without turning it into spectacle. The reference composition is the authority. New work should preserve its proportions, density, visual order, and plainspoken confidence rather than reinterpret it through a new campaign concept.
 
 **Key Characteristics:**
 
-- Image-led enterprise proof, with real collaboration and working software in the same visual world.
-- Cool white surfaces, graphite typography, and forest green actions used with restraint.
-- Soft 14px geometry, fine dividers, and generous spatial rhythm.
-- Clear editorial hierarchy that moves from offer to method, applicable systems, and contact.
-- Restrained motion and depth that clarify state, hierarchy, and material structure.
+- A connected split hero where white copy and enterprise review photography read as one surface.
+- A dark engineering-team proof banner followed by authentic platform, APP, and mini-program interface layers.
+- A full-width renewable-energy panorama, five connected delivery steps, two-column FAQ, and forest contact close.
+- White, forest green, graphite, and the official cyan logo; no atmospheric transition palette.
+- Eight-pixel buttons, 9px platform panels, 24px phone shells, sparse dividers, and core content visible in SSR.
 
 ## Colors
 
-The palette is cool, natural, and authoritative: Forest Authority leads interaction, Cool White holds the canvas, Graphite carries information, Quiet Sage separates supporting surfaces, and Brand Cyan remains a precise identity accent.
+The palette is deliberately narrow: clean White provides the field, Graphite carries information, Forest Action identifies decisions, and Brand Cyan remains confined to the official identity.
 
 ### Primary
 
-- **Forest Authority** (`colors.forest-authority`): Primary calls to action, active navigation, icons, process markers, and high-emphasis panels.
-- **Forest Authority Strong** (`colors.forest-authority-strong`): Hover states and dark green text where the standard forest tone needs stronger contrast.
+- **Forest Action** (`colors.forest-action`): Primary buttons, compact text links, labels, proof checks, process numbering, and focus accents.
+- **Forest Deep** (`colors.forest-deep`): Hover state, dark forest overlays, and the strongest green text.
 
 ### Secondary
 
-- **Quiet Sage** (`colors.quiet-sage`): Calm notes, selected supporting surfaces, and low-pressure proof blocks.
-- **Brand Cyan** (`colors.brand-cyan`): A retained logo accent, not a general interface highlight.
+- **Forest Soft** (`colors.forest-soft`): Small process-icon tiles and restrained supporting surfaces.
+- **Brand Cyan** (`colors.brand-cyan`): Official logo detail only; it is not a general interface action color.
 
 ### Neutral
 
-- **Cool White** (`colors.cool-white`): The site canvas and pale structural sections.
-- **Surface White** (`colors.surface-white`): Cards, form fields, photographic shelves, and content sections that need crisp separation.
-- **Graphite** (`colors.graphite`): Primary text and the deepest informational tone.
-- **Graphite Muted** (`colors.graphite-muted`): Explanatory body copy and secondary information.
-- **Quiet Sage Line** (`colors.quiet-sage-line`): Fine dividers, card boundaries, and process structure.
+- **White** (`colors.white`): Main page field, connected hero copy, product section, and legal footer.
+- **Surface Soft** (`colors.surface-soft`): The subtle FAQ field that separates questions without card chrome.
+- **Graphite** (`colors.graphite`): Primary headlines and high-confidence information.
+- **Graphite Muted** (`colors.graphite-muted`): Body copy, metadata, and supporting explanations.
+- **Graphite Line** (`colors.graphite-line`): FAQ separators and other sparse one-pixel structures.
 
 ### Named Rules
 
-**The Forest Means Action Rule.** Reserve Forest Authority for decisions, active state, and meaningful proof; its restraint gives it authority.
+**The One Forest Action Rule.** Use one forest-green action family across buttons, links, checks, and process markers; do not introduce competing accents.
 
-**The Cyan Stays in the Signature Rule.** Brand Cyan belongs to identity moments and must not become a generic technology glow or gradient.
+**The Cyan Stays in the Signature Rule.** Brand Cyan belongs to the official logo and must not become a glow, gradient, or general-purpose CTA color.
 
 ## Typography
 
 **Display Font:** Noto Sans SC Variable (with Geist Sans and sans-serif fallbacks)  
 **Body Font:** Noto Sans SC Variable (with Geist Sans and sans-serif fallbacks)  
-**Label/Mono Font:** Noto Sans SC Variable for labels; Geist Mono is available only for genuinely technical content.
+**Label/Mono Font:** Noto Sans SC Variable for labels; Geist Mono only for genuinely technical content.
 
-**Character:** A single high-quality Chinese sans-serif family creates an assured, contemporary enterprise voice. Weight, scale, line length, and disciplined negative tracking provide hierarchy; novelty fonts do not.
+**Character:** Compact Chinese sans typography keeps the reconstruction direct and enterprise-ready. Strong 650–680 display weights establish authority while restrained body sizes preserve the reference’s measured density.
 
 ### Hierarchy
 
-- **Display** (660, responsive 48–84px, 1.06): Inner-page statements and the largest decision-setting headlines.
-- **Headline** (650, responsive 34–58px, 1.12): Section openings and major explanatory turns.
-- **Title** (620, 24px, 1.3): Service rows, cards, and compact content groups.
-- **Body** (400, 17px, 1.75): Explanatory copy, generally held between 42ch and 64ch to preserve scanning.
-- **Label** (620, 14px, 1.4): Navigation, field labels, tags, and compact metadata; sentence case remains the default.
+- **Display** (680, responsive 36–52px, 1.19): The split-hero promise and highest-level business statement.
+- **Headline** (650, responsive 34–48px, 1.14): Engineering proof, product value, panorama, delivery, and contact headings.
+- **Title** (630, 16px, 1.35): Delivery steps and compact information groups.
+- **Body** (400, 15px, 1.75): Explanatory copy, usually held near 32em.
+- **Label** (620, 13px, 1.4): Section eyebrows, proof labels, and compact metadata.
 
 ### Named Rules
 
-**The Weight Builds Hierarchy Rule.** Use the shared sans family across the interface and create distinction through measured weight and scale, not decorative type switching.
-
-**The Headline Must Breathe Rule.** Balance major headings, keep them compact in measure, and preserve the implemented negative tracking at display sizes.
+**The Compact Authority Rule.** Keep headlines strong and relatively compact; hierarchy comes from weight and placement, not oversized campaign typography.
 
 ## Layout
 
-The primary container is fluid with a 1400px ceiling and 24px side clearance on wide screens. Clearance compresses to 16px below 900px. Sections use a generous responsive vertical rhythm (`spacing.section`), with a tighter 76px mobile rhythm. Wide layouts favor asymmetric grids—typically 40/60, 1.15/0.85, or 1.25/0.75—to set concise explanation beside dominant evidence.
+The homepage uses a 1200px content ceiling with 32px side clearance on wide screens, 24px below 1024px, and 16px below 767px. Its desktop sequence is fixed by the approved reference: connected split hero, full-width engineering proof banner, layered product system, energy panorama, five-step path, two-column FAQ, forest contact band, and slim legal footer. The shared Header sits above this sequence and remains locked.
 
-Desktop composition is structured by editorial grids, hairline dividers, and large proof images rather than repeated floating boxes. At 900px, major two-column regions collapse, navigation becomes a disclosure menu, process tracks reduce to two columns, and proof modules stack. At 640px, catalogs, cards, forms, and process tracks resolve to one column while maintaining 32px total horizontal viewport clearance.
+The hero is one connected surface: photography occupies the right 64% while a white wash extends the left copy field into the image. The engineering banner reverses the balance with image-led darkness and right-side copy. The product section uses absolute overlap rather than a card grid; two 9px platform panels sit behind three 24px phone shells. The panorama and engineering banner run square to the page edges. Delivery stays five columns on desktop, FAQ uses a 1.1/0.9 split, and the contact close uses a 0.88/1.12 split.
 
-**The Evidence Gets the Larger Column Rule.** When copy and proof share a row, concise explanation yields visual area to photography or a working interface.
+Below 767px, the hero becomes vertically connected rather than separated: copy remains on white above a lower image crop. The engineering copy moves to the bottom of a taller image, product devices remain overlapped within the viewport, scenario items become two columns, delivery becomes vertical, FAQ becomes one column, and contact details stack beneath the action.
 
-**The First Viewport Is Surface-Specific Rule.** Preserve the global visual world here, but keep each page’s first-viewport composition in its surface brief rather than promoting it into a universal template.
+**The Reference Order Rule.** Preserve the approved section order and proportion; it is part of the faithful reconstruction, not a pool of interchangeable modules.
+
+**The Locked Header Rule.** Header logo, typography, navigation, spacing, and controls are read-only and outside homepage redesign scope.
 
 ## Elevation & Depth
 
-Elevation is restrained and structural. Most hierarchy comes from tonal layering, borders, overlap, and photographic planes; shadows are reserved for a product interface rising over photography, a proof seal, hover-responsive controls, and the mobile navigation layer. Shadows use green-black neutrals and broad, low-opacity falloff so surfaces feel physically present without becoming glossy.
+Depth is concentrated in the authentic product stack. Most of the page is flat and image-led: the hero uses a white wash, dark scenes use scrims, FAQ uses tonal separation, and paths use one-pixel lines. Product panels and device shells share one broad green-tinted shadow so the overlapping system reads as physical evidence rather than decorative mockup art.
 
 ### Shadow Vocabulary
 
-- **Control Lift** (`0 12px 30px rgba(11, 85, 61, 0.18)`): Primary controls at rest; pair with only a one-pixel hover lift.
-- **Proof Overlay** (`0 32px 70px rgba(28, 39, 34, 0.17), 0 2px 8px rgba(28, 39, 34, 0.08)`): Product interface panels that physically overlap photography.
-- **Media Lift** (`0 26px 60px rgba(25, 42, 34, 0.15)`): Large standalone interface imagery.
-- **Floating Seal** (`0 16px 40px rgba(25, 42, 34, 0.13)`): Compact credibility notes attached to a larger visual.
-- **Mobile Menu** (`0 18px 30px rgba(17, 24, 20, 0.08)`): The temporary navigation layer below the sticky header.
+- **Control Lift** (`0 12px 30px rgba(11, 85, 61, 0.18)`): Primary action buttons only.
+- **Product Stack** (`0 26px 56px rgba(24, 47, 38, 0.18)`): Platform panels, APP shells, and mini-program shells in the product composition.
+- **Mobile Menu** (`0 18px 30px rgba(17, 24, 20, 0.08)`): The locked Header’s temporary navigation layer.
 
 ### Named Rules
 
-**The Structure Before Shadow Rule.** Establish depth with surface tone, edge, and overlap first; add shadow only when an element is materially raised.
+**The Product Stack Owns Shadow Rule.** Keep editorial sections flat; use the broad structural shadow only where authentic interfaces overlap.
 
 ## Shapes
 
-The form language uses gently softened rectangles, fine borders, and exact circular process markers. Content surfaces and image frames use the 14px surface radius; controls use 10px; smaller disclosures and status messages use 9–12px. These corners are soft enough to feel tactile but never bubbly. Images are clipped decisively inside their host geometry, and large sections usually stay square to preserve editorial structure.
+The shape system is precise and reference-led. Buttons use 8px corners. Platform screenshots use 9px corners. Phone and mini-program shells use 24px corners with a visible 7px device border. Process icons use compact 13px tiles, fields retain 10px corners elsewhere in the site, and play or path markers are exact circles. Full-width hero, engineering, panorama, contact, and footer bands stay square to the page.
 
-**The Fourteen-Pixel Surface Rule.** Use the shared 14px radius for major cards, proof frames, and CTA panels; do not introduce arbitrary large-radius containers.
+**The Device-Specific Geometry Rule.** Use 9px for platform panels and 24px for phone shells; do not normalize authentic device layers into one generic card radius.
 
 ## Components
 
-Components are refined and tactile: quiet at rest, explicit in state, and engineered to support evidence rather than decorate it.
+Components are compact, exact, and subordinate to the reference composition. State changes are limited to hover, focus, active, and accordion feedback; core content is visible in SSR.
 
 ### Buttons
 
-- **Shape:** Compact soft rectangle with a 10px radius, a 46px minimum height, and 21px horizontal padding.
-- **Primary:** Forest Authority with white text, medium-strong label weight, and the Control Lift shadow.
-- **Hover / Focus:** Deepen to Forest Authority Strong, translate upward by 1px on hover, compress to 98% on active, and use the shared 3px translucent forest focus outline.
-- **Light:** Cool White with strong forest text, used only on dark forest panels; it resolves to white on hover.
-
-### Cards / Containers
-
-- **Corner Style:** Gently curved 14px surface geometry.
-- **Background:** Primarily Surface White on Cool White; Quiet Sage and Forest Authority are reserved for meaningful alternation or emphasis.
-- **Shadow Strategy:** Flat by default. Photography and product proof may use the structural elevation vocabulary.
-- **Border:** Use Quiet Sage Line for grouped shelves, timelines, and information rows rather than outlining every card.
-- **Internal Padding:** Usually 24–34px for compact cards and 36–68px for large detail surfaces.
-
-### Inputs / Fields
-
-- **Style:** White field, 1px cool gray-green stroke, 10px radius, 50px single-line height, and inherited body typography.
-- **Focus:** Shift the stroke to Forest Authority and add a 3px translucent forest ring.
-- **Error / Success:** Use contained, softly rounded status panels; errors are warm muted red, while success uses Quiet Sage with strong forest text.
+- **Shape:** Compact 8px rectangle with a 48px hero height or 47px contact height.
+- **Primary:** Forest Action with white text and restrained Control Lift.
+- **Outline:** Translucent white with a cool green border and Forest Deep text.
+- **Hover / Focus:** Deepen the primary, clarify the outline border, lift by 1px, and retain the shared 3px forest focus outline.
 
 ### Navigation
 
-The desktop header is a 72px sticky translucent Cool White bar with blur, centered 14px links, and a compact primary contact action. Hover and current state turn Forest Authority; the current item gains a precise 2px bottom rule. Below 900px, navigation becomes a 42px menu control and a full-width white disclosure layer with quiet separators.
+The approved Header is a 72px sticky translucent white bar with centered compact links and a forest contact control. Current-page state uses forest text and a precise bottom rule. This component is locked; do not change its logo, type, spacing, navigation, or controls.
+
+### Connected Split Hero
+
+The hero joins a 44%-wide white copy field to right-side enterprise review photography through a directional white wash. It contains one strong promise, one restrained paragraph, and paired primary/outline actions. On mobile, the same connection becomes vertical, with white copy dissolving into the lower photograph.
+
+### Engineering Proof Banner
+
+The engineering banner is a static full-width photograph with a dark right-side scrim, white copy, and a small circular secondary media action. It is proof of a real working environment, not a video-led hero or ambient cinematic transition.
+
+### Layered Product System
+
+Two authentic platform panels and three authentic APP or mini-program screens overlap in a single composition. Platform panels use 9px corners; device shells use 24px corners and 7px borders. Product-type checks sit below as a four-item proof row. Preserve the real screenshots and their relative hierarchy.
+
+### Energy Panorama
+
+The renewable-energy landscape runs full width with a left forest scrim, compact white copy, and a five-item scenario rail attached to the bottom. The rail uses one-pixel translucent separators and becomes two columns on mobile.
+
+### Five-Step Delivery Path
+
+Five steps use 46px Forest Soft icon tiles, one-pixel connectors, small circular joints, tabular two-digit indices, and concise descriptions. The path remains horizontal on wide screens and becomes a vertical connected sequence below 767px.
 
 ### FAQ Rows
 
-FAQ items use 82px minimum-height question rows, plus/minus state icons in Forest Authority, and divider-led grouping. Expanded answers retain a restrained 64ch measure and generous 1.8 line height.
+The FAQ uses a left message and right accordion. Rows are 58px high on desktop, separated by one-pixel lines, and closed by default. Answers appear below the selected question; keyboard operation and explicit expanded state are mandatory.
 
-### Proof Imagery
+### Forest Contact Close
 
-Photographs establish human collaboration; product interfaces establish technical substance. Image crops use natural enterprise environments and should make the work inspectable. Subtle 700ms image scaling may reward hover, but proof must never become ambient decoration.
+The closing band overlays a forest panorama with a deep green scrim. The left column carries one action; the right column holds factual contact and service-scope details. It is followed immediately by a slim white legal footer.
 
 ## Do's and Don'ts
 
 ### Do:
 
-- **Do** lead with real enterprise collaboration, visible software, concrete systems, and delivery methods.
-- **Do** give photography and product interfaces enough scale to function as proof.
-- **Do** use Forest Authority sparingly for controls, active state, icons, and decisive emphasis.
-- **Do** maintain cool whites, graphite hierarchy, fine structural dividers, and 14px surface geometry.
-- **Do** honor keyboard focus, WCAG AA contrast, and reduced-motion preferences.
+- **Do** reproduce the approved reference’s connected hero, dark engineering banner, product stack, energy panorama, five-step path, FAQ split, forest contact band, and slim footer.
+- **Do** preserve real platform, APP, and mini-program screenshots as the central product evidence.
+- **Do** use White, Forest Action, Graphite, and the official cyan logo as the dominant palette.
+- **Do** use 8px button corners, 9px platform corners, and 24px phone-shell corners.
+- **Do** keep all core copy, images, proof labels, delivery steps, FAQ questions, and contact information visible from SSR.
+- **Do** limit motion to hover, focus, active, and accordion feedback, with reduced-motion support.
+- **Do** preserve the approved Header exactly as implemented.
 
 ### Don't:
 
-- **Don't** use cyberpunk, code rain, robots, neon AI imagery, or blue-purple technology gradients.
-- **Don't** turn Brand Cyan into a glow, wash, or general-purpose action color.
-- **Don't** substitute anonymous decorative abstractions for evidence of collaboration and working software.
-- **Don't** over-card the page or put every section inside a floating rounded container.
-- **Don't** use unverified client logos, metrics, testimonials, or interface mockups as claims of completed work.
+- **Don't** replace the faithful reference reconstruction with atmospheric transitions, autoplay media, or a video-led primary narrative.
+- **Don't** add horizontal galleries, carousel controls, or unrelated case modules to the homepage.
+- **Don't** replace the connected split hero with a detached card, centered campaign hero, or full-screen media opening.
+- **Don't** round full-width image bands or normalize device-specific geometry into generic 14px cards.
+- **Don't** hide core content behind client-side reveal states, opacity, blur, or transform gates.
+- **Don't** alter the locked Header or invent client names, metrics, phone numbers, testimonials, or addresses.

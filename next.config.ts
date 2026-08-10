@@ -28,6 +28,9 @@ const nextConfig: NextConfig = {
       {
         pathname: '/media/**',
       },
+      {
+        pathname: '/ui/**',
+      },
     ],
     qualities: [100],
     remotePatterns: [

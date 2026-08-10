@@ -15,6 +15,14 @@ public/media/*
 !public/media/case-enterprise.webp
 !public/media/case-ai.webp
 !public/media/ai-agent-console-light.png
+!public/media/homepage-team-energy-operations.png
+!public/media/industrial-energy-case.png
+!public/media/team-collaboration-source.mp4
+!public/media/development-team-dark.png
+!public/media/energy-scenario-platform.png
+!public/media/forest-contact-panorama.png
+!public/media/hero-options/
+!public/media/hero-options/*.png
 
 public/robots.txt
 public/sitemap*.xml

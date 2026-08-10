@@ -2,40 +2,42 @@
 
 ## Scope and mode
 
-- Scope: corporate marketing website homepage and the shared visual language for five supporting pages.
+- Scope: homepage below the shared Header. Header logo, typography, navigation, spacing and controls are locked and read-only.
 - Visitor mode: Persuade.
 - Audience: Chinese enterprise owners, business leaders, technical leaders and procurement stakeholders evaluating a software development partner.
 - Primary action: contact 云码智创科技.
 
 ## Approved direction
 
-- Approved comp: `.impeccable/mocks/home-c-human-proof.png`.
-- Direction: Human Proof. A real enterprise collaboration scene leads, with working product UI rising from the photograph.
-- Memorable moment: the dark operations dashboard crosses the photograph's lower edge while the team discusses the same system behind it.
-- Palette: cool white, graphite, deep forest green and the official cyan logo.
+- Approved comp: `.impeccable/mocks/home-reference-rebuild.png`.
+- Direction: faithful reconstruction of the supplied enterprise website reference.
+- Composition: connected split hero, dark engineering proof banner, layered multi-device product showcase, renewable-energy panorama, five-step delivery path, two-column FAQ, forest contact band and slim legal footer.
+- Palette: white, graphite, deep forest green and the official cyan logo.
 
 ## Component grammar
 
-- Corner language: 14px cards and media; 10px controls; no decorative pills.
-- Lines: 1px neutral dividers used only to organize lists and processes.
-- Elevation: wide, soft, green-tinted shadows reserved for the floating dashboard and primary CTA.
-- Type: Chinese sans display at 650-680 weight, -0.035em tracking, 50px desktop hero; body at 16-18px and 1.7-1.8 line height.
-- Motion: one soft blur-to-clear reveal for meaningful section entry, image scale feedback on case hover, reduced-motion fallback.
+- Header is out of scope and must not change.
+- Full-width image sections use square page edges. Product screenshots use 9-24px corner geometry according to device type.
+- Buttons use 8px corners and one forest-green action color.
+- Type is compact Chinese sans with strong 650-680 display weight and restrained body copy.
+- Motion is limited to hover and accordion feedback. Core page content is visible in SSR.
 
 ## Fidelity inventory
 
 | Ingredient | Commitment | Medium |
 | --- | --- | --- |
-| Navigation | One line with six exact Chinese labels and right-side contact action | Semantic HTML/CSS |
-| Hero headline | Two controlled lines on desktop, contact action visible above fold | Semantic HTML/CSS |
-| Team collaboration scene | Bright Chinese enterprise team reviewing industrial software | Generated raster: `public/media/enterprise-team.webp` |
-| Floating product UI | Dark energy operations dashboard crossing photo lower edge | Generated raster: `public/media/energy-dashboard.webp` |
-| Cases | One industrial photo plus two context crops, all explicitly presented as solution examples | Generated raster WebP |
-| Service and scenario icons | One consistent duotone stroke family | Phosphor icons |
-| Footer contact | Real email and explicit QR replacement position | Semantic HTML/CSS and CMS fields |
+| Header | Existing approved implementation remains untouched | Existing Header components and CSS |
+| Hero | White copy field connected directly to enterprise review photography | `homepage-team-energy-operations.png` plus CSS wash |
+| Engineering proof | Dark developer team banner with right-side white copy | `development-team-dark.png` |
+| Product system | Platform login, operations dashboard, APP and mini-program screens in an overlapping composition | Existing real assets under `public/media/` and `public/ui/` |
+| Industry panorama | Wind, solar and energy storage landscape with bottom scenario rail | `energy-scenario-platform.png` plus Phosphor icons |
+| Delivery | Five connected horizontal steps, vertical on mobile | Semantic HTML/CSS plus Phosphor icons |
+| FAQ | Left message and right accordion, closed by default | Existing FAQ data and interactive component |
+| Contact close | Forest panorama, action and real email | `forest-contact-panorama.png` plus semantic HTML/CSS |
 
-## Constraints and open decisions
+## Constraints
 
-- Do not publish invented client names, testimonials, delivery metrics or commercial claims.
-- 微信二维码仍需用户提供并替换占位。
-- 首页内容已支持 Payload Blocks；静态品牌页面可按项目需要逐步迁移为完全 CMS 驱动。
+- Do not modify Header code or Header CSS.
+- Do not alter Payload collections, configuration, admin routes or CMS data.
+- Do not invent client names, delivery metrics, phone numbers, testimonials or addresses.
+- Preserve SEO metadata, heading hierarchy, JSON-LD and keyboard operation.

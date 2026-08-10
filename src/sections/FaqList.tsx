@@ -3,8 +3,14 @@
 import { Minus, Plus } from '@phosphor-icons/react'
 import { useState } from 'react'
 
-export function FaqList({ items }: { items: { question: string; answer: string }[] }) {
-  const [open, setOpen] = useState(0)
+export function FaqList({
+  items,
+  defaultOpen = 0,
+}: {
+  items: { question: string; answer: string }[]
+  defaultOpen?: number
+}) {
+  const [open, setOpen] = useState(defaultOpen)
 
   return (
     <div className="faq-list">
