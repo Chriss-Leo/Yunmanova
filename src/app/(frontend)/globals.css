@@ -313,7 +313,8 @@ body {
 }
 
 .brand-logo {
-  width: 258px;
+  width: 232px;
+  transform: translateY(3px);
 }
 
 .desktop-nav {
@@ -326,9 +327,12 @@ body {
 
 .nav-link {
   position: relative;
+  display: inline-flex;
+  height: 72px;
+  align-items: center;
   color: #343b37;
   font-size: 14px;
-  line-height: 72px;
+  line-height: 1.4;
   transition: color 180ms ease;
 }
 
@@ -343,7 +347,8 @@ body {
   height: 2px;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 17px;
+  border-radius: 999px;
   background: var(--ym-green);
 }
 
@@ -1579,7 +1584,7 @@ body {
     grid-template-columns: 224px 1fr auto;
     gap: 16px;
   }
-  .brand-logo { width: 214px; }
+  .brand-logo { width: 198px; }
   .desktop-nav { gap: 16px; }
   .nav-link { font-size: 13px; }
   .header-cta { padding-inline: 16px; }
@@ -1644,7 +1649,7 @@ body {
 
 @media (max-width: 640px) {
   .site-container { width: min(100% - 32px, 1400px); }
-  .brand-logo { width: 202px; }
+  .brand-logo { width: 184px; transform: translateY(2px); }
   .home-hero { padding-bottom: 72px; }
   .hero-copy { padding-top: 54px; }
   .hero-copy h1 { max-width: none; font-size: 42px; line-height: 1.12; }
