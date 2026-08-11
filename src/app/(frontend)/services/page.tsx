@@ -41,9 +41,20 @@ export default function ServicesPage() {
         }))}
       />
       <PageHero
-        title="从业务定义到稳定运行，一起完成软件产品"
-        description="按需组合咨询、设计、研发与运维能力，解决不同阶段的产品与工程问题。"
-        backplate="定制范围可覆盖完整产品周期，也可以从一个关键模块开始。"
+        title={
+          <>
+            让技术服务于业务，
+            <br />
+            为业务构建可靠的产品
+          </>
+        }
+        description={
+          <>
+            按需组合咨询、设计、研发与运维能力，
+            <br />
+            解决不同阶段的产品与工程问题。
+          </>
+        }
         image="/media/products/travel-assistant-app-cn.png"
         imageAlt="中文智能旅行助手应用界面"
         secondaryHref="/cases"

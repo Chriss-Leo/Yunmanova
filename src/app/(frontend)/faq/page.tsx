@@ -26,8 +26,20 @@ export default function FaqPage() {
         }}
       />
       <PageHero
-        title="关于合作方式，这里先给出清晰答案"
-        description="每个项目都不同，但合作的基本原则可以透明、具体、可预期。"
+        title={
+          <>
+            关于合作方式，
+            <br />
+            这里先给出清晰答案
+          </>
+        }
+        description={
+          <>
+            每个项目都不同，
+            <br />
+            但合作的基本原则可以透明、具体、可预期。
+          </>
+        }
         image="/media/development-team-dark.png"
         imageAlt="软件团队协作与产品研发现场"
         variant="dark"

@@ -23,8 +23,20 @@ export default function AboutPage() {
   return (
     <main className="marketing-page inner-story">
       <PageHero
-        title="用产品思维和工程纪律，认真完成每一个系统"
-        description="云码智创科技专注企业软件与数字化产品开发，重视业务理解、技术质量与长期合作。"
+        title={
+          <>
+            用产品思维和工程纪律，
+            <br />
+            认真完成每一个系统
+          </>
+        }
+        description={
+          <>
+            云码智创科技专注企业软件与数字化产品开发，
+            <br />
+            重视业务理解、技术质量与长期合作。
+          </>
+        }
         image="/media/enterprise-team.webp"
         imageAlt="团队共同评审企业数字化产品"
         variant="split"

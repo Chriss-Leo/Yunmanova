@@ -80,9 +80,9 @@ export default function HomePage() {
               而是业务增长的基础设施
             </h1>
             <p>
-              我们为企业构建可靠、可扩展的软件与物联网平台，
+              以技术连接业务与产品，
               <br />
-              让系统持续创造价值。
+              为企业打造可靠、灵活且可持续演进的软件解决方案。
             </p>
             <div className="ref-hero-actions">
               <Link className="button button-primary" href="/contact">

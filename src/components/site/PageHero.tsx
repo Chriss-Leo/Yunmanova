@@ -1,6 +1,7 @@
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 import Link from 'next/link'
+import type { ReactNode } from 'react'
 
 export function PageHero({
   title,
@@ -12,8 +13,8 @@ export function PageHero({
   secondaryHref,
   secondaryLabel,
 }: {
-  title: string
-  description: string
+  title: ReactNode
+  description: ReactNode
   backplate?: string
   image: string
   imageAlt: string
@@ -23,7 +24,14 @@ export function PageHero({
 }) {
   return (
     <section className={`inner-page-hero inner-page-hero--${variant}`}>
-      <Image alt={imageAlt} className="inner-page-hero-image" fill priority sizes="100vw" src={image} />
+      <Image
+        alt={imageAlt}
+        className="inner-page-hero-image"
+        fill
+        priority
+        sizes="100vw"
+        src={image}
+      />
       <div className="inner-page-hero-scrim" />
       <div className="site-container inner-page-hero-inner">
         <div className="inner-page-hero-copy">

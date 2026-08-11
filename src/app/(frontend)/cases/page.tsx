@@ -14,9 +14,20 @@ export default function CasesPage() {
   return (
     <main className="marketing-page inner-story">
       <PageHero
-        title="把复杂场景，转化为清晰可用的产品"
-        description="从业务目标、核心流程和关键数据出发，形成可实施、可验证、可持续迭代的解决方案。"
-        backplate="以下内容为典型方案示意，不代表已公开客户项目或业绩数据。"
+        title={
+          <>
+            把复杂场景，
+            <br />
+            转化为清晰可用的产品
+          </>
+        }
+        description={
+          <>
+            从业务目标、核心流程和关键数据出发，
+            <br />
+            形成可实施、可验证、可持续迭代的解决方案。
+          </>
+        }
         image="/media/energy-scenario-platform-v2.png"
         imageAlt="风电、光伏和储能协同运行的数字化场景"
         variant="dark"
