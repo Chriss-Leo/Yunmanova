@@ -37,8 +37,8 @@ export default function AboutPage() {
             重视业务理解、技术质量与长期合作。
           </>
         }
-        image="/media/enterprise-team.webp"
-        imageAlt="团队共同评审企业数字化产品"
+        image="/media/hero-about-office-architecture-v1.jpg"
+        imageAlt="现代办公建筑群与城市天际线"
         variant="split"
         secondaryHref="/cases"
         secondaryLabel="查看案例"

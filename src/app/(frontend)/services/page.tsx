@@ -55,8 +55,8 @@ export default function ServicesPage() {
             解决不同阶段的产品与工程问题。
           </>
         }
-        image="/media/products/travel-assistant-app-cn.png"
-        imageAlt="中文智能旅行助手应用界面"
+        image="/media/hero-services-data-insights-v1.png"
+        imageAlt="数据分析与智能洞察软件服务插画"
         secondaryHref="/cases"
         secondaryLabel="查看案例"
       />

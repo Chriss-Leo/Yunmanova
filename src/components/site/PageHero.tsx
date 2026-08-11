@@ -9,6 +9,7 @@ export function PageHero({
   backplate,
   image,
   imageAlt,
+  imageFit = 'cover',
   variant = 'split',
   secondaryHref,
   secondaryLabel,
@@ -18,6 +19,7 @@ export function PageHero({
   backplate?: string
   image: string
   imageAlt: string
+  imageFit?: 'contain' | 'cover'
   variant?: 'dark' | 'split'
   secondaryHref?: string
   secondaryLabel?: string
@@ -26,7 +28,7 @@ export function PageHero({
     <section className={`inner-page-hero inner-page-hero--${variant}`}>
       <Image
         alt={imageAlt}
-        className="inner-page-hero-image"
+        className={`inner-page-hero-image inner-page-hero-image--${imageFit}`}
         fill
         priority
         sizes="100vw"

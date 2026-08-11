@@ -40,9 +40,8 @@ export default function FaqPage() {
             但合作的基本原则可以透明、具体、可预期。
           </>
         }
-        image="/media/development-team-dark.png"
-        imageAlt="软件团队协作与产品研发现场"
-        variant="dark"
+        image="/media/hero-faq-customer-support-v5.png"
+        imageAlt="客服顾问通过在线沟通解答客户问题"
         secondaryHref="/services"
         secondaryLabel="了解服务方式"
       />

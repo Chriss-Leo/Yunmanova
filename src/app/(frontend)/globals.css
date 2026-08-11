@@ -2232,6 +2232,17 @@ body {
   object-fit: cover;
 }
 
+.inner-page-hero-image--contain {
+  object-fit: contain;
+}
+
+.inner-page-hero--split .inner-page-hero-image--contain {
+  left: 43% !important;
+  width: 57% !important;
+  object-position: right top;
+  transform: translateY(-3%);
+}
+
 .inner-page-hero--split .inner-page-hero-image {
   left: 38% !important;
   width: 62% !important;
@@ -3213,6 +3224,10 @@ body {
     width: 100% !important;
     height: 54% !important;
     object-position: center;
+  }
+  .inner-page-hero--split .inner-page-hero-image--contain {
+    object-position: center top;
+    transform: none;
   }
   .inner-page-hero--split .inner-page-hero-scrim {
     background: linear-gradient(
