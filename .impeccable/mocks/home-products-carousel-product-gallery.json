@@ -1,0 +1,12 @@
+{
+  "approved": false,
+  "title": "首页产品与方案卡片轮播",
+  "direction": "C 版真实产品画廊",
+  "prompt": "Create a polished high-fidelity desktop homepage section for a Chinese digital product studio. Center the exact two-line heading 产品与方案 / 让系统持续创造价值. Use a horizontal card carousel with one dominant active fundraising CRM card and partially visible AI learning and finance cards on the sides. Preserve the supplied real product screenshots, use warm ivory, graphite and forest green, restrained shadows, clear 01 / 04 progress and arrow controls, and 查看全部方案. No bento grid, exhibition machinery, gradients, neon, glassmorphism or invented charts.",
+  "references": [
+    "/var/folders/yh/218tcb496hj3bkggds_gf_f80000gn/T/codex-clipboard-495e132a-1e5f-4f44-9f2d-1fe1342454c7.png",
+    "/var/folders/yh/218tcb496hj3bkggds_gf_f80000gn/T/codex-clipboard-3931756a-53ff-48b5-9278-134974095753.png",
+    "/Users/chris/develop/project/website/yunmanova/.impeccable/assets/product-localized/travel-assistant-app-cn.png",
+    "/var/folders/yh/218tcb496hj3bkggds_gf_f80000gn/T/codex-clipboard-78f39d43-50a4-4fe9-b651-fcef8cbb9112.png"
+  ]
+}

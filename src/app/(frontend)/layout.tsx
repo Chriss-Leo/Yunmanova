@@ -35,7 +35,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           hidden
           dangerouslySetInnerHTML={{
             __html:
-              '<!-- THESIS: faithfully reconstruct the supplied enterprise homepage reference below the locked shared Header. OWN-WORLD: white space, graphite Chinese typography, forest-green controls, connected documentary photography and authentic project UI. STORY: understand the promise, see engineering proof, inspect multi-device products, explore industry scenes, follow delivery and make contact. FIRST VIEWPORT: connected split hero with enterprise review photography. FORM: approved user reference reconstruction. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->',
+              '<!-- THESIS: faithfully reconstruct the approved enterprise homepage below the locked shared Header. OWN-WORLD: white space, graphite Chinese typography, forest-green controls, connected documentary photography and authentic product UI. STORY: understand the promise, see engineering proof, explore real products in a focused carousel, follow delivery and make contact. FIRST VIEWPORT: connected split hero with enterprise review photography. FORM: approved user reference reconstruction. FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md -->',
           }}
         />
         <Providers>

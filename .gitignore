@@ -27,6 +27,8 @@ public/media/*
 public/media/process-icons/lifecycle-icons-sprite.png
 !public/media/hero-options/
 !public/media/hero-options/*.png
+!public/media/products/
+!public/media/products/*.png
 
 public/robots.txt
 public/sitemap*.xml

@@ -4,7 +4,6 @@ import Link from 'next/link'
 import {
   ArrowRight,
   Buildings,
-  CheckCircle,
   EnvelopeSimple,
   Factory,
   Lightbulb,
@@ -18,6 +17,7 @@ import {
 import { JsonLd } from '@/components/site/JsonLd'
 import { faqs, processSteps } from '@/data/site'
 import { FaqList } from '@/sections/FaqList'
+import { ProductCarousel } from '@/sections/ProductCarousel'
 
 export const metadata: Metadata = {
   title: '企业软件定制、APP、小程序与 AI 应用开发',
@@ -25,13 +25,6 @@ export const metadata: Metadata = {
     '云码智创科技为中国企业提供软件定制、APP、小程序与AI应用开发，覆盖IoT物联网、能源管理、企业管理、电商和医疗平台。',
   alternates: { canonical: '/' },
 }
-
-const productProof = [
-  '能源管理平台',
-  '物联网平台',
-  '移动端应用',
-  '城市兴趣服务小程序',
-]
 
 const processIconSources = [
   '/media/process-icons/discovery.png',
@@ -127,45 +120,8 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="ref-products" aria-labelledby="products-title">
-        <div className="site-container ref-products-inner">
-          <div className="ref-products-copy">
-            <p className="ref-section-label">产品与方案</p>
-            <h2 id="products-title">让系统持续创造价值</h2>
-            <span className="ref-heading-rule" />
-            <p>面向能源与设施运营、城市服务等领域，提供软件系统、物联网平台与移动应用的一体化解决方案。</p>
-            <Link className="ref-text-link" href="/services">
-              查看全部方案 <ArrowRight size={16} />
-            </Link>
-          </div>
-
-          <div className="ref-product-stage" aria-label="真实产品界面展示">
-            <div className="ref-product-panel ref-product-panel-login">
-              <Image src="/media/energy-login-official.png" alt="能源管理平台登录界面" fill sizes="35vw" />
-            </div>
-            <div className="ref-product-panel ref-product-panel-dashboard">
-              <Image src="/media/energy-operations-dashboard.png" alt="能源运营数据平台界面" fill sizes="38vw" />
-            </div>
-            <div className="ref-phone ref-phone-dark">
-              <Image src="/ui/app01.png" alt="动态电价移动应用" fill sizes="20vw" />
-            </div>
-            <div className="ref-phone ref-phone-light">
-              <Image src="/ui/app02.png" alt="企业移动服务应用" fill sizes="18vw" />
-            </div>
-            <div className="ref-phone ref-phone-mini">
-              <Image src="/ui/miniprogram01.png" alt="城市兴趣服务小程序" fill sizes="18vw" />
-            </div>
-          </div>
-
-          <div className="ref-product-proof" aria-label="交付产品类型">
-            {productProof.map((item) => (
-              <div key={item}>
-                <CheckCircle size={17} weight="fill" />
-                <span>{item}</span>
-              </div>
-            ))}
-          </div>
-        </div>
+      <section className="ref-products" aria-label="产品方案">
+        <ProductCarousel />
       </section>
 
       <section className="ref-scenarios" aria-labelledby="scenarios-title">

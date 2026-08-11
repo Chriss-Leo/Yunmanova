@@ -7,6 +7,7 @@ colors:
   forest-soft: "#edf4f0"
   white: "#ffffff"
   surface-soft: "#fafcfb"
+  surface-gallery: "#f8f9f6"
   graphite: "#14201b"
   graphite-muted: "#65716b"
   graphite-line: "#d8dfdb"
@@ -45,6 +46,7 @@ rounded:
   panel: "9px"
   field: "10px"
   process: "13px"
+  gallery: "14px"
   phone: "24px"
   circle: "50%"
 spacing:
@@ -150,11 +152,11 @@ The palette is deliberately narrow: clean White provides the field, Graphite car
 
 ## Layout
 
-The homepage uses a 1200px content ceiling with 32px side clearance on wide screens, 24px below 1024px, and 16px below 767px. Its desktop sequence is fixed by the approved reference: connected split hero, full-width engineering proof banner, layered product system, energy panorama, five-step path, two-column FAQ, forest contact band, and slim legal footer. The shared Header sits above this sequence and remains locked.
+The homepage uses a 1200px content ceiling with 32px side clearance on wide screens, 24px below 1024px, and 16px below 767px. Its desktop sequence is fixed by the approved reference: connected split hero, full-width engineering proof banner, product gallery carousel, energy panorama, five-step path, two-column FAQ, forest contact band, and slim legal footer. The shared Header sits above this sequence and remains locked.
 
-The hero is one connected surface: photography occupies the right 64% while a white wash extends the left copy field into the image. The engineering banner reverses the balance with image-led darkness and right-side copy. The product section uses absolute overlap rather than a card grid; two 9px platform panels sit behind three 24px phone shells. The panorama and engineering banner run square to the page edges. Delivery stays five columns on desktop, FAQ uses a 1.1/0.9 split, and the contact close uses a 0.88/1.12 split.
+The hero is one connected surface: photography occupies the right 64% while a white wash extends the left copy field into the image. The engineering banner reverses the balance with image-led darkness and right-side copy. The product section uses one large centered 14px card, with partial previous and next cards establishing carousel depth. The panorama and engineering banner run square to the page edges. Delivery stays five columns on desktop, FAQ uses a 1.1/0.9 split, and the contact close uses a 0.88/1.12 split.
 
-Below 767px, the hero becomes vertically connected rather than separated: copy remains on white above a lower image crop. The engineering copy moves to the bottom of a taller image, product devices remain overlapped within the viewport, scenario items become two columns, delivery becomes vertical, FAQ becomes one column, and contact details stack beneath the action.
+Below 767px, the hero becomes vertically connected rather than separated: copy remains on white above a lower image crop. The engineering copy moves to the bottom of a taller image, the active product card fills 88vw while neighboring cards remain partially visible, scenario items become two columns, delivery becomes vertical, FAQ becomes one column, and contact details stack beneath the action.
 
 **The Reference Order Rule.** Preserve the approved section order and proportion; it is part of the faithful reconstruction, not a pool of interchangeable modules.
 
@@ -162,17 +164,17 @@ Below 767px, the hero becomes vertically connected rather than separated: copy r
 
 ## Elevation & Depth
 
-Depth is concentrated in the authentic product stack. Most of the page is flat and image-led: the hero uses a white wash, dark scenes use scrims, FAQ uses tonal separation, and paths use one-pixel lines. Product panels and device shells share one broad green-tinted shadow so the overlapping system reads as physical evidence rather than decorative mockup art.
+Depth is concentrated in the authentic product carousel. Most of the page is flat and image-led: the hero uses a white wash, dark scenes use scrims, FAQ uses tonal separation, and paths use one-pixel lines. The active product card uses one broad green-tinted shadow while neighboring cards recede through scale and saturation.
 
 ### Shadow Vocabulary
 
 - **Control Lift** (`0 12px 30px rgba(11, 85, 61, 0.18)`): Primary action buttons only.
-- **Product Stack** (`0 26px 56px rgba(24, 47, 38, 0.18)`): Platform panels, APP shells, and mini-program shells in the product composition.
+- **Product Gallery** (`0 24px 68px rgba(24, 47, 38, 0.13)`): Active product carousel card.
 - **Mobile Menu** (`0 18px 30px rgba(17, 24, 20, 0.08)`): The locked Header’s temporary navigation layer.
 
 ### Named Rules
 
-**The Product Stack Owns Shadow Rule.** Keep editorial sections flat; use the broad structural shadow only where authentic interfaces overlap.
+**The Product Gallery Owns Shadow Rule.** Keep editorial sections flat; use the broad structural shadow only for the active product card.
 
 ## Shapes
 
@@ -203,9 +205,9 @@ The hero joins a 44%-wide white copy field to right-side enterprise review photo
 
 The engineering banner is a static full-width photograph with a dark right-side scrim, white copy, and a small circular secondary media action. It is proof of a real working environment, not a video-led hero or ambient cinematic transition.
 
-### Layered Product System
+### Product Gallery Carousel
 
-Two authentic platform panels and three authentic APP or mini-program screens overlap in a single composition. Platform panels use 9px corners; device shells use 24px corners and 7px borders. Product-type checks sit below as a four-item proof row. Preserve the real screenshots and their relative hierarchy.
+Four authentic Chinese product interfaces form a circular manual carousel. One 14px card is fully visible while the previous and next cards remain partially exposed. Each card combines real interface artwork with a concise category, title and description. Page count, progress, previous and next controls, keyboard arrows and touch swipe remain synchronized. Motion collapses to instant state changes when reduced motion is requested.
 
 ### Energy Panorama
 
@@ -227,7 +229,7 @@ The closing band overlays a forest panorama with a deep green scrim. The left co
 
 ### Do:
 
-- **Do** reproduce the approved reference’s connected hero, dark engineering banner, product stack, energy panorama, five-step path, FAQ split, forest contact band, and slim footer.
+- **Do** reproduce the approved reference’s connected hero, dark engineering banner, product gallery carousel, energy panorama, five-step path, FAQ split, forest contact band, and slim footer.
 - **Do** preserve real platform, APP, and mini-program screenshots as the central product evidence.
 - **Do** use White, Forest Action, Graphite, and the official cyan logo as the dominant palette.
 - **Do** use 8px button corners, 9px platform corners, and 24px phone-shell corners.
@@ -238,7 +240,7 @@ The closing band overlays a forest panorama with a deep green scrim. The left co
 ### Don't:
 
 - **Don't** replace the faithful reference reconstruction with atmospheric transitions, autoplay media, or a video-led primary narrative.
-- **Don't** add horizontal galleries, carousel controls, or unrelated case modules to the homepage.
+- **Don't** turn the product carousel into an equal-card grid, autoplay it, or replace real project interfaces with fabricated dashboard markup.
 - **Don't** replace the connected split hero with a detached card, centered campaign hero, or full-screen media opening.
 - **Don't** round full-width image bands or normalize device-specific geometry into generic 14px cards.
 - **Don't** hide core content behind client-side reveal states, opacity, blur, or transform gates.
