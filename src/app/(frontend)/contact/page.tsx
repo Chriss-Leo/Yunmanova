@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { EnvelopeSimple, WechatLogo } from '@phosphor-icons/react/dist/ssr'
+import { EnvelopeSimple, MapPin, WechatLogo } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 
 import { ContactForm } from '@/components/site/ContactForm'
@@ -26,37 +26,65 @@ export default function ContactPage() {
           },
         }}
       />
-      <section className="inner-contact-hero">
-        <Image
-          src="/media/forest-contact-panorama.png"
-          alt="森林与山谷景观"
-          fill
-          priority
-          sizes="100vw"
-          className="inner-contact-hero-image"
-        />
-        <div className="inner-contact-hero-scrim" />
+      <section className="inner-contact-section">
         <div className="site-container inner-contact-shell">
-          <div className="inner-contact-intro">
-            <p className="inner-section-kicker">联系我们</p>
+          <header className="inner-contact-intro">
             <h1>告诉我们，你正在解决什么业务问题</h1>
-            <p>不需要先准备完整需求文档。说明目标、现状和约束，我们会从最关键的问题开始沟通。</p>
+            <p>
+              不需要先准备完整需求文档。
+              <br />
+              说明目标、现状和约束，我们会从最关键的问题开始沟通。
+            </p>
             <div className="inner-contact-methods">
               <a href="mailto:chrisleo.yu.cn@gmail.com">
-                <EnvelopeSimple size={25} weight="regular" aria-hidden="true" />
-                <span><small>电子邮箱</small>chrisleo.yu.cn@gmail.com</span>
+                <span className="inner-contact-method-icon">
+                  <EnvelopeSimple size={20} aria-hidden="true" />
+                </span>
+                <span>
+                  <small>电子邮箱</small>chrisleo.yu.cn@gmail.com
+                </span>
               </a>
               <div>
-                <WechatLogo size={25} weight="regular" aria-hidden="true" />
-                <span><small>微信联系</small>二维码待提供</span>
+                <span className="inner-contact-method-icon">
+                  <WechatLogo size={20} aria-hidden="true" />
+                </span>
+                <span>
+                  <small>微信联系</small>Chris_Leo_
+                </span>
+              </div>
+              <div>
+                <span className="inner-contact-method-icon">
+                  <MapPin size={20} aria-hidden="true" />
+                </span>
+                <span>
+                  <small>服务方式</small>面向全国企业提供远程与现场协作
+                </span>
               </div>
             </div>
-            <div className="inner-contact-qr">
-              <span>微信二维码</span>
-              <small>请替换为本人二维码图片</small>
+            <figure className="inner-contact-qr">
+              <div className="inner-contact-qr-image">
+                <Image
+                  src="/media/wechat-qr-chris.jpg"
+                  alt="微信二维码，添加 Chris_Leo_"
+                  fill
+                  sizes="112px"
+                />
+              </div>
+              <figcaption>
+                <strong>微信扫码咨询</strong>
+                <small>添加微信 Chris_Leo_</small>
+              </figcaption>
+            </figure>
+          </header>
+          <div className="contact-form-laptop">
+            <span className="contact-form-laptop-camera" aria-hidden="true" />
+            <div className="contact-form-laptop-screen">
+              <ContactForm />
+            </div>
+            <div className="contact-form-laptop-base" aria-hidden="true">
+              <span />
             </div>
           </div>
-          <ContactForm />
         </div>
       </section>
     </main>
