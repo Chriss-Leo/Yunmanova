@@ -156,9 +156,13 @@ The homepage uses a 1200px content ceiling with 32px side clearance on wide scre
 
 The hero is one connected surface: photography occupies the right 64% while a white wash extends the left copy field into the image. The engineering banner reverses the balance with image-led darkness and right-side copy. The product section uses one large centered 14px card, with partial previous and next cards establishing carousel depth. The panorama and engineering banner run square to the page edges. Delivery stays five columns on desktop, FAQ uses a 1.1/0.9 split, and the contact close uses a 0.88/1.12 split.
 
+The inner-page family extends this composition instead of introducing a second visual system. Services and cases use alternating full-width editorial rows with authentic product or scenario imagery; FAQ uses a restrained soft field with one single-column accordion; About combines documentary proof, flat principle cells, and the same five delivery stages; Contact places a functional white consultation panel over the forest close. Inner-page heroes may use either the connected white split or the dark documentary treatment, but always retain compact copy, one primary action, and one quiet text link.
+
 Below 767px, the hero becomes vertically connected rather than separated: copy remains on white above a lower image crop. The engineering copy moves to the bottom of a taller image, the active product card fills 88vw while neighboring cards remain partially visible, scenario items become two columns, delivery becomes vertical, FAQ becomes one column, and contact details stack beneath the action.
 
 **The Reference Order Rule.** Preserve the approved section order and proportion; it is part of the faithful reconstruction, not a pool of interchangeable modules.
+
+**The Inner-Page Continuity Rule.** Inner pages reuse the homepage palette, typography, full-width imagery, sparse dividers, and authentic UI evidence. They must not fall back to generic centered hero plus rounded-card grids.
 
 **The Locked Header Rule.** Header logo, typography, navigation, spacing, and controls are read-only and outside homepage redesign scope.
 

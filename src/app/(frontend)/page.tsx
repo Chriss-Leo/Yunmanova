@@ -4,11 +4,8 @@ import Link from 'next/link'
 import {
   ArrowRight,
   Buildings,
-  EnvelopeSimple,
   Factory,
   Lightbulb,
-  MapPin,
-  Phone,
   Play,
   SquaresFour,
   UsersThree,
@@ -111,9 +108,17 @@ export default function HomePage() {
         <div className="site-container ref-delivery-film-inner">
           <div className="ref-delivery-film-copy">
             <h2 id="delivery-film-title">真实项目，真实交付</h2>
-            <p>从需求到上线，我们与客户并肩作战。专业的工程团队，严谨的交付流程，保障每一个系统稳定、可靠、可持续演进。</p>
-            <a className="ref-film-link" href="/media/team-collaboration-source.mp4" target="_blank">
-              <span><Play size={17} weight="fill" /></span>
+            <p>
+              从需求到上线，我们与客户并肩作战。专业的工程团队，严谨的交付流程，保障每一个系统稳定、可靠、可持续演进。
+            </p>
+            <a
+              className="ref-film-link"
+              href="/media/team-collaboration-source.mp4"
+              target="_blank"
+            >
+              <span>
+                <Play size={17} weight="fill" />
+              </span>
               观看团队视频
             </a>
           </div>
@@ -136,9 +141,15 @@ export default function HomePage() {
         <div className="site-container ref-scenarios-content">
           <div className="ref-scenarios-copy">
             <p>我们服务的行业与场景</p>
-            <h2 id="scenarios-title">让系统场景更简单<br />让关键决策更智能</h2>
+            <h2 id="scenarios-title">
+              让系统场景更简单
+              <br />
+              让关键决策更智能
+            </h2>
             <span>构建面向未来的数字底座，支撑企业在不同业务场景中持续增长。</span>
-            <Link href="/cases">探索行业方案 <ArrowRight size={16} /></Link>
+            <Link href="/cases">
+              探索行业方案 <ArrowRight size={16} />
+            </Link>
           </div>
           <div className="ref-scenario-list">
             {scenarioItems.map((item) => (
@@ -158,10 +169,18 @@ export default function HomePage() {
             <h2 id="process-title">从需求到价值的确定路径</h2>
           </div>
           <div className="ref-process-track">
-            <svg className="ref-process-return-path ref-process-return-path-top" viewBox="0 0 120 96" aria-hidden="true">
+            <svg
+              className="ref-process-return-path ref-process-return-path-top"
+              viewBox="0 0 120 96"
+              aria-hidden="true"
+            >
               <path d="M 12 1 L 4 8 L 12 15 L 4 8 H 82 Q 108 8 108 34 V 94" />
             </svg>
-            <svg className="ref-process-return-path ref-process-return-path-bottom" viewBox="0 0 120 96" aria-hidden="true">
+            <svg
+              className="ref-process-return-path ref-process-return-path-bottom"
+              viewBox="0 0 120 96"
+              aria-hidden="true"
+            >
               <path d="M 4 88 H 82 Q 108 88 108 62 V 8 L 101 15 L 108 8 L 115 15" />
             </svg>
             {processSteps.map((step, index) => {
@@ -200,31 +219,10 @@ export default function HomePage() {
             <h2 id="ref-faq-title">你关心的问题，我们已经准备好答案</h2>
           </div>
           <FaqList items={faqs.slice(0, 4)} defaultOpen={-1} />
-          <Link className="ref-faq-more" href="/faq">查看全部问题 <ArrowRight size={16} /></Link>
+          <Link className="ref-faq-more" href="/faq">
+            查看全部问题 <ArrowRight size={16} />
+          </Link>
         </div>
-      </section>
-
-      <section className="ref-contact" aria-labelledby="ref-contact-title">
-        <Image src="/media/forest-contact-panorama.png" alt="森林与山脉景观" fill sizes="100vw" />
-        <div className="ref-contact-scrim" />
-        <div className="site-container ref-contact-inner">
-          <div className="ref-contact-copy">
-            <h2 id="ref-contact-title">准备好一起创造价值了吗？</h2>
-            <p>无论你有明确需求，还是正在探索方向，我们都乐意成为你的技术伙伴。</p>
-            <Link className="button button-light" href="/contact">联系我们 <ArrowRight size={17} /></Link>
-          </div>
-          <div className="ref-contact-details">
-            <div><Phone size={21} /><span><small>电话咨询</small>欢迎预约沟通</span></div>
-            <a href="mailto:chrisleo.yu.cn@gmail.com"><EnvelopeSimple size={21} /><span><small>邮箱咨询</small>chrisleo.yu.cn@gmail.com</span></a>
-            <div><MapPin size={21} /><span><small>服务范围</small>面向全国企业客户提供远程与现场协作</span></div>
-          </div>
-        </div>
-        <footer className="ref-legal-footer">
-          <div className="site-container">
-            <span>© {new Date().getFullYear()} 云码智创科技 版权所有</span>
-            <div><Link href="/about">隐私政策</Link><Link href="/contact">服务条款</Link></div>
-          </div>
-        </footer>
       </section>
     </main>
   )

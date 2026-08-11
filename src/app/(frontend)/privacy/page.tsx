@@ -1,0 +1,23 @@
+import type { Metadata } from 'next'
+
+import { LegalDocument } from '@/components/site/LegalDocument'
+import { legalEffectiveDate, privacySections } from '@/data/legal'
+
+export const metadata: Metadata = {
+  title: '隐私政策',
+  description: '了解云码智创科技网站如何处理咨询信息、访问日志、Cookie，以及您享有的个人信息权利。',
+  alternates: { canonical: '/privacy' },
+}
+
+export default function PrivacyPage() {
+  return (
+    <LegalDocument
+      title="隐私政策"
+      description="我们以清晰、必要和可控的方式处理您在访问网站与业务咨询过程中提供的信息。"
+      effectiveDate={legalEffectiveDate}
+      sections={privacySections}
+      relatedHref="/terms"
+      relatedLabel="服务条款"
+    />
+  )
+}

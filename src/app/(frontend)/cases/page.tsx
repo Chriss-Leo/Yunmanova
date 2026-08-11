@@ -2,9 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 import { PageHero } from '@/components/site/PageHero'
-import { Reveal } from '@/components/site/Reveal'
 import { cases } from '@/data/site'
-import { ContactCTA } from '@/sections/ContactCTA'
 
 export const metadata: Metadata = {
   title: '案例',
@@ -14,22 +12,36 @@ export const metadata: Metadata = {
 
 export default function CasesPage() {
   return (
-    <main className="marketing-page">
+    <main className="marketing-page inner-story">
       <PageHero
         title="把复杂场景，转化为清晰可用的产品"
         description="从业务目标、核心流程和关键数据出发，形成可实施、可验证、可持续迭代的解决方案。"
         backplate="以下内容为典型方案示意，不代表已公开客户项目或业绩数据。"
+        image="/media/energy-scenario-platform-v2.png"
+        imageAlt="风电、光伏和储能协同运行的数字化场景"
+        variant="dark"
+        secondaryHref="/services"
+        secondaryLabel="了解服务"
       />
-      <section className="section-space cases-page-list">
-        <div className="site-container">
-          {cases.map((item, index) => (
-            <Reveal className="case-feature" key={item.slug}>
-              <div className="case-feature-image">
-                <Image src={item.image} alt={`${item.title}场景示意`} fill sizes="(max-width: 768px) 100vw, 58vw" />
+      <section className="inner-cases-section" aria-labelledby="cases-list-title">
+        <div className="site-container inner-section-heading">
+          <h2 id="cases-list-title">从业务挑战，到系统路径</h2>
+          <p>案例以典型方案表达能力边界，不虚构客户、规模或业绩数据。</p>
+        </div>
+        <div className="inner-case-list">
+          {cases.map((item) => (
+            <article className="inner-case-study" key={item.slug}>
+              <div className="inner-case-study-image">
+                <Image
+                  src={item.image}
+                  alt={`${item.title}场景示意`}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 58vw"
+                />
               </div>
-              <div className="case-feature-content">
-                <span>{item.tags.join(' / ')}</span>
-                <h2>{item.title}</h2>
+              <div className="inner-case-study-copy">
+                <span>{item.tags.join(' · ')}</span>
+                <h3>{item.title}</h3>
                 <p>{item.summary}</p>
                 <dl>
                   <div>
@@ -46,11 +58,10 @@ export default function CasesPage() {
                   </div>
                 </dl>
               </div>
-            </Reveal>
+            </article>
           ))}
         </div>
       </section>
-      <ContactCTA />
     </main>
   )
 }
