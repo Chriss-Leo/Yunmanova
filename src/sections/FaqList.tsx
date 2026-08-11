@@ -25,7 +25,7 @@ export function FaqList({
               onClick={() => setOpen(expanded ? -1 : index)}
             >
               <span>{item.question}</span>
-              {expanded ? <Minus size={20} /> : <Plus size={20} />}
+              {expanded ? <Minus size={24} weight="bold" aria-hidden="true" /> : <Plus size={24} weight="bold" aria-hidden="true" />}
             </button>
             {expanded && <p id={`faq-${index}`}>{item.answer}</p>}
           </div>

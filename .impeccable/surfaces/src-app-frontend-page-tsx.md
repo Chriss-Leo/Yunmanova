@@ -16,7 +16,8 @@ related_targets: ["src/app/(frontend)/services/page.tsx","src/app/(frontend)/cas
 
 ## Approved direction
 
-- Approved comp: `.impeccable/mocks/home-reference-rebuild.png`.
+- Approved homepage comp: `.impeccable/mocks/home-reference-rebuild.png`.
+- Approved delivery and FAQ module comp: `.impeccable/mocks/home-delivery-faq-b-editorial-spine.png`.
 - Direction: faithful reconstruction of the supplied enterprise website reference.
 - Composition: connected split hero, dark engineering proof banner, layered multi-device product showcase, renewable-energy panorama, five-step delivery path, two-column FAQ, forest contact band and slim legal footer.
 - Palette: white, graphite, deep forest green and the official cyan logo.

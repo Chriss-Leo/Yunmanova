@@ -3,17 +3,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import {
   ArrowRight,
-  ArrowsClockwise,
-  Brain,
   Buildings,
   CheckCircle,
-  Code,
   EnvelopeSimple,
   Factory,
   Lightbulb,
   MapPin,
-  Monitor,
-  NotePencil,
   Phone,
   Play,
   SquaresFour,
@@ -38,6 +33,14 @@ const productProof = [
   '城市兴趣服务小程序',
 ]
 
+const processIconSources = [
+  '/media/process-icons/discovery.png',
+  '/media/process-icons/planning.png',
+  '/media/process-icons/development.png',
+  '/media/process-icons/testing.png',
+  '/media/process-icons/iteration.png',
+]
+
 const scenarioItems = [
   { title: '能源与电力', icon: Lightbulb },
   { title: '设施与设备管理', icon: Factory },
@@ -45,8 +48,6 @@ const scenarioItems = [
   { title: '文旅与社区', icon: UsersThree },
   { title: '更多行业', icon: SquaresFour },
 ]
-
-const processIcons = [Brain, NotePencil, Code, Monitor, ArrowsClockwise]
 
 export default function HomePage() {
   return (
@@ -197,19 +198,38 @@ export default function HomePage() {
       <section className="ref-process" aria-labelledby="process-title">
         <div className="site-container">
           <div className="ref-process-heading">
-            <p>我们的交付方法</p>
+            <p>产品的生命周期</p>
             <h2 id="process-title">从需求到价值的确定路径</h2>
           </div>
           <div className="ref-process-track">
+            <svg className="ref-process-return-path ref-process-return-path-top" viewBox="0 0 120 96" aria-hidden="true">
+              <path d="M 12 1 L 4 8 L 12 15 L 4 8 H 82 Q 108 8 108 34 V 94" />
+            </svg>
+            <svg className="ref-process-return-path ref-process-return-path-bottom" viewBox="0 0 120 96" aria-hidden="true">
+              <path d="M 4 88 H 82 Q 108 88 108 62 V 8 L 101 15 L 108 8 L 115 15" />
+            </svg>
             {processSteps.map((step, index) => {
-              const Icon = processIcons[index]
               return (
                 <div className="ref-process-step" key={step.title}>
-                  <div className="ref-process-icon"><Icon size={25} weight="duotone" /></div>
-                  <div className="ref-process-line" aria-hidden="true" />
-                  <span className="ref-process-index">{String(index + 1).padStart(2, '0')}</span>
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
+                  <div className="ref-process-content">
+                    <span className="ref-process-index" aria-hidden="true">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <div className="ref-process-icon" aria-hidden="true">
+                      <Image
+                        src={processIconSources[index]}
+                        alt=""
+                        width={360}
+                        height={360}
+                        className="ref-process-icon-image"
+                      />
+                    </div>
+                    <div className="ref-process-text">
+                      <h3>{step.title}</h3>
+                      <p>{step.description}</p>
+                    </div>
+                  </div>
+                  <span className="ref-process-node" aria-hidden="true" />
                 </div>
               )
             })}
@@ -222,9 +242,9 @@ export default function HomePage() {
           <div className="ref-faq-copy">
             <p>常见问题</p>
             <h2 id="ref-faq-title">你关心的问题，我们已经准备好答案</h2>
-            <Link href="/faq">查看全部问题 <ArrowRight size={16} /></Link>
           </div>
           <FaqList items={faqs.slice(0, 4)} defaultOpen={-1} />
+          <Link className="ref-faq-more" href="/faq">查看全部问题 <ArrowRight size={16} /></Link>
         </div>
       </section>
 

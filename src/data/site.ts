@@ -85,11 +85,11 @@ export const cases = [
 ]
 
 export const processSteps = [
-  { title: '理解业务', description: '访谈关键角色，明确问题、边界、目标与验收标准。' },
-  { title: '定义产品', description: '梳理信息架构、核心流程与迭代优先级，形成可执行方案。' },
-  { title: '设计开发', description: '产品、设计与工程协同推进，以阶段成果持续校准方向。' },
-  { title: '验证上线', description: '完成测试、部署、培训与上线保障，让系统稳定进入业务。' },
-  { title: '持续演进', description: '根据运营反馈优化体验、性能与功能，支持业务长期发展。' },
+  { title: '需求洞察', description: '深入理解业务现状与用户诉求，明确问题、边界、目标与优先级。' },
+  { title: '方案设计', description: '构建产品架构与业务流程，形成可执行、可扩展的实施方案。' },
+  { title: '敏捷开发', description: '分阶段交付可用成果，快速响应变化，持续校准方向与质量。' },
+  { title: '测试上线', description: '完成多维验证、部署与上线保障，确保系统稳定进入业务。' },
+  { title: '运营迭代', description: '根据数据与反馈持续优化体验和功能，支持业务长期发展。' },
 ]
 
 export const faqs = [
