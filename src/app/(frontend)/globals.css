@@ -2240,7 +2240,6 @@ body {
   left: 43% !important;
   width: 57% !important;
   object-position: right top;
-  transform: translateY(-3%);
 }
 
 .inner-page-hero--split .inner-page-hero-image {
@@ -3227,7 +3226,6 @@ body {
   }
   .inner-page-hero--split .inner-page-hero-image--contain {
     object-position: center top;
-    transform: none;
   }
   .inner-page-hero--split .inner-page-hero-scrim {
     background: linear-gradient(

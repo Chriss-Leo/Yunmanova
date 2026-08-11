@@ -28,8 +28,8 @@ export default function CasesPage() {
             形成可实施、可验证、可持续迭代的解决方案。
           </>
         }
-        image="/media/hero-cases-product-matrix-v3.png"
-        imageAlt="能源平台、企业服务应用与小程序组成的多端产品矩阵"
+        image="/media/hero-cases-product-matrix-v5.png"
+        imageAlt="AI 客服、能源平台、充电管理系统与移动应用组成的多端产品矩阵"
         imageFit="contain"
         secondaryHref="/services"
         secondaryLabel="了解服务"
