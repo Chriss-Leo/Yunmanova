@@ -88,7 +88,11 @@ export default function HomePage() {
               <br />
               而是业务增长的基础设施
             </h1>
-            <p>我们为企业构建可靠、可扩展的软件与物联网平台，让系统持续创造价值。</p>
+            <p>
+              我们为企业构建可靠、可扩展的软件与物联网平台，
+              <br />
+              让系统持续创造价值。
+            </p>
             <div className="ref-hero-actions">
               <Link className="button button-primary" href="/contact">
                 预约咨询 <ArrowRight size={17} />
@@ -165,7 +169,7 @@ export default function HomePage() {
 
       <section className="ref-scenarios" aria-labelledby="scenarios-title">
         <Image
-          src="/media/energy-scenario-platform.png"
+          src="/media/energy-scenario-platform-v2.png"
           alt="风电、光伏与储能协同的能源数字化场景"
           fill
           sizes="100vw"
