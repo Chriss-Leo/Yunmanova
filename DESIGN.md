@@ -164,7 +164,7 @@ Below 767px, the hero becomes vertically connected rather than separated: copy r
 
 ## Elevation & Depth
 
-Depth is concentrated in the authentic product carousel. Most of the page is flat and image-led: the hero uses a white wash, dark scenes use scrims, FAQ uses tonal separation, and paths use one-pixel lines. The active product card uses one broad green-tinted shadow while neighboring cards recede through scale and saturation.
+Depth is concentrated in the authentic product carousel. Most of the page is flat and image-led: the hero uses a white wash, dark scenes use scrims, FAQ uses tonal separation, and paths use one-pixel lines. The active product card floats forward with layered green-tinted shadows while neighboring cards recede through perspective, scale, and saturation.
 
 ### Shadow Vocabulary
 

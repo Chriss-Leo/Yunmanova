@@ -15,6 +15,13 @@ type ProductSlide = {
 
 const productSlides: ProductSlide[] = [
   {
+    description: '连接灵感、行程与智能推荐的移动旅行体验',
+    image: '/media/products/travel-assistant-app-cn.png',
+    imageAlt: '手持手机展示中文智能旅行助手应用',
+    imageZoom: 'strong',
+    title: '智能旅行助手',
+  },
+  {
     description: '覆盖筹款、捐赠人与项目运营的全流程管理',
     image: '/media/products/fundraising-crm-cn.png',
     imageAlt: '安和公益 CRM 中文筹款项目管理界面',
@@ -26,13 +33,6 @@ const productSlides: ProductSlide[] = [
     image: '/media/products/finance-dashboard-cn.png',
     imageAlt: '麦格智融中文智能财务管理平台界面',
     title: '智能财务平台',
-  },
-  {
-    description: '连接灵感、行程与智能推荐的移动旅行体验',
-    image: '/media/products/travel-assistant-app-cn.png',
-    imageAlt: '手持手机展示中文智能旅行助手应用',
-    imageZoom: 'strong',
-    title: '智能旅行助手',
   },
   {
     description: '将学习路径、口语陪练与即时反馈整合为自然体验',
