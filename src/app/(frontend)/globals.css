@@ -2975,8 +2975,8 @@ body:has(.reference-home) .site-footer {
   z-index: 2;
   display: grid;
   min-height: 300px;
-  grid-template-columns: .88fr 1.12fr;
-  gap: clamp(52px, 8vw, 110px);
+  grid-template-columns: 3fr 2fr;
+  gap: clamp(44px, 6vw, 84px);
   align-items: center;
 }
 
@@ -3024,7 +3024,10 @@ body:has(.reference-home) .site-footer {
 }
 
 .ref-legal-footer {
-  background: #ffffff;
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid rgba(255, 255, 255, .18);
+  background: rgba(0, 47, 34, .18);
 }
 
 .ref-legal-footer > div {
@@ -3032,13 +3035,17 @@ body:has(.reference-home) .site-footer {
   min-height: 66px;
   align-items: center;
   justify-content: space-between;
-  color: #68736d;
+  color: #c9ddd3;
   font-size: 12px;
 }
 
 .ref-legal-footer div div {
   display: flex;
   gap: 36px;
+}
+
+.ref-legal-footer a {
+  color: #edf6f1;
 }
 
 .reference-home a:focus-visible,

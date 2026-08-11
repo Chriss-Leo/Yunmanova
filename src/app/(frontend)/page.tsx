@@ -243,14 +243,13 @@ export default function HomePage() {
             <div><MapPin size={21} /><span><small>服务范围</small>面向全国企业客户提供远程与现场协作</span></div>
           </div>
         </div>
+        <footer className="ref-legal-footer">
+          <div className="site-container">
+            <span>© {new Date().getFullYear()} 云码智创科技 版权所有</span>
+            <div><Link href="/about">隐私政策</Link><Link href="/contact">服务条款</Link></div>
+          </div>
+        </footer>
       </section>
-
-      <footer className="ref-legal-footer">
-        <div className="site-container">
-          <span>© {new Date().getFullYear()} 云码智创科技 版权所有</span>
-          <div><Link href="/about">隐私政策</Link><Link href="/contact">服务条款</Link></div>
-        </div>
-      </footer>
     </main>
   )
 }
