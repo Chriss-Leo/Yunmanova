@@ -22,7 +22,7 @@ import { services } from '@/data/site'
 export const metadata: Metadata = {
   title: '产品与服务',
   description:
-    '软件定制、APP开发、小程序开发和AI应用开发服务，覆盖产品规划、设计、研发、测试、上线与运维。',
+    '软件定制、网站开发、APP开发、小程序开发和AI应用开发服务，覆盖产品规划、设计、研发、测试、上线与运维。',
   alternates: { canonical: '/services' },
 }
 

@@ -7,7 +7,7 @@ import { JsonLd } from '@/components/site/JsonLd'
 
 export const metadata: Metadata = {
   title: '联系我们',
-  description: '联系云码智创科技，咨询软件定制、APP、小程序、AI应用与企业数字化平台开发。',
+  description: '联系云码智创科技，咨询软件定制、网站、APP、小程序、AI应用与企业数字化平台开发。',
   alternates: { canonical: '/contact' },
 }
 

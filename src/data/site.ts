@@ -52,12 +52,28 @@ export const capabilities = [
 ]
 
 export const scenarios = [
-  { title: 'IoT 物联网平台', description: '设备接入、实时监测、告警联动与数据分析。', icon: Factory },
-  { title: '能源管理平台', description: '用能监测、能效分析、异常预警与经营决策。', icon: Lightning },
+  {
+    title: 'IoT 物联网平台',
+    description: '设备接入、实时监测、告警联动与数据分析。',
+    icon: Factory,
+  },
+  {
+    title: '能源管理平台',
+    description: '用能监测、能效分析、异常预警与经营决策。',
+    icon: Lightning,
+  },
   { title: '企业管理系统', description: '打通人、财、物、项目与跨部门协作流程。', icon: Buildings },
-  { title: '电商平台', description: '商品、交易、会员、营销与履约的一体化建设。', icon: ShoppingBag },
+  {
+    title: '电商平台',
+    description: '商品、交易、会员、营销与履约的一体化建设。',
+    icon: ShoppingBag,
+  },
   { title: '医疗平台', description: '围绕患者服务、业务协同与数据治理构建产品。', icon: FirstAid },
-  { title: '云端业务平台', description: '构建安全、弹性、可持续演进的数字化基础设施。', icon: CloudArrowUp },
+  {
+    title: '云端业务平台',
+    description: '构建安全、弹性、可持续演进的数字化基础设施。',
+    icon: CloudArrowUp,
+  },
 ]
 
 export const cases = [
@@ -95,23 +111,28 @@ export const processSteps = [
 export const faqs = [
   {
     question: '定制软件开发通常从哪里开始？',
-    answer: '从一次业务访谈开始。我们会先理解目标、用户、流程、现有系统与约束，再给出范围建议、实施路径和阶段计划。',
+    answer:
+      '从一次业务访谈开始。我们会先理解目标、用户、流程、现有系统与约束，再给出范围建议、实施路径和阶段计划。',
   },
   {
     question: '可以只负责设计、开发或某个技术模块吗？',
-    answer: '可以。合作范围可以覆盖完整产品周期，也可以针对产品设计、前端、后端、移动端、AI 能力或系统集成等模块展开。',
+    answer:
+      '可以。合作范围可以覆盖完整产品周期，也可以针对产品设计、前端、后端、移动端、AI 能力或系统集成等模块展开。',
   },
   {
     question: '如何评估项目周期和费用？',
-    answer: '周期与费用取决于业务范围、系统复杂度、第三方集成、数据迁移和质量要求。需求梳理后会提供清晰的工作范围与阶段估算。',
+    answer:
+      '周期与费用取决于业务范围、系统复杂度、第三方集成、数据迁移和质量要求。需求梳理后会提供清晰的工作范围与阶段估算。',
   },
   {
     question: '项目过程中如何保证沟通和质量？',
-    answer: '通过固定沟通节奏、阶段演示、需求与缺陷追踪、代码审查和测试验收，让进度、风险与决策保持透明。',
+    answer:
+      '通过固定沟通节奏、阶段演示、需求与缺陷追踪、代码审查和测试验收，让进度、风险与决策保持透明。',
   },
   {
     question: '系统上线后是否提供运维和迭代？',
-    answer: '可以提供上线保障、监控、问题响应、性能优化与持续迭代，具体服务等级会在合作方案中约定。',
+    answer:
+      '可以提供上线保障、监控、问题响应、性能优化与持续迭代，具体服务等级会在合作方案中约定。',
   },
   {
     question: '能否与企业现有系统和设备对接？',

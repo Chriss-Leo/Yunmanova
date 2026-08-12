@@ -57,11 +57,11 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 export const metadata: Metadata = {
   metadataBase: new URL(getServerSideURL()),
   title: {
-    default: '云码智创科技｜企业软件定制、APP、小程序与 AI 应用开发',
+    default: '云码智创科技｜企业软件定制、网站、APP、小程序与AI应用开发',
     template: '%s｜云码智创科技',
   },
   description:
-    '云码智创科技提供软件定制开发、APP开发、小程序开发与AI应用开发，服务IoT物联网、能源管理、企业管理、电商与医疗等企业数字化场景。',
+    '云码智创科技提供软件定制开发、网站开发、APP开发、小程序开发与AI应用开发，服务IoT物联网、能源管理、企业管理、电商与医疗等企业数字化场景。',
   openGraph: mergeOpenGraph(),
   twitter: {
     card: 'summary_large_image',

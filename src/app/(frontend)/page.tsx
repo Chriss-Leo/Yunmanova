@@ -17,9 +17,9 @@ import { FaqList } from '@/sections/FaqList'
 import { ProductCarousel } from '@/sections/ProductCarousel'
 
 export const metadata: Metadata = {
-  title: '企业软件定制、APP、小程序与 AI 应用开发',
+  title: '软件定制、网站、APP、小程序与AI应用开发',
   description:
-    '云码智创科技为中国企业提供软件定制、APP、小程序与AI应用开发，覆盖IoT物联网、能源管理、企业管理、电商和医疗平台。',
+    '云码智创科技为中国企业提供软件定制、网站、APP、小程序与AI应用开发，覆盖IoT物联网、能源管理、企业管理、电商和医疗平台。',
   alternates: { canonical: '/' },
 }
 
@@ -50,7 +50,7 @@ export default function HomePage() {
             name: '云码智创科技',
             email: 'chrisleo.yu.cn@gmail.com',
             url: '/',
-            description: '企业软件定制、APP、小程序与AI应用开发服务商。',
+            description: '企业软件定制、网站、APP、小程序与AI应用开发服务商。',
           },
           {
             '@context': 'https://schema.org',

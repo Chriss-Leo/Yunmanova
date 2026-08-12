@@ -24,7 +24,7 @@ web
 
 ## Capabilities and Constraints
 
-- 服务：软件定制开发、APP 开发、小程序开发、AI 应用开发。
+- 服务：软件定制开发、网站开发、APP 开发、小程序开发、AI 应用开发。
 - 场景：IoT 物联网平台、能源管理平台、企业管理系统、电商平台、医疗平台及其他企业数字化场景。
 - 技术栈：Next.js App Router、Tailwind CSS、shadcn/ui、Framer Motion、Payload CMS Block 结构。
 - 页面：首页、产品与服务、案例、常见问题、关于我们、联系我们。
