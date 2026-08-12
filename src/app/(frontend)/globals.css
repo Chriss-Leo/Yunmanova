@@ -3007,9 +3007,7 @@ body {
 .inner-cases-section > .inner-section-heading {
   margin-bottom: 76px;
 }
-.inner-case-list {
-  border-top: 1px solid var(--inner-line);
-}
+
 .inner-case-study {
   display: grid;
   grid-template-columns: minmax(0, 1.2fr) minmax(360px, 0.8fr);

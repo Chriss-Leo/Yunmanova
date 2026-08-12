@@ -23,15 +23,14 @@ const productSlides: ProductSlide[] = [
   },
   {
     description: '覆盖筹款、捐赠人与项目运营的全流程管理',
-    image: '/media/products/fundraising-crm-cn.png',
-    imageAlt: '安和公益 CRM 中文筹款项目管理界面',
-    imageZoom: 'soft',
+    image: '/ui/products/fundraising-crm-macbook-v1.png',
+    imageAlt: '银色 MacBook Pro 展示安和公益 CRM 中文筹款项目管理界面',
     title: '公益筹款 CRM',
   },
   {
     description: '汇集账户、资金流向与经营数据，辅助财务决策',
-    image: '/media/products/finance-dashboard-cn.png',
-    imageAlt: '麦格智融中文智能财务管理平台界面',
+    image: '/ui/products/finance-dashboard-chrome-v1.png',
+    imageAlt: 'Google Chrome 浏览器窗口展示麦格智融中文智能财务管理平台',
     title: '智能财务平台',
   },
   {

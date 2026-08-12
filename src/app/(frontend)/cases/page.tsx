@@ -35,7 +35,7 @@ export default function CasesPage() {
         secondaryLabel="了解服务"
       />
       <section className="inner-cases-section" aria-labelledby="cases-list-title">
-        <div className="inner-case-list">
+        <div>
           {cases.map((item) => (
             <article className="inner-case-study" key={item.slug}>
               <div className="inner-case-study-image">
