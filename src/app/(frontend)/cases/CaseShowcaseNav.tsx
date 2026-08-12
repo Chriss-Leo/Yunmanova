@@ -14,6 +14,43 @@ export function CaseShowcaseNav({ links }: { links: CaseShowcaseLink[] }) {
   const itemRefs = useRef(new Map<string, HTMLAnchorElement>())
 
   useEffect(() => {
+    let frame = 0
+    let settleTimer = 0
+
+    const scrollToCurrentHash = () => {
+      const hash = decodeURIComponent(window.location.hash)
+      if (!hash || !links.some((link) => link.href === hash)) return
+
+      const target = document.querySelector<HTMLElement>(hash)
+      if (!target) return
+
+      setActiveHref(hash)
+      target.scrollIntoView({ behavior: 'auto', block: 'start' })
+    }
+
+    const scheduleHashScroll = () => {
+      window.cancelAnimationFrame(frame)
+      window.clearTimeout(settleTimer)
+
+      frame = window.requestAnimationFrame(() => {
+        frame = window.requestAnimationFrame(scrollToCurrentHash)
+      })
+      settleTimer = window.setTimeout(scrollToCurrentHash, 300)
+    }
+
+    scheduleHashScroll()
+    window.addEventListener('hashchange', scheduleHashScroll)
+    window.addEventListener('pageshow', scheduleHashScroll)
+
+    return () => {
+      window.cancelAnimationFrame(frame)
+      window.clearTimeout(settleTimer)
+      window.removeEventListener('hashchange', scheduleHashScroll)
+      window.removeEventListener('pageshow', scheduleHashScroll)
+    }
+  }, [links])
+
+  useEffect(() => {
     const sections = links
       .map(({ href }) => document.querySelector<HTMLElement>(href))
       .filter((section): section is HTMLElement => Boolean(section))

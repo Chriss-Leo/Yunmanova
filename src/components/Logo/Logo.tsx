@@ -19,7 +19,7 @@ export const Logo = (props: Props) => {
         loading={priorityFromProps === 'high' ? undefined : loading}
         priority={priorityFromProps === 'high'}
         className="official-logo-image"
-        src="/brand/yunma-logo-official.png"
+        src="/brand/yunma-logo.png"
       />
     </span>
   )

@@ -5548,6 +5548,18 @@ body {
   background: #edf1ef;
 }
 
+.product-carousel-card-hitarea {
+  display: block;
+  color: inherit;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.product-carousel-card-hitarea:focus-visible {
+  outline: 3px solid rgba(13, 86, 62, 0.38);
+  outline-offset: -3px;
+}
+
 .product-carousel-image img {
   pointer-events: none;
   object-fit: cover;
@@ -5605,12 +5617,12 @@ body {
     transform 180ms ease;
 }
 
-.product-carousel-card-link:hover {
+.product-carousel-card-hitarea:hover .product-carousel-card-link {
   background: var(--ref-green-deep);
   transform: translateX(2px);
 }
 
-.product-carousel-card-link:active,
+.product-carousel-card-hitarea:active .product-carousel-card-link,
 .product-carousel-buttons button:active {
   transform: scale(0.96);
 }

@@ -7,6 +7,7 @@ import { useRef, useState, type KeyboardEvent, type PointerEvent } from 'react'
 
 type ProductSlide = {
   description: string
+  href: string
   image: string
   imageAlt: string
   imageZoom?: 'soft' | 'strong'
@@ -16,25 +17,29 @@ type ProductSlide = {
 const productSlides: ProductSlide[] = [
   {
     description: '连接灵感、行程与智能推荐的移动旅行体验',
+    href: '/cases#lifestyle',
     image: '/media/products/travel-assistant-app-cn.png',
     imageAlt: '手持手机展示中文智能旅行助手应用',
     imageZoom: 'strong',
     title: '智能旅行助手',
   },
   {
-    description: '覆盖筹款、捐赠人与项目运营的全流程管理',
-    image: '/ui/products/fundraising-crm-macbook-v1.png',
-    imageAlt: '银色 MacBook Pro 展示安和公益 CRM 中文筹款项目管理界面',
-    title: '公益筹款 CRM',
+    description: '统一客户、商机与销售分析，让业务进展清晰可追踪',
+    href: '/cases#crm',
+    image: '/ui/products/yunlian-crm-macbook-v1.png',
+    imageAlt: '银色 MacBook Pro 展示云联 CRM 中文销售分析界面',
+    title: '智能CRM系统',
   },
   {
     description: '汇集账户、资金流向与经营数据，辅助财务决策',
+    href: '/cases#web3',
     image: '/ui/products/finance-dashboard-chrome-v1.png',
     imageAlt: 'Google Chrome 浏览器窗口展示麦格智融中文智能财务管理平台',
     title: '智能财务平台',
   },
   {
     description: '将学习路径、口语陪练与即时反馈整合为自然体验',
+    href: '/cases#ai',
     image: '/media/products/ai-english-learning-app-cn-bg.png',
     imageAlt: '三台手机展示中文 AI 英语学习助手应用',
     title: 'AI 英语学习助手',
@@ -79,7 +84,6 @@ export function ProductCarousel() {
   const handlePointerDown = (event: PointerEvent<HTMLDivElement>) => {
     didSwipe.current = false
     pointerStartX.current = event.clientX
-    event.currentTarget.setPointerCapture(event.pointerId)
   }
 
   const handlePointerUp = (event: PointerEvent<HTMLDivElement>) => {
@@ -125,31 +129,38 @@ export function ProductCarousel() {
               key={slide.title}
               role="group"
             >
-              <div className="product-carousel-image">
-                <Image
-                  alt={slide.imageAlt}
-                  className={slide.imageZoom ? `product-carousel-image-zoom-${slide.imageZoom}` : undefined}
-                  draggable={false}
-                  fill
-                  sizes="(max-width: 767px) 88vw, (max-width: 1024px) 62vw, 680px"
-                  src={slide.image}
-                />
-              </div>
-              <div className="product-carousel-caption">
-                <h3>{slide.title}</h3>
-                <p>{slide.description}</p>
-                <Link
-                  aria-label={`查看${slide.title}方案`}
-                  className="product-carousel-card-link"
-                  href="/services"
-                  onClick={(event) => {
-                    if (didSwipe.current) event.preventDefault()
-                  }}
-                  tabIndex={isActive ? 0 : -1}
-                >
-                  <ArrowRight aria-hidden="true" size={23} />
-                </Link>
-              </div>
+              <a
+                aria-label={`查看${slide.title}案例`}
+                className="product-carousel-card-hitarea"
+                href={slide.href}
+                onClick={(event) => {
+                  if (!didSwipe.current) return
+
+                  event.preventDefault()
+                  didSwipe.current = false
+                }}
+                tabIndex={isActive ? 0 : -1}
+              >
+                <div className="product-carousel-image">
+                  <Image
+                    alt={slide.imageAlt}
+                    className={
+                      slide.imageZoom ? `product-carousel-image-zoom-${slide.imageZoom}` : undefined
+                    }
+                    draggable={false}
+                    fill
+                    sizes="(max-width: 767px) 88vw, (max-width: 1024px) 62vw, 680px"
+                    src={slide.image}
+                  />
+                </div>
+                <div className="product-carousel-caption">
+                  <h3>{slide.title}</h3>
+                  <p>{slide.description}</p>
+                  <span className="product-carousel-card-link" aria-hidden="true">
+                    <ArrowRight size={23} />
+                  </span>
+                </div>
+              </a>
             </article>
           )
         })}
