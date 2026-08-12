@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import Image from 'next/image'
 
 import { PageHero } from '@/components/site/PageHero'
+import { Separator } from '@/components/ui/separator'
 import { processSteps } from '@/data/site'
 
 export const metadata: Metadata = {
@@ -9,13 +10,6 @@ export const metadata: Metadata = {
   description: '了解云码智创科技的产品方法、工程原则与企业软件开发合作方式。',
   alternates: { canonical: '/about' },
 }
-
-const principles = [
-  ['先理解，再开发', '把业务目标、用户任务与系统边界放在技术选型之前。'],
-  ['小步验证，持续交付', '优先验证高风险与高价值路径，让反馈尽早进入产品。'],
-  ['质量贯穿全过程', '架构、代码、测试、安全与文档共同决定系统的长期成本。'],
-  ['对结果保持透明', '不回避风险，不包装不确定性，让合作双方始终掌握真实状态。'],
-]
 
 const processIcons = ['discovery', 'planning', 'development', 'testing', 'iteration']
 
@@ -44,76 +38,68 @@ export default function AboutPage() {
         secondaryLabel="查看案例"
       />
 
-      <section className="inner-about-proof">
-        <Image
-          src="/media/development-team-dark.png"
-          alt="产品、设计和工程团队共同推进项目"
-          fill
-          sizes="100vw"
-          className="inner-about-proof-image"
-        />
-        <div className="inner-about-proof-scrim" />
-        <div className="site-container inner-about-proof-content">
-          <div>
-            <p className="inner-section-kicker">共同理解</p>
-            <h2>可靠的软件，始于对同一个问题的共同理解</h2>
-            <p>
-              业务、产品、设计和工程需要在同一目标下协作。我们先把问题说清楚，再用合适的技术把它解决。
-            </p>
-            <p>
-              关键决策、阶段成果与风险保持透明。系统上线不是结束，而是进入真实业务并持续演进的开始。
-            </p>
+      <div className="inner-about-content">
+        <section className="inner-about-story" aria-labelledby="about-story-title">
+          <div className="site-container inner-about-story-layout">
+            <div className="inner-about-story-heading">
+              <h2 id="about-story-title">
+                可靠的软件，
+                <br />
+                始于对问题的共同理解
+              </h2>
+              <div className="inner-about-story-copy">
+                <p>
+                  业务、产品、设计和工程需要在同一目标下协作。我们先把问题说清楚，再用合适的技术把它解决。
+                </p>
+                <p>
+                  关键决策、阶段成果与风险保持透明。系统上线不是结束，而是进入真实业务并持续演进的开始。
+                </p>
+              </div>
+            </div>
+            <figure className="inner-about-story-visual">
+              <Image
+                src="/media/about-product-collaboration-v1.png"
+                alt="产品、设计和工程团队围绕同一套软件流程协作"
+                fill
+                sizes="(max-width: 767px) calc(100vw - 32px), 610px"
+                className="inner-about-story-image"
+              />
+            </figure>
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section className="inner-principles-section">
-        <div className="site-container">
-          <div className="inner-section-heading">
-            <p className="inner-section-kicker">工作原则</p>
-            <h2>让每一次合作都有清晰的判断依据</h2>
-          </div>
-          <div className="inner-principles-grid">
-            {principles.map(([title, description], index) => (
-              <article key={title}>
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <div>
-                  <h3>{title}</h3>
-                  <p>{description}</p>
-                </div>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
+        <Separator className="site-container" />
 
-      <section className="inner-about-process-section">
-        <div className="site-container">
-          <div className="inner-section-heading inner-section-heading--center">
-            <p className="inner-section-kicker">产品的生命周期</p>
-            <h2>从需求到价值的确定路径</h2>
+        <section className="inner-about-process-section" aria-labelledby="about-process-title">
+          <div className="site-container">
+            <div className="inner-about-process-heading">
+              <h2 id="about-process-title">从需求到价值的确定路径</h2>
+              <p>每一步都有明确目标和可见成果，让产品稳定进入真实业务。</p>
+            </div>
+            <ol className="inner-about-process">
+              {processSteps.map((step, index) => (
+                <li key={step.title}>
+                  <div className="inner-about-process-mark">
+                    <span className="inner-about-process-number">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    <Image
+                      src={`/media/process-icons/${processIcons[index]}.png`}
+                      alt=""
+                      width={48}
+                      height={48}
+                    />
+                  </div>
+                  <div className="inner-about-process-copy">
+                    <h3>{step.title}</h3>
+                    <p>{step.description}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
           </div>
-          <ol className="inner-about-process">
-            {processSteps.map((step, index) => (
-              <li key={step.title}>
-                <span className="inner-about-process-number">
-                  {String(index + 1).padStart(2, '0')}
-                </span>
-                <div className="inner-about-process-icon">
-                  <Image
-                    src={`/media/process-icons/${processIcons[index]}.png`}
-                    alt=""
-                    width={72}
-                    height={72}
-                  />
-                </div>
-                <h3>{step.title}</h3>
-                <p>{step.description}</p>
-              </li>
-            ))}
-          </ol>
-        </div>
-      </section>
+        </section>
+      </div>
     </main>
   )
 }
