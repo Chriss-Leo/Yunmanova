@@ -25,7 +25,7 @@ export default function AboutPage() {
       <PageHero
         title={
           <>
-            用产品思维和工程纪律，
+            从需求到上线，
             <br />
             认真完成每一个系统
           </>

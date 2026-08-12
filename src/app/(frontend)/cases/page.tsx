@@ -35,10 +35,6 @@ export default function CasesPage() {
         secondaryLabel="了解服务"
       />
       <section className="inner-cases-section" aria-labelledby="cases-list-title">
-        <div className="site-container inner-section-heading">
-          <h2 id="cases-list-title">从业务挑战，到系统路径</h2>
-          <p>案例以典型方案表达能力边界，不虚构客户、规模或业绩数据。</p>
-        </div>
         <div className="inner-case-list">
           {cases.map((item) => (
             <article className="inner-case-study" key={item.slug}>

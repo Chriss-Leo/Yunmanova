@@ -28,7 +28,7 @@ export default function FaqPage() {
       <PageHero
         title={
           <>
-            关于合作方式，
+            关于常见问题，
             <br />
             这里先给出清晰答案
           </>
