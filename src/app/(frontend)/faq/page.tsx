@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
+import Link from 'next/link'
 
 import { JsonLd } from '@/components/site/JsonLd'
 import { PageHero } from '@/components/site/PageHero'
@@ -45,15 +47,17 @@ export default function FaqPage() {
         secondaryHref="/services"
         secondaryLabel="了解服务方式"
       />
-      <section className="inner-faq-section">
+      <section className="inner-faq-section" aria-labelledby="faq-content-title">
         <div className="site-container inner-faq-layout">
-          <div className="inner-faq-intro">
-            <p className="inner-section-kicker">常见问题</p>
-            <h2>先把合作中的不确定性说清楚</h2>
+          <header className="inner-faq-heading">
+            <h2 id="faq-content-title">先把合作中的不确定性说清楚</h2>
             <p>从范围、周期到交付与运维，我们把项目开始前最常见的问题集中在这里。</p>
-            <a href="mailto:chrisleo.yu.cn@gmail.com">没有找到答案？直接联系我们</a>
-          </div>
+          </header>
           <FaqList items={faqs} defaultOpen={-1} />
+          <Link className="inner-faq-contact" href="/contact">
+            没有找到答案？直接联系我们
+            <ArrowRight aria-hidden="true" size={16} weight="regular" />
+          </Link>
         </div>
       </section>
     </main>

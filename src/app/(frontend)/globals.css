@@ -3076,43 +3076,40 @@ body {
 
 /* FAQ */
 .inner-faq-section {
-  padding: 104px 0 120px;
+  padding: 96px 0 112px;
   background: var(--inner-soft);
 }
 .inner-faq-layout {
-  display: grid;
-  grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
-  gap: clamp(70px, 10vw, 160px);
-  align-items: start;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.inner-faq-intro {
-  position: sticky;
-  top: 112px;
+.inner-faq-heading {
+  width: min(100%, 900px);
+  text-align: center;
 }
-.inner-faq-intro h2 {
-  max-width: 8.6em;
-  margin: 0;
-  font-size: clamp(36px, 3.4vw, 50px);
-  line-height: 1.14;
+.inner-faq-heading .inner-section-kicker {
+  margin-bottom: 18px;
+}
+.inner-faq-heading h2 {
+  margin: 0 auto;
+  color: var(--inner-green-deep);
+  font-size: clamp(36px, 3.4vw, 48px);
+  font-weight: 660;
+  line-height: 1.16;
   letter-spacing: -0.035em;
+  text-wrap: balance;
 }
-.inner-faq-intro > p:not(.inner-section-kicker) {
-  max-width: 29em;
-  margin: 24px 0 0;
+.inner-faq-heading > p:not(.inner-section-kicker) {
+  max-width: 48em;
+  margin: 22px auto 0;
   color: var(--inner-muted);
-  font-size: 14px;
+  font-size: 15px;
   line-height: 1.8;
 }
-.inner-faq-intro a {
-  display: inline-flex;
-  margin-top: 30px;
-  padding-bottom: 7px;
-  border-bottom: 1px solid var(--inner-green);
-  color: var(--inner-green);
-  font-size: 13px;
-  font-weight: 650;
-}
 .inner-faq-layout .faq-list {
+  width: min(100%, 1000px);
+  margin-top: 58px;
   border-top: 1px solid #cbd5cf;
 }
 .inner-faq-layout .faq-item {
@@ -3127,30 +3124,60 @@ body {
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  min-height: 92px;
-  padding: 0 4px 0 0;
+  min-height: 90px;
+  padding: 0 12px 0 4px;
   border: 0;
   background: transparent;
   color: var(--inner-ink);
   cursor: pointer;
   font: inherit;
-  font-size: 17px;
-  font-weight: 600;
+  font-size: 18px;
+  font-weight: 590;
   text-align: left;
+  transition: color 180ms ease-out;
+}
+.inner-faq-layout .faq-item button:hover {
+  color: var(--inner-green);
 }
 .inner-faq-layout .faq-item button svg {
   flex: 0 0 auto;
   color: var(--inner-ink);
-  stroke-width: 2.6;
+  stroke-width: 3;
+  transition: transform 180ms ease-out;
+}
+.inner-faq-layout .faq-item button:hover svg {
+  transform: scale(1.1);
 }
 .inner-faq-layout .faq-item > p {
-  margin: 0 0 20px;
-  padding: 24px 28px;
+  max-width: none;
+  margin: 0 12px 24px;
+  padding: 22px 28px;
   border-radius: 8px;
   background: #fff;
   color: var(--inner-muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+.inner-faq-contact {
+  display: inline-flex;
+  width: fit-content;
+  align-items: center;
+  gap: 12px;
+  margin-top: 44px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid currentColor;
+  color: var(--inner-green);
   font-size: 14px;
-  line-height: 1.85;
+  font-weight: 620;
+  line-height: 1;
+}
+.inner-faq-contact svg {
+  flex: 0 0 auto;
+  transform: translateY(1px);
+  transition: transform 180ms ease-out;
+}
+.inner-faq-contact:hover svg {
+  transform: translate(4px, 1px);
 }
 
 /* About */
@@ -3663,10 +3690,6 @@ body {
   .inner-scenario-list {
     grid-template-columns: repeat(2, 1fr);
   }
-  .inner-faq-layout {
-    grid-template-columns: minmax(240px, 0.65fr) 1.35fr;
-    gap: 56px;
-  }
   .inner-about-process {
     grid-template-columns: repeat(3, 1fr);
     border-bottom: 0;
@@ -3793,15 +3816,14 @@ body {
     min-height: 190px;
   }
 
-  .inner-faq-layout {
-    grid-template-columns: 1fr;
-    gap: 48px;
-  }
-  .inner-faq-intro {
-    position: static;
-  }
-  .inner-faq-intro h2 {
+  .inner-faq-heading h2 {
     font-size: 32px;
+  }
+  .inner-faq-heading > p:not(.inner-section-kicker) {
+    font-size: 14px;
+  }
+  .inner-faq-layout .faq-list {
+    margin-top: 40px;
   }
   .inner-faq-layout .faq-item button {
     min-height: 80px;
@@ -3809,7 +3831,11 @@ body {
     font-size: 15px;
   }
   .inner-faq-layout .faq-item > p {
+    margin-inline: 0;
     padding: 20px;
+  }
+  .inner-faq-contact {
+    margin-top: 36px;
   }
 
   .inner-about-proof,
