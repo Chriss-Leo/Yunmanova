@@ -240,8 +240,24 @@ html[data-theme='light'] {
   color-scheme: light;
 }
 
-html {
+html,
+body {
   scroll-behavior: smooth;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+/* Keep every document and nested scroll surface usable while removing browser chrome. */
+* {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+  width: 0;
+  height: 0;
+  background: transparent;
 }
 
 body {
@@ -4424,8 +4440,6 @@ body {
   padding: 0 max(24px, calc((100vw - 1400px) / 2)) 30px;
   scroll-padding-inline: max(24px, calc((100vw - 1400px) / 2));
   scroll-snap-type: x mandatory;
-  scrollbar-color: #8ca397 #e0e8e4;
-  scrollbar-width: thin;
 }
 
 .case-film-frame {
