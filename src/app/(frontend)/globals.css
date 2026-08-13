@@ -3720,11 +3720,119 @@ body {
 
 /* About */
 .inner-about-content,
+.inner-about-proof,
 .inner-about-story {
   background: #fff;
 }
+.inner-about-proof {
+  padding: clamp(30px, 2.8vw, 40px) 0 clamp(24px, 2.3vw, 34px);
+}
+.inner-about-proof-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(320px, 0.65fr);
+  gap: clamp(48px, 8vw, 128px);
+  align-items: center;
+}
+.inner-about-proof-heading h2 {
+  margin: 0;
+  color: var(--inner-ink);
+  font-size: clamp(34px, 3vw, 46px);
+  font-weight: 650;
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+}
+.inner-about-proof-intro > p:first-child {
+  margin: 0;
+  color: var(--inner-green-deep);
+  font-size: 17px;
+  font-weight: 580;
+  letter-spacing: 0.08em;
+}
+.inner-about-proof-intro > p:last-child {
+  max-width: 30em;
+  margin: 13px 0 0;
+  color: var(--inner-muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+.inner-about-proof-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-top: clamp(38px, 4vw, 54px);
+}
+.inner-about-proof-metric {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  padding: clamp(22px, 2.5vw, 30px) clamp(20px, 2.5vw, 34px) clamp(16px, 1.8vw, 22px);
+  text-align: center;
+}
+.inner-about-proof-metric + .inner-about-proof-metric {
+  border-left: 1px solid var(--inner-line);
+}
+.inner-about-proof-value {
+  color: var(--inner-green-deep);
+  font-size: clamp(48px, 5vw, 72px);
+  font-variant-numeric: tabular-nums;
+  font-weight: 650;
+  line-height: 1;
+  letter-spacing: -0.045em;
+}
+.inner-about-proof-icon {
+  width: 48px;
+  height: 48px;
+  margin-top: 21px;
+  object-fit: contain;
+}
+.inner-about-proof-metric h3 {
+  margin: 13px 0 0;
+  color: var(--inner-ink);
+  font-size: 18px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+.inner-about-proof-metric p {
+  margin: 7px 0 0;
+  color: var(--inner-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+.inner-about-proof-closing {
+  width: 100%;
+  margin: 12px auto 0;
+  padding-top: 18px;
+  border-top: 1px solid var(--inner-line);
+  color: var(--inner-ink);
+  font-size: 14px;
+  font-weight: 580;
+  line-height: 1.6;
+  text-align: center;
+}
+.inner-about-proof--animated .inner-about-proof-metric {
+  animation: about-proof-arrive 620ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.inner-about-proof--animated .inner-about-proof-metric:nth-child(2) {
+  animation-delay: 70ms;
+}
+.inner-about-proof--animated .inner-about-proof-metric:nth-child(3) {
+  animation-delay: 140ms;
+}
+.inner-about-proof--animated .inner-about-proof-metric:nth-child(4) {
+  animation-delay: 210ms;
+}
+@keyframes about-proof-arrive {
+  from {
+    opacity: 0.45;
+    transform: translateY(14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 .inner-about-story {
-  padding: clamp(82px, 8vw, 116px) 0;
+  padding: clamp(32px, 3vw, 44px) 0 clamp(82px, 8vw, 116px);
 }
 .inner-about-story-layout {
   display: grid;
@@ -4221,6 +4329,22 @@ body {
     grid-template-columns: 1fr;
     gap: 48px;
   }
+  .inner-about-proof-heading {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .inner-about-proof-intro > p:last-child {
+    max-width: 42em;
+  }
+  .inner-about-proof-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .inner-about-proof-metric:nth-child(3) {
+    border-left: 0;
+  }
+  .inner-about-proof-metric:nth-child(n + 3) {
+    border-top: 1px solid var(--inner-line);
+  }
   .inner-about-story-heading {
     max-width: 720px;
   }
@@ -4371,8 +4495,47 @@ body {
     margin-top: 36px;
   }
 
+  .inner-about-proof {
+    padding: 26px 0 22px;
+  }
+  .inner-about-proof-heading h2 {
+    font-size: 32px;
+  }
+  .inner-about-proof-intro > p:first-child {
+    font-size: 15px;
+  }
+  .inner-about-proof-intro > p:last-child {
+    margin-top: 10px;
+    font-size: 14px;
+  }
+  .inner-about-proof-metrics {
+    margin-top: 32px;
+  }
+  .inner-about-proof-metric {
+    padding: 20px 14px 16px;
+  }
+  .inner-about-proof-value {
+    font-size: clamp(42px, 13vw, 56px);
+  }
+  .inner-about-proof-icon {
+    width: 42px;
+    height: 42px;
+    margin-top: 18px;
+  }
+  .inner-about-proof-metric h3 {
+    margin-top: 10px;
+    font-size: 16px;
+  }
+  .inner-about-proof-metric p {
+    font-size: 12px;
+  }
+  .inner-about-proof-closing {
+    margin-top: 10px;
+    padding-top: 16px;
+    font-size: 13px;
+  }
   .inner-about-story {
-    padding: 72px 0;
+    padding: 28px 0 72px;
   }
   .inner-about-story-layout {
     grid-template-columns: 1fr;
@@ -4474,6 +4637,9 @@ body {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .inner-about-proof--animated .inner-about-proof-metric {
+    animation: none;
+  }
   .ref-hero-actions .button svg,
   .inner-page-hero-actions .button svg,
   .inner-text-link svg,

@@ -7,6 +7,8 @@ import { JsonLd } from '@/components/site/JsonLd'
 import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
 import { getSiteSettings } from '@/utilities/siteSettings'
 
+import { AboutProofMetrics } from './AboutProofMetrics'
+
 export const generateMetadata = () =>
   generateSiteMetadata({
     title: '关于我们',
@@ -53,6 +55,8 @@ export default async function AboutPage() {
       />
 
       <div className="inner-about-content">
+        <AboutProofMetrics />
+
         <section className="inner-about-story" aria-labelledby="about-story-title">
           <div className="site-container inner-about-story-layout">
             <div className="inner-about-story-heading">
