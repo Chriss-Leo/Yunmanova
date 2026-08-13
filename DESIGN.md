@@ -1,5 +1,5 @@
 ---
-name: "云码智创科技"
+name: "无锡云码智创科技"
 description: "以连接式企业叙事、真实产品界面与克制森林绿建立软件交付信任。"
 colors:
   forest-action: "#0d563e"
@@ -84,7 +84,7 @@ components:
     rounded: "{rounded.phone}"
 ---
 
-# Design System: 云码智创科技
+# Design System: 无锡云码智创科技
 
 ## Overview
 

@@ -5,7 +5,7 @@
 - Scope: homepage below the shared Header. Header logo, typography, navigation, spacing and controls are locked and read-only.
 - Visitor mode: Persuade.
 - Audience: Chinese enterprise owners, business leaders, technical leaders and procurement stakeholders evaluating a software development partner.
-- Primary action: contact 云码智创科技.
+- Primary action: contact 无锡云码智创科技.
 
 ## Approved direction
 

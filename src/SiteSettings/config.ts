@@ -16,7 +16,7 @@ export const SiteSettings: GlobalConfig = {
       name: 'siteName',
       type: 'text',
       label: '站点名称',
-      defaultValue: '云码智创科技',
+      defaultValue: '无锡云码智创科技',
       required: true,
     },
     {
@@ -70,7 +70,7 @@ export const SiteSettings: GlobalConfig = {
           type: 'text',
           label: '默认标题',
           defaultValue:
-            '云码智创科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3开发、项目二次开发',
+            '无锡云码智创科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3开发、项目二次开发',
           required: true,
         },
         {
@@ -78,7 +78,7 @@ export const SiteSettings: GlobalConfig = {
           type: 'textarea',
           label: '默认描述',
           defaultValue:
-            '云码智创科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。',
+            '无锡云码智创科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。',
           required: true,
         },
         {

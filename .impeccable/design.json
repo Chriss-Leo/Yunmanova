@@ -1,72 +1,196 @@
 {
   "schemaVersion": 2,
   "generatedAt": "2026-08-10T10:22:24Z",
-  "title": "Design System: 云码智创科技",
+  "title": "Design System: 无锡云码智创科技",
   "extensions": {
     "colorMeta": {
       "forest-action": {
         "role": "primary",
         "displayName": "Forest Action",
-        "tonalRamp": ["oklch(17% 0.05 160)", "oklch(27% 0.07 160)", "oklch(37% 0.08 160)", "oklch(48% 0.075 160)", "oklch(59% 0.063 160)", "oklch(71% 0.047 160)", "oklch(83% 0.029 160)", "oklch(95% 0.009 160)"]
+        "tonalRamp": [
+          "oklch(17% 0.05 160)",
+          "oklch(27% 0.07 160)",
+          "oklch(37% 0.08 160)",
+          "oklch(48% 0.075 160)",
+          "oklch(59% 0.063 160)",
+          "oklch(71% 0.047 160)",
+          "oklch(83% 0.029 160)",
+          "oklch(95% 0.009 160)"
+        ]
       },
       "forest-deep": {
         "role": "primary",
         "displayName": "Forest Deep",
-        "tonalRamp": ["oklch(15% 0.043 160)", "oklch(23% 0.058 160)", "oklch(33% 0.068 160)", "oklch(44% 0.064 160)", "oklch(56% 0.054 160)", "oklch(69% 0.041 160)", "oklch(82% 0.025 160)", "oklch(95% 0.007 160)"]
+        "tonalRamp": [
+          "oklch(15% 0.043 160)",
+          "oklch(23% 0.058 160)",
+          "oklch(33% 0.068 160)",
+          "oklch(44% 0.064 160)",
+          "oklch(56% 0.054 160)",
+          "oklch(69% 0.041 160)",
+          "oklch(82% 0.025 160)",
+          "oklch(95% 0.007 160)"
+        ]
       },
       "forest-soft": {
         "role": "secondary",
         "displayName": "Forest Soft",
-        "tonalRamp": ["oklch(17% 0.018 160)", "oklch(29% 0.024 160)", "oklch(42% 0.026 160)", "oklch(55% 0.024 160)", "oklch(68% 0.02 160)", "oklch(80% 0.014 160)", "oklch(90% 0.008 160)", "oklch(96% 0.003 160)"]
+        "tonalRamp": [
+          "oklch(17% 0.018 160)",
+          "oklch(29% 0.024 160)",
+          "oklch(42% 0.026 160)",
+          "oklch(55% 0.024 160)",
+          "oklch(68% 0.02 160)",
+          "oklch(80% 0.014 160)",
+          "oklch(90% 0.008 160)",
+          "oklch(96% 0.003 160)"
+        ]
       },
       "white": {
         "role": "neutral",
         "displayName": "White",
-        "tonalRamp": ["oklch(15% 0 0)", "oklch(28% 0 0)", "oklch(42% 0 0)", "oklch(56% 0 0)", "oklch(70% 0 0)", "oklch(82% 0 0)", "oklch(92% 0 0)", "oklch(100% 0 0)"]
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(28% 0 0)",
+          "oklch(42% 0 0)",
+          "oklch(56% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(82% 0 0)",
+          "oklch(92% 0 0)",
+          "oklch(100% 0 0)"
+        ]
       },
       "surface-soft": {
         "role": "neutral",
         "displayName": "Surface Soft",
-        "tonalRamp": ["oklch(15% 0.004 160)", "oklch(28% 0.004 160)", "oklch(42% 0.004 160)", "oklch(56% 0.004 160)", "oklch(70% 0.003 160)", "oklch(82% 0.003 160)", "oklch(92% 0.002 160)", "oklch(99% 0.001 160)"]
+        "tonalRamp": [
+          "oklch(15% 0.004 160)",
+          "oklch(28% 0.004 160)",
+          "oklch(42% 0.004 160)",
+          "oklch(56% 0.004 160)",
+          "oklch(70% 0.003 160)",
+          "oklch(82% 0.003 160)",
+          "oklch(92% 0.002 160)",
+          "oklch(99% 0.001 160)"
+        ]
       },
       "graphite": {
         "role": "neutral",
         "displayName": "Graphite",
-        "tonalRamp": ["oklch(15% 0.01 155)", "oklch(27% 0.011 155)", "oklch(40% 0.011 155)", "oklch(53% 0.009 155)", "oklch(66% 0.007 155)", "oklch(78% 0.005 155)", "oklch(89% 0.003 155)", "oklch(96% 0.001 155)"]
+        "tonalRamp": [
+          "oklch(15% 0.01 155)",
+          "oklch(27% 0.011 155)",
+          "oklch(40% 0.011 155)",
+          "oklch(53% 0.009 155)",
+          "oklch(66% 0.007 155)",
+          "oklch(78% 0.005 155)",
+          "oklch(89% 0.003 155)",
+          "oklch(96% 0.001 155)"
+        ]
       },
       "graphite-muted": {
         "role": "neutral",
         "displayName": "Graphite Muted",
-        "tonalRamp": ["oklch(16% 0.01 155)", "oklch(28% 0.012 155)", "oklch(41% 0.012 155)", "oklch(54% 0.011 155)", "oklch(67% 0.009 155)", "oklch(79% 0.007 155)", "oklch(89% 0.004 155)", "oklch(96% 0.002 155)"]
+        "tonalRamp": [
+          "oklch(16% 0.01 155)",
+          "oklch(28% 0.012 155)",
+          "oklch(41% 0.012 155)",
+          "oklch(54% 0.011 155)",
+          "oklch(67% 0.009 155)",
+          "oklch(79% 0.007 155)",
+          "oklch(89% 0.004 155)",
+          "oklch(96% 0.002 155)"
+        ]
       },
       "graphite-line": {
         "role": "neutral",
         "displayName": "Graphite Line",
-        "tonalRamp": ["oklch(16% 0.008 155)", "oklch(28% 0.01 155)", "oklch(41% 0.011 155)", "oklch(54% 0.01 155)", "oklch(67% 0.008 155)", "oklch(79% 0.006 155)", "oklch(89% 0.004 155)", "oklch(95% 0.002 155)"]
+        "tonalRamp": [
+          "oklch(16% 0.008 155)",
+          "oklch(28% 0.01 155)",
+          "oklch(41% 0.011 155)",
+          "oklch(54% 0.01 155)",
+          "oklch(67% 0.008 155)",
+          "oklch(79% 0.006 155)",
+          "oklch(89% 0.004 155)",
+          "oklch(95% 0.002 155)"
+        ]
       },
       "brand-cyan": {
         "role": "tertiary",
         "displayName": "Brand Cyan",
-        "tonalRamp": ["oklch(18% 0.07 225)", "oklch(29% 0.105 225)", "oklch(41% 0.14 225)", "oklch(54% 0.16 225)", "oklch(65% 0.145 225)", "oklch(76% 0.105 225)", "oklch(86% 0.06 225)", "oklch(95% 0.02 225)"]
+        "tonalRamp": [
+          "oklch(18% 0.07 225)",
+          "oklch(29% 0.105 225)",
+          "oklch(41% 0.14 225)",
+          "oklch(54% 0.16 225)",
+          "oklch(65% 0.145 225)",
+          "oklch(76% 0.105 225)",
+          "oklch(86% 0.06 225)",
+          "oklch(95% 0.02 225)"
+        ]
       }
     },
     "typographyMeta": {
-      "display": { "displayName": "Display", "purpose": "The split-hero promise and highest-level business statement." },
-      "headline": { "displayName": "Headline", "purpose": "Engineering proof, product value, panorama, delivery, and contact headings." },
-      "title": { "displayName": "Title", "purpose": "Delivery steps and compact information groups." },
-      "body": { "displayName": "Body", "purpose": "Restrained enterprise explanations held near 32em." },
-      "label": { "displayName": "Label", "purpose": "Section eyebrows, proof labels, and compact metadata." }
+      "display": {
+        "displayName": "Display",
+        "purpose": "The split-hero promise and highest-level business statement."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Engineering proof, product value, panorama, delivery, and contact headings."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Delivery steps and compact information groups."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Restrained enterprise explanations held near 32em."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Section eyebrows, proof labels, and compact metadata."
+      }
     },
     "shadows": [
-      { "name": "control-lift", "value": "0 12px 30px rgba(11, 85, 61, 0.18)", "purpose": "Primary action buttons only." },
-      { "name": "product-stack", "value": "0 26px 56px rgba(24, 47, 38, 0.18)", "purpose": "Platform panels, APP shells, and mini-program shells in the product composition." },
-      { "name": "mobile-menu", "value": "0 18px 30px rgba(17, 24, 20, 0.08)", "purpose": "The locked Header’s temporary navigation layer." }
+      {
+        "name": "control-lift",
+        "value": "0 12px 30px rgba(11, 85, 61, 0.18)",
+        "purpose": "Primary action buttons only."
+      },
+      {
+        "name": "product-stack",
+        "value": "0 26px 56px rgba(24, 47, 38, 0.18)",
+        "purpose": "Platform panels, APP shells, and mini-program shells in the product composition."
+      },
+      {
+        "name": "mobile-menu",
+        "value": "0 18px 30px rgba(17, 24, 20, 0.08)",
+        "purpose": "The locked Header’s temporary navigation layer."
+      }
     ],
     "motion": [
-      { "name": "interaction-standard", "value": "180ms ease", "purpose": "Hover, focus, and active feedback for compact controls." },
-      { "name": "accordion-toggle", "value": "immediate state change", "purpose": "FAQ disclosure feedback without ornamental entrance animation." },
-      { "name": "content-visible-default", "value": "SSR visible", "purpose": "Core page content renders visibly without client-side reveal gates." },
-      { "name": "reduced-motion", "value": "0.01ms", "purpose": "Near-instant fallback when the user prefers reduced motion." }
+      {
+        "name": "interaction-standard",
+        "value": "180ms ease",
+        "purpose": "Hover, focus, and active feedback for compact controls."
+      },
+      {
+        "name": "accordion-toggle",
+        "value": "immediate state change",
+        "purpose": "FAQ disclosure feedback without ornamental entrance animation."
+      },
+      {
+        "name": "content-visible-default",
+        "value": "SSR visible",
+        "purpose": "Core page content renders visibly without client-side reveal gates."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "0.01ms",
+        "purpose": "Near-instant fallback when the user prefers reduced motion."
+      }
     ],
     "breakpoints": [
       { "name": "mobile", "value": "767px" },
@@ -153,7 +277,7 @@
       "kind": "custom",
       "refersTo": "contact-close",
       "description": "A forest panorama close with one action, factual contact details, and a slim white legal footer.",
-      "html": "<div class=\"ds-contact-wrap\"><section class=\"ds-contact\"><div><h3>准备好一起创造价值了吗？</h3><p>无论你有明确需求，还是正在探索方向，我们都乐意成为你的技术伙伴。</p><a href=\"#\">联系我们 →</a></div><address><span>邮箱咨询<br><b>chrisleo.yu.cn@gmail.com</b></span><span>服务范围<br><b>面向全国企业客户</b></span></address></section><footer>© 云码智创科技 版权所有</footer></div>",
+      "html": "<div class=\"ds-contact-wrap\"><section class=\"ds-contact\"><div><h3>准备好一起创造价值了吗？</h3><p>无论你有明确需求，还是正在探索方向，我们都乐意成为你的技术伙伴。</p><a href=\"#\">联系我们 →</a></div><address><span>邮箱咨询<br><b>chrisleo.yu.cn@gmail.com</b></span><span>服务范围<br><b>面向全国企业客户</b></span></address></section><footer>© 无锡云码智创科技 版权所有</footer></div>",
       "css": ".ds-contact-wrap { font-family:'Noto Sans SC Variable',Arial,sans-serif; } .ds-contact { display:grid; min-height:260px; grid-template-columns:.88fr 1.12fr; gap:72px; align-items:center; padding:48px; background:linear-gradient(90deg,rgba(1,58,41,.88),rgba(1,58,41,.72)),linear-gradient(145deg,#315f4f,#0a3326); color:#fff; } .ds-contact h3 { margin:0; font-size:31px; line-height:1.18; font-weight:650; } .ds-contact p { max-width:34em; margin:16px 0 22px; color:#d7e8e0; font-size:14px; line-height:1.75; } .ds-contact a { display:inline-flex; min-height:47px; align-items:center; padding:0 18px; border-radius:8px; background:#fff; color:#073b2b; font-size:13px; font-weight:620; text-decoration:none; } .ds-contact a:hover { transform:translateY(-1px); } .ds-contact a:focus-visible { outline:3px solid rgba(255,255,255,.6); outline-offset:4px; } .ds-contact address { display:grid; gap:18px; font-style:normal; color:#bcd4c8; font-size:11px; } .ds-contact address b { color:#f3f8f5; font-size:14px; font-weight:500; } .ds-contact-wrap footer { min-height:58px; display:flex; align-items:center; padding:0 48px; background:#fff; color:#68736d; font-size:12px; }"
     }
   ],
@@ -168,13 +292,41 @@
       "Eight-pixel buttons, 9px platform panels, 24px phone shells, sparse dividers, and core content visible in SSR."
     ],
     "rules": [
-      { "name": "The One Forest Action Rule", "body": "Use one forest-green action family across buttons, links, checks, and process markers; do not introduce competing accents.", "section": "colors" },
-      { "name": "The Cyan Stays in the Signature Rule", "body": "Brand Cyan belongs to the official logo and must not become a glow, gradient, or general-purpose CTA color.", "section": "colors" },
-      { "name": "The Compact Authority Rule", "body": "Keep headlines strong and relatively compact; hierarchy comes from weight and placement, not oversized campaign typography.", "section": "typography" },
-      { "name": "The Reference Order Rule", "body": "Preserve the approved section order and proportion; it is part of the faithful reconstruction, not a pool of interchangeable modules.", "section": "layout" },
-      { "name": "The Locked Header Rule", "body": "Header logo, typography, navigation, spacing, and controls are read-only and outside homepage redesign scope.", "section": "layout" },
-      { "name": "The Product Stack Owns Shadow Rule", "body": "Keep editorial sections flat; use the broad structural shadow only where authentic interfaces overlap.", "section": "elevation" },
-      { "name": "The Device-Specific Geometry Rule", "body": "Use 9px for platform panels and 24px for phone shells; do not normalize authentic device layers into one generic card radius.", "section": "shapes" }
+      {
+        "name": "The One Forest Action Rule",
+        "body": "Use one forest-green action family across buttons, links, checks, and process markers; do not introduce competing accents.",
+        "section": "colors"
+      },
+      {
+        "name": "The Cyan Stays in the Signature Rule",
+        "body": "Brand Cyan belongs to the official logo and must not become a glow, gradient, or general-purpose CTA color.",
+        "section": "colors"
+      },
+      {
+        "name": "The Compact Authority Rule",
+        "body": "Keep headlines strong and relatively compact; hierarchy comes from weight and placement, not oversized campaign typography.",
+        "section": "typography"
+      },
+      {
+        "name": "The Reference Order Rule",
+        "body": "Preserve the approved section order and proportion; it is part of the faithful reconstruction, not a pool of interchangeable modules.",
+        "section": "layout"
+      },
+      {
+        "name": "The Locked Header Rule",
+        "body": "Header logo, typography, navigation, spacing, and controls are read-only and outside homepage redesign scope.",
+        "section": "layout"
+      },
+      {
+        "name": "The Product Stack Owns Shadow Rule",
+        "body": "Keep editorial sections flat; use the broad structural shadow only where authentic interfaces overlap.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Device-Specific Geometry Rule",
+        "body": "Use 9px for platform panels and 24px for phone shells; do not normalize authentic device layers into one generic card radius.",
+        "section": "shapes"
+      }
     ],
     "dos": [
       "Do reproduce the approved reference’s connected hero, dark engineering banner, product stack, energy panorama, five-step path, FAQ split, forest contact band, and slim footer.",

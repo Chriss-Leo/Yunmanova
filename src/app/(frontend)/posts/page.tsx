@@ -38,7 +38,7 @@ export default async function Page() {
       <JsonLd
         data={buildPageJsonLd({
           description:
-            '阅读云码智创科技关于软件开发、网站、APP、小程序、AI应用与企业数字化的文章与实践分享。',
+            '阅读无锡云码智创科技关于软件开发、网站、APP、小程序、AI应用与企业数字化的文章与实践分享。',
           mainEntity: {
             '@type': 'ItemList',
             itemListElement: posts.docs.map((post, index) => ({
@@ -95,7 +95,7 @@ export async function generateMetadata() {
   return generateSiteMetadata({
     title: '文章',
     description:
-      '阅读云码智创科技关于软件开发、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化的文章与实践分享。',
+      '阅读无锡云码智创科技关于软件开发、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化的文章与实践分享。',
     canonical: '/posts',
     noIndex: posts.totalDocs === 0,
   })

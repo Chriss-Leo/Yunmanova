@@ -16,7 +16,7 @@ export const generateMetadata = () =>
   generateSiteMetadata({
     title: '案例',
     description:
-      '查看云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
+      '查看无锡无锡云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
     canonical: '/cases',
   })
 
@@ -72,7 +72,7 @@ export default async function CasesPage() {
       <JsonLd
         data={buildPageJsonLd({
           description:
-            '查看云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
+            '查看无锡云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
           mainEntity: {
             '@type': 'ItemList',
             itemListElement: caseEntities.map(([name, description], index) => ({
