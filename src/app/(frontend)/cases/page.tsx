@@ -10,6 +10,7 @@ import { JsonLd } from '@/components/site/JsonLd'
 import { CaseShowcaseNav } from './CaseShowcaseNav'
 import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
 import { getSiteSettings } from '@/utilities/siteSettings'
+import { getServerSideURL } from '@/utilities/getURL'
 
 export const generateMetadata = () =>
   generateSiteMetadata({
@@ -28,6 +29,16 @@ const caseLinks = [
   { href: '#data-screen', label: '数据可视化大屏' },
   { href: '#web3', label: 'Web3 金融' },
 ]
+
+const caseEntities = [
+  ['能源管理系统', '连接发电、储能、负载与充电设备数据的能源管理产品实践。'],
+  ['IoT 物联网平台', '覆盖设备连接、实时状态、自动化与多端控制的物联网产品实践。'],
+  ['CRM 系统', '围绕客户、商机与销售协作流程建设的客户关系管理产品实践。'],
+  ['娱乐与旅游', '面向娱乐、旅行与社区服务场景的移动端产品实践。'],
+  ['AI 应用', '结合大模型、知识库与业务流程的智能应用产品实践。'],
+  ['数据可视化大屏', '聚合关键业务指标与实时状态的数据可视化产品实践。'],
+  ['Web3 金融', '面向数字资产与金融业务场景的 Web3 产品实践。'],
+] as const
 
 function CaseHeading({
   index,
@@ -62,6 +73,22 @@ export default async function CasesPage() {
         data={buildPageJsonLd({
           description:
             '查看云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
+          mainEntity: {
+            '@type': 'ItemList',
+            itemListElement: caseEntities.map(([name, description], index) => ({
+              '@type': 'ListItem',
+              position: index + 1,
+              item: {
+                '@type': 'CreativeWork',
+                name,
+                description,
+                url: new URL(
+                  `/cases#${caseLinks[index]?.href.replace('#', '')}`,
+                  getServerSideURL(),
+                ).toString(),
+              },
+            })),
+          },
           name: '案例',
           path: '/cases',
           settings,

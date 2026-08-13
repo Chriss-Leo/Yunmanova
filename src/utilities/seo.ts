@@ -38,12 +38,17 @@ export async function generateSiteMetadata(input: SiteMetadataInput): Promise<Me
         url: input.canonical,
       },
     ),
-    robots: input.noIndex
-      ? {
-          follow: true,
-          index: false,
-        }
-      : undefined,
+    robots: {
+      follow: true,
+      index: !input.noIndex,
+      googleBot: {
+        follow: true,
+        index: !input.noIndex,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+        'max-video-preview': -1,
+      },
+    },
     title,
     twitter: {
       card: 'summary_large_image',
@@ -77,13 +82,36 @@ export function buildPageJsonLd({
   const siteURL = new URL('/', getServerSideURL()).toString().replace(/\/$/, '')
   const siteName = settings.siteName || defaultSiteSettings.siteName
 
+  const pageURL = new URL(path, siteURL).toString()
+  const breadcrumb =
+    new URL(pageURL).pathname === '/'
+      ? undefined
+      : {
+          '@type': 'BreadcrumbList',
+          '@id': `${pageURL}#breadcrumb`,
+          itemListElement: [
+            {
+              '@type': 'ListItem',
+              position: 1,
+              name: '首页',
+              item: siteURL,
+            },
+            {
+              '@type': 'ListItem',
+              position: 2,
+              name,
+              item: pageURL,
+            },
+          ],
+        }
+
   return {
     '@context': 'https://schema.org',
     '@type': type,
-    '@id': new URL(path, siteURL).toString() + '#webpage',
+    '@id': `${pageURL}#webpage`,
     name,
     description: description || undefined,
-    url: new URL(path, siteURL).toString(),
+    url: pageURL,
     inLanguage: 'zh-CN',
     isPartOf: {
       '@type': 'WebSite',
@@ -96,7 +124,60 @@ export function buildPageJsonLd({
       '@id': `${siteURL}/#brand`,
       name: siteName,
     },
+    breadcrumb,
     mainEntity: mainEntity || undefined,
+  }
+}
+
+type ArticleJsonLdInput = {
+  authors?: string[]
+  dateModified: string
+  datePublished?: string | null
+  description?: string | null
+  image?: Media | number | null
+  path: string
+  settings: SiteSetting
+  title: string
+}
+
+export function buildArticleJsonLd({
+  authors,
+  dateModified,
+  datePublished,
+  description,
+  image,
+  path,
+  settings,
+  title,
+}: ArticleJsonLdInput): Record<string, unknown> {
+  const siteURL = new URL('/', getServerSideURL()).toString().replace(/\/$/, '')
+  const pageURL = new URL(path, siteURL).toString()
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    '@id': `${pageURL}#article`,
+    headline: title,
+    description: description || undefined,
+    image: getSiteImageURL(image),
+    datePublished: datePublished || undefined,
+    dateModified,
+    inLanguage: 'zh-CN',
+    author: authors?.length
+      ? authors.map((name) => ({
+          '@type': 'Person',
+          name,
+        }))
+      : undefined,
+    about: {
+      '@type': 'Brand',
+      '@id': `${siteURL}/#brand`,
+      name: settings.siteName || defaultSiteSettings.siteName,
+    },
+    mainEntityOfPage: {
+      '@type': 'WebPage',
+      '@id': `${pageURL}#webpage`,
+    },
   }
 }
 
@@ -110,6 +191,7 @@ export function buildBrandJsonLd(settings: SiteSetting): Record<string, unknown>
     name: settings.siteName || defaultSiteSettings.siteName,
     description: settings.brandDescription || defaultSiteSettings.brandDescription,
     url: siteURL,
+    logo: new URL('/brand/yunma-logo-trimmed.png', siteURL).toString(),
   }
 }
 

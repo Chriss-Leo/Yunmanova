@@ -13,7 +13,6 @@ const staticRoutes = [
   '/contact',
   '/privacy',
   '/terms',
-  '/posts',
 ]
 
 const getPagesSitemap = unstable_cache(
@@ -21,39 +20,57 @@ const getPagesSitemap = unstable_cache(
     const payload = await getPayload({ config })
     const SITE_URL = getServerSideURL()
 
-    const results = await payload.find({
-      collection: 'pages',
-      overrideAccess: false,
-      draft: false,
-      depth: 0,
-      limit: 1000,
-      pagination: false,
-      where: {
-        _status: {
-          equals: 'published',
+    const [results, posts] = await Promise.all([
+      payload.find({
+        collection: 'pages',
+        overrideAccess: false,
+        draft: false,
+        depth: 0,
+        limit: 1000,
+        pagination: false,
+        where: {
+          _status: {
+            equals: 'published',
+          },
         },
-      },
-      select: {
-        meta: true,
-        slug: true,
-        updatedAt: true,
-      },
-    })
+        select: {
+          meta: true,
+          slug: true,
+          updatedAt: true,
+        },
+      }),
+      payload.find({
+        collection: 'posts',
+        overrideAccess: false,
+        draft: false,
+        depth: 0,
+        limit: 1,
+        pagination: false,
+        select: { slug: true },
+      }),
+    ])
 
-    const dateFallback = new Date().toISOString()
+    const staticRouteURLs = new Set(staticRoutes.map((route) => new URL(route, SITE_URL).toString()))
 
     const defaultSitemap = staticRoutes.map((route) => ({
       loc: new URL(route, SITE_URL).toString(),
-      lastmod: dateFallback,
     }))
+
+    if (posts.totalDocs > 0) {
+      defaultSitemap.push({ loc: new URL('/posts', SITE_URL).toString() })
+    }
 
     const sitemap = results.docs
       ? results.docs
-          .filter((page) => Boolean(page?.slug) && !page.meta?.searchEnhancement?.noIndex)
+          .filter((page) => {
+            if (!page?.slug || page.meta?.searchEnhancement?.noIndex) return false
+            const url = new URL(page.slug === 'home' ? '/' : `/${page.slug}`, SITE_URL).toString()
+            return !staticRouteURLs.has(url)
+          })
           .map((page) => {
             return {
               loc: new URL(page?.slug === 'home' ? '/' : `/${page?.slug}`, SITE_URL).toString(),
-              lastmod: page.updatedAt || dateFallback,
+              lastmod: page.updatedAt,
             }
           })
       : []

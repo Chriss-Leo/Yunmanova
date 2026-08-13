@@ -14,6 +14,9 @@ import { PostHero } from '@/heros/PostHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
+import { JsonLd } from '@/components/site/JsonLd'
+import { buildArticleJsonLd, buildPageJsonLd } from '@/utilities/seo'
+import { getSiteSettings } from '@/utilities/siteSettings'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -51,8 +54,34 @@ export default async function Post({ params: paramsPromise }: Args) {
 
   if (!post) return <PayloadRedirects url={url} />
 
+  const settings = await getSiteSettings()
+  const description = post.meta?.description
+  const authors = post.populatedAuthors
+    ?.map((author) => author.name)
+    .filter((name): name is string => Boolean(name))
+
   return (
     <article className="pt-16 pb-16">
+      <JsonLd
+        data={[
+          buildPageJsonLd({
+            description,
+            name: post.meta?.title || post.title,
+            path: url,
+            settings,
+          }),
+          buildArticleJsonLd({
+            authors,
+            dateModified: post.updatedAt,
+            datePublished: post.publishedAt,
+            description,
+            image: post.meta?.image || post.heroImage,
+            path: url,
+            settings,
+            title: post.meta?.title || post.title,
+          }),
+        ]}
+      />
       <PageClient />
 
       {/* Allows redirects for valid pages too */}
