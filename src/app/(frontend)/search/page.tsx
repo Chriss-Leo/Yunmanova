@@ -1,5 +1,3 @@
-import type { Metadata } from 'next/types'
-
 import { CollectionArchive } from '@/components/CollectionArchive'
 import configPromise from '@payload-config'
 import { getPayload } from 'payload'
@@ -7,6 +5,7 @@ import React from 'react'
 import { Search } from '@/search/Component'
 import PageClient from './page.client'
 import { CardPostData } from '@/components/Card'
+import { generateSiteMetadata } from '@/utilities/seo'
 
 type Args = {
   searchParams: Promise<{
@@ -81,12 +80,10 @@ export default async function Page({ searchParams: searchParamsPromise }: Args) 
   )
 }
 
-export function generateMetadata(): Metadata {
-  return {
+export function generateMetadata() {
+  return generateSiteMetadata({
     title: '站内搜索',
-    robots: {
-      follow: true,
-      index: false,
-    },
-  }
+    canonical: '/search',
+    noIndex: true,
+  })
 }

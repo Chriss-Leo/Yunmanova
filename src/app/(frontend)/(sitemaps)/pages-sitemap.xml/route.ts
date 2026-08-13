@@ -2,14 +2,24 @@ import { getServerSideSitemap } from 'next-sitemap'
 import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
+import { getServerSideURL } from '@/utilities/getURL'
+
+const staticRoutes = [
+  '/',
+  '/services',
+  '/cases',
+  '/faq',
+  '/about',
+  '/contact',
+  '/privacy',
+  '/terms',
+  '/posts',
+]
 
 const getPagesSitemap = unstable_cache(
   async () => {
     const payload = await getPayload({ config })
-    const SITE_URL =
-      process.env.NEXT_PUBLIC_SERVER_URL ||
-      process.env.VERCEL_PROJECT_PRODUCTION_URL ||
-      'https://example.com'
+    const SITE_URL = getServerSideURL()
 
     const results = await payload.find({
       collection: 'pages',
@@ -24,6 +34,7 @@ const getPagesSitemap = unstable_cache(
         },
       },
       select: {
+        meta: true,
         slug: true,
         updatedAt: true,
       },
@@ -31,29 +42,25 @@ const getPagesSitemap = unstable_cache(
 
     const dateFallback = new Date().toISOString()
 
-    const defaultSitemap = [
-      {
-        loc: `${SITE_URL}/search`,
-        lastmod: dateFallback,
-      },
-      {
-        loc: `${SITE_URL}/posts`,
-        lastmod: dateFallback,
-      },
-    ]
+    const defaultSitemap = staticRoutes.map((route) => ({
+      loc: new URL(route, SITE_URL).toString(),
+      lastmod: dateFallback,
+    }))
 
     const sitemap = results.docs
       ? results.docs
-          .filter((page) => Boolean(page?.slug))
+          .filter((page) => Boolean(page?.slug) && !page.meta?.searchEnhancement?.noIndex)
           .map((page) => {
             return {
-              loc: page?.slug === 'home' ? `${SITE_URL}/` : `${SITE_URL}/${page?.slug}`,
+              loc: new URL(page?.slug === 'home' ? '/' : `/${page?.slug}`, SITE_URL).toString(),
               lastmod: page.updatedAt || dateFallback,
             }
           })
       : []
 
-    return [...defaultSitemap, ...sitemap]
+    return Array.from(
+      new Map([...defaultSitemap, ...sitemap].map((entry) => [entry.loc, entry])).values(),
+    )
   },
   ['pages-sitemap'],
   {

@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { EnvelopeSimple, MapPin, WechatLogo } from '@phosphor-icons/react/dist/ssr'
 import Image from 'next/image'
 
@@ -6,13 +5,13 @@ import { ContactForm } from '@/components/site/ContactForm'
 import { JsonLd } from '@/components/site/JsonLd'
 import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
 import { getServerSideURL } from '@/utilities/getURL'
+import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
 
-export const metadata: Metadata = {
-  title: '联系我们',
-  description:
-    '联系云码智创科技，咨询软件定制、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化平台开发。',
-  alternates: { canonical: '/contact' },
-}
+const seoDescription =
+  '联系云码智创科技，咨询软件定制、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化平台开发。'
+
+export const generateMetadata = () =>
+  generateSiteMetadata({ title: '联系我们', description: seoDescription, canonical: '/contact' })
 
 export default async function ContactPage() {
   const settings = await getSiteSettings()
@@ -25,23 +24,24 @@ export default async function ContactPage() {
     settings.contact?.wechatQRCode && typeof settings.contact.wechatQRCode === 'object'
       ? settings.contact.wechatQRCode.url
       : '/media/wechat-qr-chris.jpg'
-  const siteURL = getServerSideURL()
+  const brandID = `${new URL('/', getServerSideURL()).toString()}#brand`
 
   return (
     <main className="marketing-page inner-story inner-contact-page">
       <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'ContactPage',
+        data={buildPageJsonLd({
+          description: seoDescription,
           name: `联系${siteName}`,
-          url: `${siteURL}/contact`,
           mainEntity: {
             '@type': 'Brand',
-            '@id': `${siteURL}/#brand`,
+            '@id': brandID,
             name: siteName,
             description: brandDescription,
           },
-        }}
+          path: '/contact',
+          settings,
+          type: 'ContactPage',
+        })}
       />
       <section className="inner-contact-section">
         <div className="site-container inner-contact-shell">

@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import { ArrowRight } from '@phosphor-icons/react/dist/ssr'
 import Link from 'next/link'
 
@@ -6,26 +5,33 @@ import { JsonLd } from '@/components/site/JsonLd'
 import { PageHero } from '@/components/site/PageHero'
 import { faqs } from '@/data/site'
 import { FaqList } from '@/sections/FaqList'
+import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
+import { getSiteSettings } from '@/utilities/siteSettings'
 
-export const metadata: Metadata = {
-  title: '常见问题',
-  description: '了解软件定制开发的合作流程、项目周期、费用评估、质量保障、系统集成与上线运维。',
-  alternates: { canonical: '/faq' },
-}
+const seoDescription =
+  '了解软件定制开发的合作流程、项目周期、费用评估、质量保障、系统集成与上线运维。'
 
-export default function FaqPage() {
+export const generateMetadata = () =>
+  generateSiteMetadata({ title: '常见问题', description: seoDescription, canonical: '/faq' })
+
+export default async function FaqPage() {
+  const settings = await getSiteSettings()
+
   return (
     <main className="marketing-page inner-story">
       <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': 'FAQPage',
+        data={buildPageJsonLd({
+          description: seoDescription,
           mainEntity: faqs.map((faq) => ({
             '@type': 'Question',
             name: faq.question,
             acceptedAnswer: { '@type': 'Answer', text: faq.answer },
           })),
-        }}
+          name: '常见问题',
+          path: '/faq',
+          settings,
+          type: 'FAQPage',
+        })}
       />
       <PageHero
         title={

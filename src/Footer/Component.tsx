@@ -2,9 +2,11 @@ import { ArrowRight, EnvelopeSimple, MapPin, WechatLogo } from '@phosphor-icons/
 import Image from 'next/image'
 import Link from 'next/link'
 import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
+import { getCachedGlobal } from '@/utilities/getGlobals'
+import { getCMSLinkHref } from '@/utilities/cmsLink'
 
 export async function Footer() {
-  const settings = await getSiteSettings()
+  const [settings, footer] = await Promise.all([getSiteSettings(), getCachedGlobal('footer', 1)()])
   const siteName = settings.siteName || defaultSiteSettings.siteName
   const email = settings.contact?.email || defaultSiteSettings.contact.email
   const wechat = settings.contact?.wechat || defaultSiteSettings.contact.wechat
@@ -13,6 +15,9 @@ export async function Footer() {
     settings.contact?.wechatQRCode && typeof settings.contact.wechatQRCode === 'object'
       ? settings.contact.wechatQRCode.url
       : '/media/wechat-qr-chris.jpg'
+  const footerLinks = (footer.navItems || [])
+    .map(({ id, link }) => ({ href: getCMSLinkHref(link), id, link }))
+    .filter((item): item is typeof item & { href: string } => Boolean(item.href))
   return (
     <footer className="site-footer ref-contact" aria-labelledby="site-footer-title">
       <Image src="/media/forest-contact-panorama.png" alt="森林与山脉景观" fill sizes="100vw" />
@@ -68,8 +73,22 @@ export async function Footer() {
             © {new Date().getFullYear()} {siteName} 版权所有
           </span>
           <div>
-            <Link href="/privacy">隐私政策</Link>
-            <Link href="/terms">服务条款</Link>
+            {footerLinks.map(({ href, id, link }) => (
+              <Link
+                href={href}
+                key={id || `${link.label}-${href}`}
+                rel={link.newTab ? 'noopener noreferrer' : undefined}
+                target={link.newTab ? '_blank' : undefined}
+              >
+                {link.label}
+              </Link>
+            ))}
+            {footerLinks.length === 0 && (
+              <>
+                <Link href="/privacy">隐私政策</Link>
+                <Link href="/terms">服务条款</Link>
+              </>
+            )}
           </div>
         </div>
       </div>

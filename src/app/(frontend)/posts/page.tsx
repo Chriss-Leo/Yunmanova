@@ -1,5 +1,3 @@
-import type { Metadata } from 'next/types'
-
 import { CollectionArchive } from '@/components/CollectionArchive'
 import { PageRange } from '@/components/PageRange'
 import { Pagination } from '@/components/Pagination'
@@ -7,6 +5,7 @@ import configPromise from '@payload-config'
 import { getPayload } from 'payload'
 import React from 'react'
 import PageClient from './page.client'
+import { generateSiteMetadata } from '@/utilities/seo'
 
 export const dynamic = 'force-static'
 export const revalidate = 600
@@ -56,11 +55,11 @@ export default async function Page() {
   )
 }
 
-export function generateMetadata(): Metadata {
-  return {
+export function generateMetadata() {
+  return generateSiteMetadata({
     title: '文章',
     description:
       '阅读云码智创科技关于软件开发、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化的文章与实践分享。',
-    alternates: { canonical: '/posts' },
-  }
+    canonical: '/posts',
+  })
 }

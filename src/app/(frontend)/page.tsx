@@ -1,4 +1,3 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import {
@@ -15,16 +14,22 @@ import { JsonLd } from '@/components/site/JsonLd'
 import { faqs, processSteps } from '@/data/site'
 import { FaqList } from '@/sections/FaqList'
 import { ProductCarousel } from '@/sections/ProductCarousel'
-import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
-import { getServerSideURL } from '@/utilities/getURL'
+import { getSiteSettings } from '@/utilities/siteSettings'
+import {
+  buildBrandJsonLd,
+  buildPageJsonLd,
+  buildWebsiteJsonLd,
+  generateSiteMetadata,
+} from '@/utilities/seo'
 
-export const metadata: Metadata = {
-  title:
-    '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
-  description:
-    '云码智创科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3, 金融平台。',
-  alternates: { canonical: '/' },
-}
+export const generateMetadata = () =>
+  generateSiteMetadata({
+    title:
+      '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
+    description:
+      '云码智创科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3和金融平台。',
+    canonical: '/',
+  })
 
 const processIconSources = [
   '/media/process-icons/discovery.png',
@@ -44,30 +49,20 @@ const scenarioItems = [
 
 export default async function HomePage() {
   const settings = await getSiteSettings()
-  const siteName = settings.siteName || defaultSiteSettings.siteName
-  const brandDescription = settings.brandDescription || defaultSiteSettings.brandDescription
-  const siteURL = getServerSideURL()
 
   return (
     <main className="marketing-page reference-home">
       <JsonLd
         data={[
-          {
-            '@context': 'https://schema.org',
-            '@type': 'Brand',
-            '@id': `${siteURL}/#brand`,
-            name: siteName,
-            url: siteURL,
-            description: brandDescription,
-          },
-          {
-            '@context': 'https://schema.org',
-            '@type': 'WebSite',
-            name: siteName,
-            url: siteURL,
-            inLanguage: 'zh-CN',
-            about: { '@id': `${siteURL}/#brand` },
-          },
+          buildBrandJsonLd(settings),
+          buildWebsiteJsonLd(settings),
+          buildPageJsonLd({
+            description:
+              '云码智创科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发。',
+            name: '云码智创科技首页',
+            path: '/',
+            settings,
+          }),
         ]}
       />
 

@@ -2542,12 +2542,14 @@ body {
 /* Services — approved capability architecture composition */
 .services-capability,
 .services-industries,
+.services-technology,
 .services-delivery {
   background: #ffffff;
 }
 
 .services-capability > .site-container,
 .services-industries > .site-container,
+.services-technology > .site-container,
 .services-delivery > .site-container {
   width: min(calc(100% - 64px), 1200px);
 }
@@ -2789,6 +2791,110 @@ body {
   transform: translate(4px, 1px);
 }
 
+.services-technology {
+  padding-top: 72px;
+}
+
+.services-technology-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 0.78fr) minmax(560px, 1.22fr);
+  gap: clamp(52px, 6vw, 92px);
+  align-items: stretch;
+}
+
+.services-technology-copy {
+  display: flex;
+  min-height: 100%;
+  flex-direction: column;
+}
+
+.services-technology-copy > h2 {
+  max-width: 12em;
+  margin: 0;
+  color: var(--inner-ink);
+  font-size: clamp(30px, 2.35vw, 36px);
+  font-weight: 680;
+  line-height: 1.22;
+  letter-spacing: -0.035em;
+  text-wrap: balance;
+}
+
+.services-technology-copy > h2 span {
+  display: block;
+  white-space: nowrap;
+}
+
+.services-technology-copy > p {
+  max-width: 31em;
+  margin: 22px 0 0;
+  color: var(--inner-muted);
+  font-size: 14px;
+  line-height: 1.85;
+}
+
+.services-technology-copy > p + p {
+  margin-top: 10px;
+}
+
+.services-technology-principles {
+  margin-top: 28px;
+}
+
+.services-technology-principle {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr);
+  gap: 18px;
+  align-items: center;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--inner-line);
+}
+
+.services-technology-principle-icon {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  border-radius: 50%;
+  color: var(--inner-green-deep);
+  background: #f3f5f0;
+}
+
+.services-technology-principle h3 {
+  margin: 0;
+  color: var(--inner-ink);
+  font-size: 17px;
+  font-weight: 650;
+  line-height: 1.4;
+}
+
+.services-technology-principle p {
+  margin: 4px 0 0;
+  color: var(--inner-muted);
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.services-technology-figure .services-technology-contact {
+  align-self: flex-end;
+  margin-top: auto;
+}
+
+.services-technology-figure {
+  display: flex;
+  min-width: 0;
+  min-height: 100%;
+  flex-direction: column;
+  margin: 0;
+}
+
+.services-technology-image {
+  display: block;
+  width: 110%;
+  max-width: none;
+  height: auto;
+  margin-left: -10%;
+}
+
 .services-delivery {
   padding: 92px 0 112px;
 }
@@ -2884,11 +2990,36 @@ body {
     padding: 26px 0;
     border-bottom: 1px solid var(--inner-line);
   }
+
+  .services-technology-layout {
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .services-technology-copy {
+    display: grid;
+    grid-template-columns: minmax(0, 0.85fr) minmax(420px, 1.15fr);
+    gap: 8px 56px;
+    min-height: 0;
+    padding-top: 0;
+  }
+
+  .services-technology-copy > h2,
+  .services-technology-copy > p {
+    grid-column: 1;
+  }
+
+  .services-technology-principles {
+    grid-row: 1 / span 5;
+    grid-column: 2;
+    margin-top: 0;
+  }
 }
 
 @media (max-width: 767px) {
   .services-capability > .site-container,
   .services-industries > .site-container,
+  .services-technology > .site-container,
   .services-delivery > .site-container {
     width: min(calc(100% - 32px), 1200px);
   }
@@ -2951,6 +3082,56 @@ body {
   .services-industries,
   .services-delivery {
     padding-top: 72px;
+  }
+
+  .services-technology {
+    padding-top: 56px;
+  }
+
+  .services-technology-layout {
+    gap: 38px;
+  }
+
+  .services-technology-copy {
+    display: block;
+  }
+
+  .services-technology-copy > h2 {
+    max-width: 11em;
+    font-size: 30px;
+  }
+
+  .services-technology-copy > p {
+    font-size: 14px;
+  }
+
+  .services-technology-principles {
+    margin-top: 26px;
+  }
+
+  .services-technology-principle {
+    grid-template-columns: 50px minmax(0, 1fr);
+    gap: 14px;
+    padding: 15px 0;
+  }
+
+  .services-technology-principle-icon {
+    width: 46px;
+    height: 46px;
+  }
+
+  .services-technology-figure .services-technology-contact {
+    margin-top: 34px;
+  }
+
+  .services-technology-figure {
+    width: 100%;
+    min-height: 0;
+  }
+
+  .services-technology-image {
+    width: 100%;
+    margin-left: 0;
   }
 
   .services-section-heading h2,
@@ -3104,7 +3285,9 @@ body {
   height: 2px;
   background: var(--case-green);
   content: '';
-  transition: right 180ms ease, left 180ms ease;
+  transition:
+    right 180ms ease,
+    left 180ms ease;
 }
 
 .case-showcase-nav a:hover,

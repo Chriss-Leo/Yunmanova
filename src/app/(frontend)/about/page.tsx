@@ -1,21 +1,35 @@
-import type { Metadata } from 'next'
 import Image from 'next/image'
 
 import { PageHero } from '@/components/site/PageHero'
 import { Separator } from '@/components/ui/separator'
 import { processSteps } from '@/data/site'
+import { JsonLd } from '@/components/site/JsonLd'
+import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
+import { getSiteSettings } from '@/utilities/siteSettings'
 
-export const metadata: Metadata = {
-  title: '关于我们',
-  description: '了解云码智创科技的产品方法、工程原则与企业软件开发合作方式。',
-  alternates: { canonical: '/about' },
-}
+export const generateMetadata = () =>
+  generateSiteMetadata({
+    title: '关于我们',
+    description: '了解云码智创科技的产品方法、工程原则与企业软件开发合作方式。',
+    canonical: '/about',
+  })
 
 const processIcons = ['discovery', 'planning', 'development', 'testing', 'iteration']
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const settings = await getSiteSettings()
+
   return (
     <main className="marketing-page inner-story">
+      <JsonLd
+        data={buildPageJsonLd({
+          description: '了解云码智创科技的产品方法、工程原则与企业软件开发合作方式。',
+          name: '关于我们',
+          path: '/about',
+          settings,
+          type: 'AboutPage',
+        })}
+      />
       <PageHero
         title={
           <>

@@ -1,20 +1,23 @@
 import { ArrowRight } from 'lucide-react'
-import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
 import { Separator } from '@/components/ui/separator'
 import { PageHero } from '@/components/site/PageHero'
+import { JsonLd } from '@/components/site/JsonLd'
 
 import { CaseShowcaseNav } from './CaseShowcaseNav'
+import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
+import { getSiteSettings } from '@/utilities/siteSettings'
 
-export const metadata: Metadata = {
-  title: '案例',
-  description:
-    '查看云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
-  alternates: { canonical: '/cases' },
-}
+export const generateMetadata = () =>
+  generateSiteMetadata({
+    title: '案例',
+    description:
+      '查看云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
+    canonical: '/cases',
+  })
 
 const caseLinks = [
   { href: '#energy', label: '能源管理' },
@@ -50,9 +53,21 @@ function CaseHeading({
   )
 }
 
-export default function CasesPage() {
+export default async function CasesPage() {
+  const settings = await getSiteSettings()
+
   return (
     <main className="marketing-page inner-story">
+      <JsonLd
+        data={buildPageJsonLd({
+          description:
+            '查看云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
+          name: '案例',
+          path: '/cases',
+          settings,
+          type: 'CollectionPage',
+        })}
+      />
       <PageHero
         title={
           <>

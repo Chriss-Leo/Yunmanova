@@ -244,18 +244,43 @@ export const seed = async ({
           {
             link: {
               type: 'custom',
-              label: 'Posts',
-              url: '/posts',
+              label: '首页',
+              url: '/',
             },
           },
           {
             link: {
-              type: 'reference',
-              label: 'Contact',
-              reference: {
-                relationTo: 'pages',
-                value: contactPage.id,
-              },
+              type: 'custom',
+              label: '产品与服务',
+              url: '/services',
+            },
+          },
+          {
+            link: {
+              type: 'custom',
+              label: '案例',
+              url: '/cases',
+            },
+          },
+          {
+            link: {
+              type: 'custom',
+              label: '常见问题',
+              url: '/faq',
+            },
+          },
+          {
+            link: {
+              type: 'custom',
+              label: '关于我们',
+              url: '/about',
+            },
+          },
+          {
+            link: {
+              type: 'custom',
+              label: '联系我们',
+              url: '/contact',
             },
           },
         ],
@@ -268,24 +293,15 @@ export const seed = async ({
           {
             link: {
               type: 'custom',
-              label: 'Admin',
-              url: '/admin',
+              label: '隐私政策',
+              url: '/privacy',
             },
           },
           {
             link: {
               type: 'custom',
-              label: 'Source Code',
-              newTab: true,
-              url: 'https://github.com/payloadcms/payload/tree/3.x/templates/website',
-            },
-          },
-          {
-            link: {
-              type: 'custom',
-              label: 'Payload',
-              newTab: true,
-              url: 'https://payloadcms.com/',
+              label: '服务条款',
+              url: '/terms',
             },
           },
         ],

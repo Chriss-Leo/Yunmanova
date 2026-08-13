@@ -14,6 +14,8 @@ import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { JsonLd } from '@/components/site/JsonLd'
 import { getServerSideURL } from '@/utilities/getURL'
+import { buildPageJsonLd } from '@/utilities/seo'
+import { getSiteSettings } from '@/utilities/siteSettings'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -71,17 +73,18 @@ export default async function Page({ params: paramsPromise }: Args) {
   const canonicalURL = searchEnhancement?.canonicalURL
     ? new URL(searchEnhancement.canonicalURL, getServerSideURL()).toString()
     : new URL(url, getServerSideURL()).toString()
+  const settings = await getSiteSettings()
 
   return (
     <article className="pt-16 pb-24">
       <JsonLd
-        data={{
-          '@context': 'https://schema.org',
-          '@type': searchEnhancement?.schemaType || 'WebPage',
+        data={buildPageJsonLd({
           description: searchEnhancement?.entitySummary || page.meta?.description || undefined,
           name: page.meta?.title || page.title,
-          url: canonicalURL,
-        }}
+          path: canonicalURL,
+          settings,
+          type: searchEnhancement?.schemaType || 'WebPage',
+        })}
       />
       <PageClient />
       {/* Allows redirects for valid pages too */}
@@ -103,7 +106,7 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
     slug: decodedSlug,
   })
 
-  return generateMeta({ doc: page })
+  return generateMeta({ canonical: `/${decodedSlug}`, doc: page })
 }
 
 const queryPageBySlug = cache(async ({ slug }: { slug: string }) => {

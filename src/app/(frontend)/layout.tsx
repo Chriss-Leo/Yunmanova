@@ -9,8 +9,8 @@ import { AdminBar } from '@/components/AdminBar'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
-import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
-import { defaultSiteSettings, getSiteImageURL, getSiteSettings } from '@/utilities/siteSettings'
+import { getSiteSettings } from '@/utilities/siteSettings'
+import { generateSiteMetadata } from '@/utilities/seo'
 import { draftMode } from 'next/headers'
 
 import './globals.css'
@@ -57,24 +57,14 @@ export default async function RootLayout({ children }: { children: React.ReactNo
 
 export async function generateMetadata(): Promise<Metadata> {
   const settings = await getSiteSettings()
-  const siteName = settings.siteName || defaultSiteSettings.siteName
-  const title = settings.defaultSEO?.title || defaultSiteSettings.defaultSEO.title
-  const description = settings.defaultSEO?.description || defaultSiteSettings.defaultSEO.description
-  const image = getSiteImageURL(settings.defaultSEO?.image)
+  const generated = await generateSiteMetadata({})
 
   return {
+    ...generated,
     metadataBase: new URL(getServerSideURL()),
     title: {
-      default: title,
-      template: `%s｜${siteName}`,
-    },
-    description,
-    openGraph: mergeOpenGraph({ description, image, siteName, title }),
-    twitter: {
-      card: 'summary_large_image',
-      description,
-      images: [image],
-      title,
+      default: settings.defaultSEO.title,
+      template: `%s｜${settings.siteName}`,
     },
   }
 }

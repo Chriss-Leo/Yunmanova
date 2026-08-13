@@ -1,13 +1,14 @@
-import type { Metadata } from 'next'
 import {
   ArrowRight,
   ArrowsClockwise,
   Buildings,
   Cube,
   FirstAid,
+  LinkSimple,
   Lightning,
   ShoppingCartSimple,
   Smiley,
+  Target,
   TreeStructure,
   UsersThree,
   ShieldCheck,
@@ -18,15 +19,15 @@ import Link from 'next/link'
 import { JsonLd } from '@/components/site/JsonLd'
 import { PageHero } from '@/components/site/PageHero'
 import { services } from '@/data/site'
-import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
+import { getSiteSettings } from '@/utilities/siteSettings'
+import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
 import { getServerSideURL } from '@/utilities/getURL'
 
-export const metadata: Metadata = {
-  title: '产品与服务',
-  description:
-    '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发服务，覆盖产品规划、设计、研发、测试、上线与运维。',
-  alternates: { canonical: '/services' },
-}
+const seoDescription =
+  '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发服务，覆盖产品规划、设计、研发、测试、上线与运维。'
+
+export const generateMetadata = () =>
+  generateSiteMetadata({ title: '产品与服务', description: seoDescription, canonical: '/services' })
 
 const serviceSummaries = [
   '从业务流程到稳定系统',
@@ -51,22 +52,45 @@ const deliveryOutcomes = [
   { title: '持续演进的产品', icon: ArrowsClockwise },
 ]
 
+const technologyPrinciples = [
+  {
+    title: '按场景选型',
+    description: '结合业务场景与约束条件，选择最合适的技术方案。',
+    icon: Target,
+  },
+  {
+    title: '全链路交付',
+    description: '从需求到上线与运维，提供稳定可靠的端到端交付。',
+    icon: LinkSimple,
+  },
+  {
+    title: '长期可维护',
+    description: '关注代码质量与架构演进，保障系统长期健康发展。',
+    icon: ShieldCheck,
+  },
+]
+
 export default async function ServicesPage() {
   const settings = await getSiteSettings()
-  const siteName = settings.siteName || defaultSiteSettings.siteName
-  const siteURL = getServerSideURL()
+  const brandID = `${new URL('/', getServerSideURL()).toString()}#brand`
 
   return (
     <main className="marketing-page inner-story">
       <JsonLd
-        data={services.map((service) => ({
-          '@context': 'https://schema.org',
-          '@type': 'Service',
-          name: service.title,
-          brand: { '@type': 'Brand', '@id': `${siteURL}/#brand`, name: siteName },
-          areaServed: 'CN',
-          description: service.description,
-        }))}
+        data={buildPageJsonLd({
+          description: seoDescription,
+          mainEntity: services.map((service) => ({
+            '@type': 'Service',
+            name: service.title,
+            brand: { '@id': brandID },
+            areaServed: 'CN',
+            description: service.description,
+          })),
+          name: '产品与服务',
+          path: '/services',
+          settings,
+          type: 'CollectionPage',
+        })}
       />
       <PageHero
         title={
@@ -167,6 +191,49 @@ export default async function ServicesPage() {
           <Link className="services-industry-more" href="/contact">
             更多请咨询 <ArrowRight aria-hidden="true" size={16} weight="regular" />
           </Link>
+        </div>
+      </section>
+
+      <section className="services-technology" aria-labelledby="services-technology-title">
+        <div className="site-container services-technology-layout">
+          <div className="services-technology-copy">
+            <h2 id="services-technology-title">
+              <span>覆盖主流技术栈，</span>
+              <span>也尊重每个项目的真实边界</span>
+            </h2>
+            <p>
+              我们根据业务目标、系统复杂度与长期维护要求选择合适的技术，而不是为了堆叠名词而使用技术。
+            </p>
+            <p>从产品前端、服务端、移动端到数据与部署，提供贯穿完整生命周期的工程能力。</p>
+
+            <div className="services-technology-principles">
+              {technologyPrinciples.map((principle) => (
+                <div className="services-technology-principle" key={principle.title}>
+                  <div className="services-technology-principle-icon">
+                    <principle.icon aria-hidden="true" size={26} weight="regular" />
+                  </div>
+                  <div>
+                    <h3>{principle.title}</h3>
+                    <p>{principle.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <figure className="services-technology-figure">
+            <Image
+              alt="后端、前端、移动端、数据库与云运维技术栈，涵盖 Go、Java、Python、Node.js、React、Vue、Flutter、PostgreSQL、Docker 与 Kubernetes 等技术"
+              className="services-technology-image"
+              height={1024}
+              sizes="(max-width: 767px) calc(100vw - 32px), (max-width: 1100px) calc(100vw - 64px), 690px"
+              src="/ui/services/technology-stack-matrix-v1.png"
+              width={1536}
+            />
+            <Link className="services-industry-more services-technology-contact" href="/contact">
+              沟通你的技术需求 <ArrowRight aria-hidden="true" size={16} weight="regular" />
+            </Link>
+          </figure>
         </div>
       </section>
 
