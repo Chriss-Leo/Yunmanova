@@ -25,11 +25,26 @@ const caseLinks = [
   { href: '#web3', label: 'Web3 金融' },
 ]
 
-function CaseHeading({ title, description }: { title: string; description: string }) {
+function CaseHeading({
+  index,
+  title,
+  description,
+}: {
+  index: string
+  title: string
+  description: string[]
+}) {
   return (
     <header className="case-showcase-heading">
-      <h2>{title}</h2>
-      <p>{description}</p>
+      <div className="case-showcase-heading-title">
+        <span aria-hidden="true">{index}</span>
+        <h2>{title}</h2>
+      </div>
+      <div className="case-showcase-heading-copy">
+        {description.map((line) => (
+          <p key={line}>{line}</p>
+        ))}
+      </div>
     </header>
   )
 }
@@ -65,8 +80,14 @@ export default function CasesPage() {
         <div className="site-container case-showcase-list">
           <article className="case-showcase-item" id="energy">
             <CaseHeading
+              index="01"
               title="能源管理系统"
-              description="把能源生产、储能、负载与设备运行放进同一套管理路径。"
+              description={[
+                '围绕发电、储能、负载与充电设备，统一连接分散的能源数据。',
+                '网页端聚合设备状态、运行告警与专业参数，支持集中管理。',
+                '移动端呈现家庭能源流向、实时功率与收益，便于随时掌握。',
+                '从设备接入到运营分析，形成清晰、可追踪的能源管理闭环。',
+              ]}
             />
             <div className="case-stage case-stage-energy">
               <Image
@@ -84,8 +105,13 @@ export default function CasesPage() {
 
           <article className="case-showcase-item" id="iot">
             <CaseHeading
+              index="02"
               title="IoT 物联网平台"
-              description="围绕家庭设备的连接、状态与自动化，构建清晰可控的使用体验。"
+              description={[
+                '围绕家庭设备的连接、状态与自动化，统一组织多端使用路径。',
+                '网页端集中管理设备、空间与运行状态，降低复杂系统的操作负担。',
+                '移动端承载实时控制、模式设置与提醒，让日常使用更加直接。',
+              ]}
             />
             <div className="case-stage case-stage-iot">
               <Image
@@ -102,8 +128,13 @@ export default function CasesPage() {
 
           <article className="case-showcase-item" id="crm">
             <CaseHeading
+              index="03"
               title="CRM 系统"
-              description="从销售管道到分析报表，让客户推进与经营判断持续可追踪。"
+              description={[
+                '围绕客户、商机与销售过程，建立统一的信息管理与协作路径。',
+                '销售管道清晰呈现阶段、金额与推进状态，便于团队持续跟进。',
+                '分析报表汇总线索来源与销售表现，为经营判断提供直观依据。',
+              ]}
             />
             <div className="case-stage case-stage-crm">
               <Image
@@ -120,8 +151,13 @@ export default function CasesPage() {
 
           <article className="case-showcase-item" id="lifestyle">
             <CaseHeading
+              index="04"
               title="娱乐与旅游"
-              description="从兴趣组局到智能行程，让内容、服务与交易自然连接。"
+              description={[
+                '以兴趣内容和本地活动为入口，帮助用户发现并参与真实社交场景。',
+                '旅行助手整合目的地推荐、行程灵感与服务信息，缩短决策路径。',
+                '两类移动体验均强调内容浏览、即时互动与轻量化操作。',
+              ]}
             />
             <div className="case-stage case-stage-lifestyle">
               <Image
@@ -137,7 +173,15 @@ export default function CasesPage() {
           <Separator className="case-showcase-separator" />
 
           <article className="case-showcase-item" id="ai">
-            <CaseHeading title="AI 应用" description="让智能对话进入服务、学习与日常业务流程。" />
+            <CaseHeading
+              index="05"
+              title="AI 应用"
+              description={[
+                '将智能对话接入客服、学习与日常业务流程，形成可直接使用的能力。',
+                '网页端支持连续问答、知识检索与上下文理解，提升信息处理效率。',
+                '移动端以语音交互和即时反馈构建自然、低负担的练习体验。',
+              ]}
+            />
             <div className="case-stage case-stage-ai">
               <Image
                 alt="AI 智能客服网页端与英语练习移动端界面"
@@ -153,8 +197,13 @@ export default function CasesPage() {
 
           <article className="case-showcase-item" id="data-screen">
             <CaseHeading
+              index="06"
               title="数据可视化大屏"
-              description="把设备状态、运行趋势与关键告警集中呈现在同一视野。"
+              description={[
+                '把设备状态、运行趋势与关键告警集中呈现在同一视野。',
+                '通过分区信息结构梳理复杂指标，帮助使用者快速识别重点变化。',
+                '适用于运营监控、设备管理与现场决策等需要持续关注的场景。',
+              ]}
             />
             <div className="case-stage case-stage-dashboard">
               <Image
@@ -171,8 +220,13 @@ export default function CasesPage() {
 
           <article className="case-showcase-item" id="web3">
             <CaseHeading
+              index="07"
               title="Web3 金融"
-              description="以清晰的信息层级承载账户、资产与交易体验。"
+              description={[
+                '以清晰的信息层级承载账户、资产与交易体验，降低信息理解成本。',
+                '资产平台集中呈现余额、资金流向与关键指标，支持快速查看。',
+                '钱包页面保持一致的深色视觉语言，让连接与操作路径更加连贯。',
+              ]}
             />
             <div className="case-stage case-stage-web3">
               <Image
