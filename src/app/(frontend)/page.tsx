@@ -15,11 +15,14 @@ import { JsonLd } from '@/components/site/JsonLd'
 import { faqs, processSteps } from '@/data/site'
 import { FaqList } from '@/sections/FaqList'
 import { ProductCarousel } from '@/sections/ProductCarousel'
+import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
+import { getServerSideURL } from '@/utilities/getURL'
 
 export const metadata: Metadata = {
-  title: '软件定制、网站、APP、小程序与AI应用开发',
+  title:
+    '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
   description:
-    '云码智创科技为中国企业提供软件定制、网站、APP、小程序与AI应用开发，覆盖IoT物联网、能源管理、企业管理、电商和医疗平台。',
+    '云码智创科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3, 金融平台。',
   alternates: { canonical: '/' },
 }
 
@@ -39,25 +42,31 @@ const scenarioItems = [
   { title: '更多行业', icon: SquaresFour },
 ]
 
-export default function HomePage() {
+export default async function HomePage() {
+  const settings = await getSiteSettings()
+  const siteName = settings.siteName || defaultSiteSettings.siteName
+  const brandDescription = settings.brandDescription || defaultSiteSettings.brandDescription
+  const siteURL = getServerSideURL()
+
   return (
     <main className="marketing-page reference-home">
       <JsonLd
         data={[
           {
             '@context': 'https://schema.org',
-            '@type': 'Organization',
-            name: '云码智创科技',
-            email: 'chrisleo.yu.cn@gmail.com',
-            url: '/',
-            description: '企业软件定制、网站、APP、小程序与AI应用开发服务商。',
+            '@type': 'Brand',
+            '@id': `${siteURL}/#brand`,
+            name: siteName,
+            url: siteURL,
+            description: brandDescription,
           },
           {
             '@context': 'https://schema.org',
             '@type': 'WebSite',
-            name: '云码智创科技',
-            url: '/',
+            name: siteName,
+            url: siteURL,
             inLanguage: 'zh-CN',
+            about: { '@id': `${siteURL}/#brand` },
           },
         ]}
       />

@@ -10,6 +10,7 @@ import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
+import { defaultSiteSettings, getSiteImageURL, getSiteSettings } from '@/utilities/siteSettings'
 import { draftMode } from 'next/headers'
 
 import './globals.css'
@@ -54,16 +55,26 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   )
 }
 
-export const metadata: Metadata = {
-  metadataBase: new URL(getServerSideURL()),
-  title: {
-    default: '云码智创科技｜企业软件定制、网站、APP、小程序与AI应用开发',
-    template: '%s｜云码智创科技',
-  },
-  description:
-    '云码智创科技提供软件定制开发、网站开发、APP开发、小程序开发与AI应用开发，服务IoT物联网、能源管理、企业管理、电商与医疗等企业数字化场景。',
-  openGraph: mergeOpenGraph(),
-  twitter: {
-    card: 'summary_large_image',
-  },
+export async function generateMetadata(): Promise<Metadata> {
+  const settings = await getSiteSettings()
+  const siteName = settings.siteName || defaultSiteSettings.siteName
+  const title = settings.defaultSEO?.title || defaultSiteSettings.defaultSEO.title
+  const description = settings.defaultSEO?.description || defaultSiteSettings.defaultSEO.description
+  const image = getSiteImageURL(settings.defaultSEO?.image)
+
+  return {
+    metadataBase: new URL(getServerSideURL()),
+    title: {
+      default: title,
+      template: `%s｜${siteName}`,
+    },
+    description,
+    openGraph: mergeOpenGraph({ description, image, siteName, title }),
+    twitter: {
+      card: 'summary_large_image',
+      description,
+      images: [image],
+      title,
+    },
+  }
 }

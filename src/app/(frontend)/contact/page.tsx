@@ -4,25 +4,42 @@ import Image from 'next/image'
 
 import { ContactForm } from '@/components/site/ContactForm'
 import { JsonLd } from '@/components/site/JsonLd'
+import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
+import { getServerSideURL } from '@/utilities/getURL'
 
 export const metadata: Metadata = {
   title: '联系我们',
-  description: '联系云码智创科技，咨询软件定制、网站、APP、小程序、AI应用与企业数字化平台开发。',
+  description:
+    '联系云码智创科技，咨询软件定制、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化平台开发。',
   alternates: { canonical: '/contact' },
 }
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const settings = await getSiteSettings()
+  const siteName = settings.siteName || defaultSiteSettings.siteName
+  const brandDescription = settings.brandDescription || defaultSiteSettings.brandDescription
+  const email = settings.contact?.email || defaultSiteSettings.contact.email
+  const wechat = settings.contact?.wechat || defaultSiteSettings.contact.wechat
+  const serviceArea = settings.contact?.serviceArea || defaultSiteSettings.contact.serviceArea
+  const qrCode =
+    settings.contact?.wechatQRCode && typeof settings.contact.wechatQRCode === 'object'
+      ? settings.contact.wechatQRCode.url
+      : '/media/wechat-qr-chris.jpg'
+  const siteURL = getServerSideURL()
+
   return (
     <main className="marketing-page inner-story inner-contact-page">
       <JsonLd
         data={{
           '@context': 'https://schema.org',
           '@type': 'ContactPage',
-          name: '联系云码智创科技',
+          name: `联系${siteName}`,
+          url: `${siteURL}/contact`,
           mainEntity: {
-            '@type': 'Organization',
-            name: '云码智创科技',
-            email: 'chrisleo.yu.cn@gmail.com',
+            '@type': 'Brand',
+            '@id': `${siteURL}/#brand`,
+            name: siteName,
+            description: brandDescription,
           },
         }}
       />
@@ -36,12 +53,13 @@ export default function ContactPage() {
               说明目标、现状和约束，我们会从最关键的问题开始沟通。
             </p>
             <div className="inner-contact-methods">
-              <a href="mailto:chrisleo.yu.cn@gmail.com">
+              <a href={`mailto:${email}`}>
                 <span className="inner-contact-method-icon">
                   <EnvelopeSimple size={20} aria-hidden="true" />
                 </span>
                 <span>
-                  <small>电子邮箱</small>chrisleo.yu.cn@gmail.com
+                  <small>电子邮箱</small>
+                  {email}
                 </span>
               </a>
               <div>
@@ -49,7 +67,8 @@ export default function ContactPage() {
                   <WechatLogo size={20} aria-hidden="true" />
                 </span>
                 <span>
-                  <small>微信联系</small>Chris_Leo_
+                  <small>微信联系</small>
+                  {wechat}
                 </span>
               </div>
               <div>
@@ -57,29 +76,30 @@ export default function ContactPage() {
                   <MapPin size={20} aria-hidden="true" />
                 </span>
                 <span>
-                  <small>服务方式</small>面向全国企业提供远程与现场协作
+                  <small>服务方式</small>
+                  {serviceArea}
                 </span>
               </div>
             </div>
             <figure className="inner-contact-qr">
               <div className="inner-contact-qr-image">
                 <Image
-                  src="/media/wechat-qr-chris.jpg"
-                  alt="微信二维码，添加 Chris_Leo_"
+                  src={qrCode || '/media/wechat-qr-chris.jpg'}
+                  alt={`微信二维码，添加 ${wechat}`}
                   fill
                   sizes="112px"
                 />
               </div>
               <figcaption>
                 <strong>微信扫码咨询</strong>
-                <small>添加微信 Chris_Leo_</small>
+                <small>添加微信 {wechat}</small>
               </figcaption>
             </figure>
           </header>
           <div className="contact-form-laptop">
             <span className="contact-form-laptop-camera" aria-hidden="true" />
             <div className="contact-form-laptop-screen">
-              <ContactForm />
+              <ContactForm email={email} />
             </div>
             <div className="contact-form-laptop-base" aria-hidden="true">
               <span />

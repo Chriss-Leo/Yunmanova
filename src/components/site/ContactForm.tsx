@@ -5,7 +5,7 @@ import { FormEvent, useState } from 'react'
 
 type FormState = 'idle' | 'error' | 'ready'
 
-export function ContactForm() {
+export function ContactForm({ email }: { email: string }) {
   const [state, setState] = useState<FormState>('idle')
 
   function submit(event: FormEvent<HTMLFormElement>) {
@@ -24,9 +24,9 @@ export function ContactForm() {
     setState('ready')
     const subject = encodeURIComponent(`项目咨询 - ${company || name}`)
     const body = encodeURIComponent(
-      `姓名：${name}\n公司：${company}\n联系方式：${contact}\n\n项目需求：\n${need}`,
+      `姓名：${name}\n企业或团队：${company}\n联系方式：${contact}\n\n项目需求：\n${need}`,
     )
-    window.location.href = `mailto:chrisleo.yu.cn@gmail.com?subject=${subject}&body=${body}`
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
   }
 
   return (
@@ -56,7 +56,7 @@ export function ContactForm() {
           />
         </label>
         <label>
-          <span>公司</span>
+          <span>企业或团队</span>
           <input name="company" autoComplete="organization" placeholder="企业或团队名称" />
         </label>
       </div>

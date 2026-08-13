@@ -11,7 +11,8 @@ import { CaseShowcaseNav } from './CaseShowcaseNav'
 
 export const metadata: Metadata = {
   title: '案例',
-  description: '查看云码智创科技在能源管理、物联网、CRM、AI 应用与企业软件场景中的产品实践。',
+  description:
+    '查看云码智创科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
   alternates: { canonical: '/cases' },
 }
 

@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 import { LegalDocument } from '@/components/site/LegalDocument'
-import { legalEffectiveDate, privacySections } from '@/data/legal'
+import { applyLegalContactEmail, legalEffectiveDate, privacySections } from '@/data/legal'
+import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
 
 export const metadata: Metadata = {
   title: '隐私政策',
@@ -9,13 +10,16 @@ export const metadata: Metadata = {
   alternates: { canonical: '/privacy' },
 }
 
-export default function PrivacyPage() {
+export default async function PrivacyPage() {
+  const settings = await getSiteSettings()
+  const email = settings.contact?.email || defaultSiteSettings.contact.email
+
   return (
     <LegalDocument
       title="隐私政策"
       description="我们以清晰、必要和可控的方式处理您在访问网站与业务咨询过程中提供的信息。"
       effectiveDate={legalEffectiveDate}
-      sections={privacySections}
+      sections={applyLegalContactEmail(privacySections, email)}
       relatedHref="/terms"
       relatedLabel="服务条款"
     />

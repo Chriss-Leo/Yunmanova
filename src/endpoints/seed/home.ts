@@ -47,7 +47,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: 'Payload Website Template',
+                  text: '云码智创科技',
                   version: 1,
                 },
               ],
@@ -666,9 +666,10 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
       },
     ],
     meta: {
-      description: 'An open-source website built with Payload and Next.js.',
+      description:
+        '云码智创科技提供软件定制开发、网站开发、APP开发、小程序开发与AI应用开发，服务企业数字化场景。',
       image: heroImage.id,
-      title: 'Payload Website Template',
+      title: '企业软件定制、网站、APP、小程序与AI应用开发',
     },
     title: 'Home',
   }

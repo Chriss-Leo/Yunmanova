@@ -110,10 +110,12 @@ export interface Config {
   };
   fallbackLocale: null;
   globals: {
+    'site-settings': SiteSetting;
     header: Header;
     footer: Footer;
   };
   globalsSelect: {
+    'site-settings': SiteSettingsSelect<false> | SiteSettingsSelect<true>;
     header: HeaderSelect<false> | HeaderSelect<true>;
     footer: FooterSelect<false> | FooterSelect<true>;
   };
@@ -1921,6 +1923,33 @@ export interface PayloadMigrationsSelect<T extends boolean = true> {
   createdAt?: T;
 }
 /**
+ * 统一管理品牌身份、联系方式和全站默认 SEO。品牌不代表任何注册主体或法人主体。
+ *
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings".
+ */
+export interface SiteSetting {
+  id: number;
+  siteName: string;
+  brandDescription: string;
+  contact: {
+    email: string;
+    wechat: string;
+    wechatQRCode?: (number | null) | Media;
+    serviceArea: string;
+  };
+  defaultSEO: {
+    title: string;
+    description: string;
+    /**
+     * 建议尺寸 1200 × 630；未上传时使用首页品牌图片。
+     */
+    image?: (number | null) | Media;
+  };
+  updatedAt?: string | null;
+  createdAt?: string | null;
+}
+/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "header".
  */
@@ -1955,11 +1984,6 @@ export interface Header {
  */
 export interface Footer {
   id: number;
-  contactEmail: string;
-  /**
-   * 建议上传清晰的正方形二维码图片。未上传时前台显示替换提示。
-   */
-  wechatQRCode?: (number | null) | Media;
   navItems?:
     | {
         link: {
@@ -1982,6 +2006,32 @@ export interface Footer {
     | null;
   updatedAt?: string | null;
   createdAt?: string | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "site-settings_select".
+ */
+export interface SiteSettingsSelect<T extends boolean = true> {
+  siteName?: T;
+  brandDescription?: T;
+  contact?:
+    | T
+    | {
+        email?: T;
+        wechat?: T;
+        wechatQRCode?: T;
+        serviceArea?: T;
+      };
+  defaultSEO?:
+    | T
+    | {
+        title?: T;
+        description?: T;
+        image?: T;
+      };
+  updatedAt?: T;
+  createdAt?: T;
+  globalType?: T;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
@@ -2011,8 +2061,6 @@ export interface HeaderSelect<T extends boolean = true> {
  * via the `definition` "footer_select".
  */
 export interface FooterSelect<T extends boolean = true> {
-  contactEmail?: T;
-  wechatQRCode?: T;
   navItems?:
     | T
     | {

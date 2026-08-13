@@ -1,4 +1,4 @@
-import type { CollectionSlug, GlobalSlug, Payload, PayloadRequest, File } from 'payload'
+import type { CollectionSlug, Payload, PayloadRequest, File } from 'payload'
 
 import { contactForm as contactFormData } from './contact-form'
 import { contact as contactPageData } from './contact-page'
@@ -20,7 +20,7 @@ const collections: CollectionSlug[] = [
   'search',
 ]
 
-const globals: GlobalSlug[] = ['header', 'footer']
+const globals: Array<'header' | 'footer'> = ['header', 'footer']
 
 const categories = ['Technology', 'News', 'Finance', 'Design', 'Software', 'Engineering']
 
@@ -218,6 +218,25 @@ export const seed = async ({
   payload.logger.info(`— Seeding globals...`)
 
   await Promise.all([
+    payload.updateGlobal({
+      slug: 'site-settings',
+      data: {
+        siteName: '云码智创科技',
+        brandDescription:
+          '专注软件定制、网站、APP、小程序、AI应用、Web3、项目二次开发的技术服务品牌。',
+        contact: {
+          email: 'chrisleo.yu.cn@gmail.com',
+          wechat: 'Chris_Leo_',
+          serviceArea: '面向全国企业客户提供远程与现场协作',
+        },
+        defaultSEO: {
+          title:
+            '云码智创科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
+          description:
+            '云码智创科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、智能合约、金融等数字化场景。',
+        },
+      },
+    }),
     payload.updateGlobal({
       slug: 'header',
       data: {

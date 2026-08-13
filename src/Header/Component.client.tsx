@@ -8,28 +8,30 @@ import { useState } from 'react'
 import { Logo } from '@/components/Logo/Logo'
 import { navigation } from '@/data/site'
 
-export function HeaderClient() {
+export function HeaderClient({ siteName }: { siteName: string }) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
 
   return (
     <header className="site-header">
       <div className="site-container header-inner">
-        <Link href="/" aria-label="云码智创科技首页" className="brand-link">
+        <Link href="/" aria-label={`${siteName}首页`} className="brand-link">
           <Logo loading="eager" priority="high" className="brand-logo" />
         </Link>
 
         <nav className="desktop-nav" aria-label="主导航">
-          {navigation.filter((item) => item.href !== '/contact').map((item) => (
-            <Link
-              key={item.href}
-              href={item.href}
-              aria-current={pathname === item.href ? 'page' : undefined}
-              className="nav-link"
-            >
-              {item.label}
-            </Link>
-          ))}
+          {navigation
+            .filter((item) => item.href !== '/contact')
+            .map((item) => (
+              <Link
+                key={item.href}
+                href={item.href}
+                aria-current={pathname === item.href ? 'page' : undefined}
+                className="nav-link"
+              >
+                {item.label}
+              </Link>
+            ))}
         </nav>
 
         <Link href="/contact" className="header-cta">

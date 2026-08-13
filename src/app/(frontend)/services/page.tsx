@@ -18,11 +18,13 @@ import Link from 'next/link'
 import { JsonLd } from '@/components/site/JsonLd'
 import { PageHero } from '@/components/site/PageHero'
 import { services } from '@/data/site'
+import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
+import { getServerSideURL } from '@/utilities/getURL'
 
 export const metadata: Metadata = {
   title: '产品与服务',
   description:
-    '软件定制、网站开发、APP开发、小程序开发和AI应用开发服务，覆盖产品规划、设计、研发、测试、上线与运维。',
+    '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发服务，覆盖产品规划、设计、研发、测试、上线与运维。',
   alternates: { canonical: '/services' },
 }
 
@@ -49,7 +51,11 @@ const deliveryOutcomes = [
   { title: '持续演进的产品', icon: ArrowsClockwise },
 ]
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const settings = await getSiteSettings()
+  const siteName = settings.siteName || defaultSiteSettings.siteName
+  const siteURL = getServerSideURL()
+
   return (
     <main className="marketing-page inner-story">
       <JsonLd
@@ -57,7 +63,7 @@ export default function ServicesPage() {
           '@context': 'https://schema.org',
           '@type': 'Service',
           name: service.title,
-          provider: { '@type': 'Organization', name: '云码智创科技' },
+          brand: { '@type': 'Brand', '@id': `${siteURL}/#brand`, name: siteName },
           areaServed: 'CN',
           description: service.description,
         }))}

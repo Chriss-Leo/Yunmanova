@@ -58,6 +58,9 @@ export default async function Page() {
 
 export function generateMetadata(): Metadata {
   return {
-    title: `Payload Website Template Posts`,
+    title: '文章',
+    description:
+      '阅读云码智创科技关于软件开发、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化的文章与实践分享。',
+    alternates: { canonical: '/posts' },
   }
 }

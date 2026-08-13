@@ -6,6 +6,19 @@ export type LegalSection = {
   emphasis?: string
 }
 
+const defaultContactEmail = 'chrisleo.yu.cn@gmail.com'
+
+export function applyLegalContactEmail(sections: LegalSection[], email: string): LegalSection[] {
+  const replaceEmail = (value: string) => value.replaceAll(defaultContactEmail, email)
+
+  return sections.map((section) => ({
+    ...section,
+    bullets: section.bullets?.map(replaceEmail),
+    emphasis: section.emphasis ? replaceEmail(section.emphasis) : undefined,
+    paragraphs: section.paragraphs?.map(replaceEmail),
+  }))
+}
+
 export const legalEffectiveDate = '2026年8月11日'
 
 export const privacySections: LegalSection[] = [
