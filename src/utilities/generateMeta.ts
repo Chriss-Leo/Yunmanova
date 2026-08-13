@@ -25,12 +25,19 @@ export const generateMeta = async (args: {
   const { doc } = args
 
   const ogImage = getImageURL(doc?.meta?.image)
+  const searchEnhancement =
+    doc?.meta && 'searchEnhancement' in doc.meta ? doc.meta.searchEnhancement : undefined
 
   const title = doc?.meta?.title
     ? doc?.meta?.title + ' | Payload Website Template'
     : 'Payload Website Template'
 
   return {
+    alternates: searchEnhancement?.canonicalURL
+      ? {
+          canonical: searchEnhancement.canonicalURL,
+        }
+      : undefined,
     description: doc?.meta?.description,
     openGraph: mergeOpenGraph({
       description: doc?.meta?.description || '',
@@ -44,6 +51,12 @@ export const generateMeta = async (args: {
       title,
       url: Array.isArray(doc?.slug) ? doc?.slug.join('/') : '/',
     }),
+    robots: searchEnhancement?.noIndex
+      ? {
+          follow: true,
+          index: false,
+        }
+      : undefined,
     title,
   }
 }

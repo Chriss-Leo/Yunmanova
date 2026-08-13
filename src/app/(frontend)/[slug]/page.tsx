@@ -12,6 +12,8 @@ import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
+import { JsonLd } from '@/components/site/JsonLd'
+import { getServerSideURL } from '@/utilities/getURL'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -65,9 +67,22 @@ export default async function Page({ params: paramsPromise }: Args) {
   }
 
   const { hero, layout } = page
+  const searchEnhancement = page.meta?.searchEnhancement
+  const canonicalURL = searchEnhancement?.canonicalURL
+    ? new URL(searchEnhancement.canonicalURL, getServerSideURL()).toString()
+    : new URL(url, getServerSideURL()).toString()
 
   return (
     <article className="pt-16 pb-24">
+      <JsonLd
+        data={{
+          '@context': 'https://schema.org',
+          '@type': searchEnhancement?.schemaType || 'WebPage',
+          description: searchEnhancement?.entitySummary || page.meta?.description || undefined,
+          name: page.meta?.title || page.title,
+          url: canonicalURL,
+        }}
+      />
       <PageClient />
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />

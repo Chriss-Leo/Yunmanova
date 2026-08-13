@@ -106,6 +106,57 @@ export const Pages: CollectionConfig<'pages'> = {
             }),
 
             MetaDescriptionField({}),
+            {
+              name: 'searchEnhancement',
+              type: 'group',
+              label: '搜索增强',
+              admin: {
+                description: '配置规范链接、结构化数据和搜索引擎收录规则。',
+              },
+              fields: [
+                {
+                  name: 'canonicalURL',
+                  type: 'text',
+                  label: '规范网址（Canonical URL）',
+                  admin: {
+                    description:
+                      '填写该页面希望搜索引擎收录的唯一正式网址，可使用完整网址或站内路径。',
+                    placeholder: 'https://www.example.com/page',
+                  },
+                },
+                {
+                  name: 'schemaType',
+                  type: 'select',
+                  label: '结构化数据类型',
+                  defaultValue: 'WebPage',
+                  options: [
+                    { label: '普通页面（WebPage）', value: 'WebPage' },
+                    { label: '服务页面（Service）', value: 'Service' },
+                    { label: '关于页面（AboutPage）', value: 'AboutPage' },
+                    { label: '联系页面（ContactPage）', value: 'ContactPage' },
+                    { label: '集合页面（CollectionPage）', value: 'CollectionPage' },
+                  ],
+                },
+                {
+                  name: 'entitySummary',
+                  type: 'textarea',
+                  label: '实体摘要',
+                  admin: {
+                    description: '用于结构化数据的页面主体摘要；留空时使用 SEO 描述。',
+                    rows: 3,
+                  },
+                },
+                {
+                  name: 'noIndex',
+                  type: 'checkbox',
+                  label: '禁止搜索引擎收录',
+                  defaultValue: false,
+                  admin: {
+                    description: '开启后向搜索引擎输出 noindex；公开页面通常不要开启。',
+                  },
+                },
+              ],
+            },
             PreviewField({
               // if the `generateUrl` function is configured
               hasGenerateFn: true,

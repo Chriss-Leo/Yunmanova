@@ -222,6 +222,24 @@ export interface Page {
      */
     image?: (number | null) | Media;
     description?: string | null;
+    /**
+     * 配置规范链接、结构化数据和搜索引擎收录规则。
+     */
+    searchEnhancement?: {
+      /**
+       * 填写该页面希望搜索引擎收录的唯一正式网址，可使用完整网址或站内路径。
+       */
+      canonicalURL?: string | null;
+      schemaType?: ('WebPage' | 'Service' | 'AboutPage' | 'ContactPage' | 'CollectionPage') | null;
+      /**
+       * 用于结构化数据的页面主体摘要；留空时使用 SEO 描述。
+       */
+      entitySummary?: string | null;
+      /**
+       * 开启后向搜索引擎输出 noindex；公开页面通常不要开启。
+       */
+      noIndex?: boolean | null;
+    };
   };
   publishedAt?: string | null;
   /**
@@ -1236,6 +1254,14 @@ export interface PagesSelect<T extends boolean = true> {
         title?: T;
         image?: T;
         description?: T;
+        searchEnhancement?:
+          | T
+          | {
+              canonicalURL?: T;
+              schemaType?: T;
+              entitySummary?: T;
+              noIndex?: T;
+            };
       };
   publishedAt?: T;
   generateSlug?: T;

@@ -32,7 +32,8 @@
       "@/*": [
         "./src/*"
       ]
-    }
+    },
+    "esModuleInterop": true
   },
   "include": [
     "**/*.ts",
