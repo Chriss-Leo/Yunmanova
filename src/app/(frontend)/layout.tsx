@@ -6,6 +6,8 @@ import { GeistSans } from 'geist/font/sans'
 import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
+import { SiteAnalytics } from '@/components/site/SiteAnalytics'
+import { getSiteVerificationMetadata, seoConfig } from '@/config/seo'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
 import { Providers } from '@/providers'
@@ -15,7 +17,6 @@ import { draftMode } from 'next/headers'
 
 import './globals.css'
 import '@fontsource-variable/noto-sans-sc'
-import { getServerSideURL } from '@/utilities/getURL'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
@@ -50,6 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           {children}
           <Footer />
         </Providers>
+        <SiteAnalytics />
       </body>
     </html>
   )
@@ -61,10 +63,11 @@ export async function generateMetadata(): Promise<Metadata> {
 
   return {
     ...generated,
-    metadataBase: new URL(getServerSideURL()),
+    metadataBase: new URL(seoConfig.canonicalBaseURL),
     title: {
       default: settings.defaultSEO.title,
       template: `%s｜${settings.siteName}`,
     },
+    verification: getSiteVerificationMetadata(),
   }
 }

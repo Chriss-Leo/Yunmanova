@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 
 import type { Media, SiteSetting } from '@/payload-types'
 
+import { getCanonicalURL } from '@/config/seo'
 import { mergeOpenGraph } from './mergeOpenGraph'
 import { getServerSideURL } from './getURL'
 import { defaultSiteSettings, getSiteImageURL, getSiteSettings } from './siteSettings'
@@ -25,9 +26,10 @@ export async function generateSiteMetadata(input: SiteMetadataInput): Promise<Me
   const description = input.description || defaultDescription
   const image = input.image ? getSiteImageURL(input.image) : defaultImage
   const socialTitle = input.title ? `${input.title}｜${siteName}` : defaultTitle
+  const canonical = input.canonical ? getCanonicalURL(input.canonical) : undefined
 
   return {
-    alternates: input.canonical ? { canonical: input.canonical } : undefined,
+    alternates: canonical ? { canonical } : undefined,
     description,
     openGraph: mergeOpenGraph(
       { description: defaultDescription, image: defaultImage, siteName, title: defaultTitle },
@@ -35,7 +37,7 @@ export async function generateSiteMetadata(input: SiteMetadataInput): Promise<Me
         description,
         images: [{ url: image }],
         title: socialTitle,
-        url: input.canonical,
+        url: canonical,
       },
     ),
     robots: {
