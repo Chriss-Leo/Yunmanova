@@ -7,6 +7,7 @@ import React from 'react'
 
 import { AdminBar } from '@/components/AdminBar'
 import { SiteAnalytics } from '@/components/site/SiteAnalytics'
+import { SupportChat } from '@/components/site/SupportChat'
 import { getSiteVerificationMetadata, seoConfig } from '@/config/seo'
 import { Footer } from '@/Footer/Component'
 import { Header } from '@/Header/Component'
@@ -50,6 +51,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
           <Header />
           {children}
           <Footer />
+          <SupportChat />
         </Providers>
         <SiteAnalytics />
       </body>
