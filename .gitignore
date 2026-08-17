@@ -34,6 +34,15 @@ public/media/process-icons/lifecycle-icons-sprite.png
 public/robots.txt
 public/sitemap*.xml
 
+# Impeccable generated review artifacts
+.impeccable/assets/
+.impeccable/review/
+.impeccable/home-surface-brief.md
+.impeccable/mocks/*
+!.impeccable/mocks/home-reference-rebuild.png
+!.impeccable/mocks/home-products-carousel-product-gallery.png
+!.impeccable/mocks/home-delivery-faq-b-editorial-spine.png
+
 
 # Playwright
 node_modules/
