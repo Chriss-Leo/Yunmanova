@@ -11,6 +11,7 @@ import {
 } from '@/components/ui/chat'
 import { Button } from '@/components/ui/button'
 import { Textarea } from '@/components/ui/textarea'
+import { containsContactInfo } from '@/utilities/contactDetection'
 import { ChatCircleDots, Check, PaperPlaneTilt, WarningCircle, X } from '@phosphor-icons/react'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -34,9 +35,6 @@ const welcomeMessage: ChatMessage = {
   sentAt: '',
 }
 
-const contactPattern =
-  /(?:1[3-9]\d{9})|(?:[\w.+-]+@[\w-]+(?:\.[\w-]+)+)|(?:微信|vx|wechat|微\s*信)\s*[:：]?\s*[a-zA-Z][-_a-zA-Z0-9]{5,19}/i
-
 function formatTime(value: string) {
   if (!value) return ''
 
@@ -57,7 +55,7 @@ function getSessionID() {
 
 function nextAssistantReply(messages: ChatMessage[]) {
   const visitorMessages = messages.filter((message) => message.role === 'visitor')
-  const hasContact = visitorMessages.some((message) => contactPattern.test(message.content))
+  const hasContact = visitorMessages.some((message) => containsContactInfo(message.content))
 
   if (hasContact) {
     return '好的，联系方式已收到。您还可以继续补充预算范围、期望周期或参考产品。'
