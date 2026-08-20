@@ -30,8 +30,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       suppressHydrationWarning
     >
       <head>
-        <link href="/favicon.ico" rel="icon" sizes="32x32" />
-        <link href="/favicon.svg" rel="icon" type="image/svg+xml" />
+        <link href="/favicon.ico?v=2" rel="icon" sizes="32x32" />
+        <link href="/favicon.svg?v=2" rel="icon" type="image/svg+xml" />
       </head>
       <body>
         <span

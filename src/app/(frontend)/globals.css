@@ -786,18 +786,15 @@ body {
 .official-logo-frame {
   position: relative;
   display: block;
-  overflow: hidden;
+  overflow: visible;
   aspect-ratio: 1238 / 262;
 }
 
 .official-logo-image {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 124.08%;
-  max-width: none;
-  height: auto;
-  transform: translate(-8.203%, -33.984%);
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
 }
 
 .brand-logo {

@@ -14,8 +14,8 @@ export const Logo = (props: Props) => {
     <span className={['official-logo-frame', className].filter(Boolean).join(' ')}>
       <Image
         alt="无锡云码智创科技"
-        width={1536}
-        height={1024}
+        width={520}
+        height={98}
         loading={priorityFromProps === 'high' ? undefined : loading}
         priority={priorityFromProps === 'high'}
         className="official-logo-image"
