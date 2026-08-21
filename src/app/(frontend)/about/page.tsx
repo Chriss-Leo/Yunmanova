@@ -12,7 +12,7 @@ import { AboutProofMetrics } from './AboutProofMetrics'
 export const generateMetadata = () =>
   generateSiteMetadata({
     title: '关于我们',
-    description: '了解无锡云码智创科技的产品方法、工程原则与企业软件开发合作方式。',
+    description: '了解寻光数字科技的产品方法、工程原则与企业软件开发合作方式。',
     canonical: '/about',
   })
 
@@ -25,7 +25,7 @@ export default async function AboutPage() {
     <main className="marketing-page inner-story">
       <JsonLd
         data={buildPageJsonLd({
-          description: '了解无锡云码智创科技的产品方法、工程原则与企业软件开发合作方式。',
+          description: '了解寻光数字科技的产品方法、工程原则与企业软件开发合作方式。',
           name: '关于我们',
           path: '/about',
           settings,
@@ -42,7 +42,7 @@ export default async function AboutPage() {
         }
         description={
           <>
-            无锡云码智创科技专注企业软件与数字化产品开发，
+            寻光数字科技专注企业软件与数字化产品开发，
             <br />
             重视业务理解、技术质量与长期合作。
           </>

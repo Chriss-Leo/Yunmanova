@@ -8,7 +8,7 @@ import { getServerSideURL } from '@/utilities/getURL'
 import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
 
 const seoDescription =
-  '联系无锡云码智创科技，咨询软件定制、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化平台开发。'
+  '联系寻光数字科技，咨询软件定制、网站、APP、小程序、AI应用、Web3金融、数据大屏与企业数字化平台开发。'
 
 export const generateMetadata = () =>
   generateSiteMetadata({ title: '联系我们', description: seoDescription, canonical: '/contact' })

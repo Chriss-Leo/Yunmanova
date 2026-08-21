@@ -9,7 +9,7 @@ export const generateMetadata = () =>
   generateSiteMetadata({
     title: '隐私政策',
     description:
-      '了解无锡云码智创科技网站如何处理咨询信息、访问日志、Cookie，以及您享有的个人信息权利。',
+      '了解寻光数字科技网站如何处理咨询信息、访问日志、Cookie，以及您享有的个人信息权利。',
     canonical: '/privacy',
   })
 
@@ -22,7 +22,7 @@ export default async function PrivacyPage() {
       <JsonLd
         data={buildPageJsonLd({
           description:
-            '了解无锡云码智创科技网站如何处理咨询信息、访问日志、Cookie，以及您享有的个人信息权利。',
+            '了解寻光数字科技网站如何处理咨询信息、访问日志、Cookie，以及您享有的个人信息权利。',
           name: '隐私政策',
           path: '/privacy',
           settings,

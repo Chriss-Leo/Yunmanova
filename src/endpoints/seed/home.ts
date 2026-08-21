@@ -47,7 +47,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
                   format: 0,
                   mode: 'normal',
                   style: '',
-                  text: '无锡云码智创科技',
+                  text: '寻光数字科技',
                   version: 1,
                 },
               ],
@@ -667,7 +667,7 @@ export const home: (args: HomeArgs) => RequiredDataFromCollectionSlug<'pages'> =
     ],
     meta: {
       description:
-        '无锡云码智创科技提供软件定制开发、网站开发、APP开发、小程序开发与AI应用开发，服务企业数字化场景。',
+        '寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发与AI应用开发，服务企业数字化场景。',
       image: heroImage.id,
       title: '企业软件定制、网站、APP、小程序与AI应用开发',
     },

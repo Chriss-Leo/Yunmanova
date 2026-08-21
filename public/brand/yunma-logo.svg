@@ -1,26 +1,38 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="520" height="98" viewBox="0 0 520 98" role="img" aria-labelledby="title desc">
-  <title id="title">云码智创科技</title>
-  <desc id="desc">代码猫头鹰图标与云码智创科技、YUNMA NOVA TECH 横向组合标志</desc>
-  <defs>
-    <clipPath id="wordmarkClip">
-      <rect x="150" y="0" width="370" height="98" />
-    </clipPath>
-  </defs>
+<svg xmlns="http://www.w3.org/2000/svg" width="490" height="98" viewBox="0 0 490 98" role="img" aria-labelledby="title desc">
+  <title id="title">寻光数字科技</title>
+  <desc id="desc">代码猫头鹰图标与寻光数字科技、GLEAM SEEK TECH 横向组合标志</desc>
   <image
     href="yunma-logo-owl-mark.png"
-    x="4"
+    x="-25"
     y="-14"
     width="141"
     height="116"
     preserveAspectRatio="xMidYMid meet"
   />
-  <image
-    href="yunma-logo-trimmed.png"
-    x="0"
-    y="-5"
-    width="520"
-    height="98"
-    preserveAspectRatio="none"
-    clip-path="url(#wordmarkClip)"
-  />
+  <text
+    x="108"
+    y="58"
+    fill="#070A0F"
+    font-family="PingFang SC, Hiragino Sans GB, Microsoft YaHei, sans-serif"
+    font-size="56"
+    font-weight="900"
+    letter-spacing="9"
+  >寻光数字科技</text>
+  <text
+    x="110"
+    y="86"
+    fill="#070A0F"
+    font-family="Avenir Next, Helvetica Neue, Arial, sans-serif"
+    font-size="15"
+    font-weight="500"
+    letter-spacing="17.5"
+  >GLEAM SEEK TEC</text>
+  <text
+    x="472"
+    y="86"
+    fill="#070A0F"
+    font-family="Avenir Next, Helvetica Neue, Arial, sans-serif"
+    font-size="15"
+    font-weight="500"
+  >H</text>
 </svg>

@@ -9,7 +9,7 @@ export const generateMetadata = () =>
   generateSiteMetadata({
     title: '服务条款',
     description:
-      '了解无锡云码智创科技网站的访问规则、咨询与项目合作边界、知识产权、责任范围及争议解决方式。',
+      '了解寻光数字科技网站的访问规则、咨询与项目合作边界、知识产权、责任范围及争议解决方式。',
     canonical: '/terms',
   })
 
@@ -22,7 +22,7 @@ export default async function TermsPage() {
       <JsonLd
         data={buildPageJsonLd({
           description:
-            '了解无锡云码智创科技网站的访问规则、咨询与项目合作边界、知识产权、责任范围及争议解决方式。',
+            '了解寻光数字科技网站的访问规则、咨询与项目合作边界、知识产权、责任范围及争议解决方式。',
           name: '服务条款',
           path: '/terms',
           settings,
