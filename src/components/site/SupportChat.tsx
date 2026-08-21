@@ -29,7 +29,7 @@ type ChatMessage = {
 
 const welcomeMessage: ChatMessage = {
   content:
-    '您好，我是寻光数字的在线接待。请直接告诉我您想开发的产品、目前遇到的问题，或期望的上线时间。',
+    '您好，我是无锡寻光数字的在线接待。请直接告诉我您想开发的产品、目前遇到的问题，或期望的上线时间。',
   id: 'welcome',
   role: 'assistant',
   sentAt: '',
@@ -237,7 +237,7 @@ export function SupportChat() {
               <Image alt="" fill sizes="40px" src="/brand.svg" />
             </div>
             <div>
-              <h2 id="support-chat-title">寻光数字接待</h2>
+              <h2 id="support-chat-title">无锡寻光数字接待</h2>
               <p>
                 <span aria-hidden="true" />
                 在线接待

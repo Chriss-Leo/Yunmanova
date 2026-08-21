@@ -4,7 +4,7 @@ import { getCachedGlobal } from './getGlobals'
 import { getServerSideURL } from './getURL'
 
 export const defaultSiteSettings = {
-  siteName: '寻光数字科技',
+  siteName: '无锡寻光数字科技',
   brandDescription:
     '专注软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发的技术服务品牌。',
   contact: {
@@ -14,9 +14,9 @@ export const defaultSiteSettings = {
   },
   defaultSEO: {
     title:
-      '寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
+      '无锡寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
     description:
-      '寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。',
+      '无锡寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。',
   },
 } as const
 

@@ -221,7 +221,7 @@ export const seed = async ({
     payload.updateGlobal({
       slug: 'site-settings',
       data: {
-        siteName: '寻光数字科技',
+        siteName: '无锡寻光数字科技',
         brandDescription:
           '专注软件定制、网站、APP、小程序、AI应用、Web3、项目二次开发的技术服务品牌。',
         contact: {
@@ -231,9 +231,9 @@ export const seed = async ({
         },
         defaultSEO: {
           title:
-            '寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
+            '无锡寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
           description:
-            '寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、智能合约、金融等数字化场景。',
+            '无锡寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、智能合约、金融等数字化场景。',
         },
       },
     }),

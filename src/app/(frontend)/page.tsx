@@ -27,7 +27,7 @@ export const generateMetadata = () =>
     title:
       '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发',
     description:
-      '寻光数字科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3和金融平台。',
+      '无锡寻光数字科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3和金融平台。',
     canonical: '/',
   })
 
@@ -58,8 +58,8 @@ export default async function HomePage() {
           buildWebsiteJsonLd(settings),
           buildPageJsonLd({
             description:
-              '寻光数字科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发。',
-            name: '寻光数字科技首页',
+              '无锡寻光数字科技为中国企业提供软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发。',
+            name: '无锡寻光数字科技首页',
             path: '/',
             settings,
           }),
@@ -69,7 +69,7 @@ export default async function HomePage() {
       <section className="ref-hero" aria-labelledby="ref-hero-title">
         <Image
           src="/media/homepage-team-energy-operations.png"
-          alt="寻光数字团队评审企业能源运营平台"
+          alt="无锡寻光数字团队评审企业能源运营平台"
           fill
           priority
           sizes="(max-width: 767px) 100vw, 68vw"

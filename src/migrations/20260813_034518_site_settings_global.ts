@@ -6,14 +6,14 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   CREATE TYPE "public"."enum__pages_v_version_meta_search_enhancement_schema_type" AS ENUM('WebPage', 'Service', 'AboutPage', 'ContactPage', 'CollectionPage');
   CREATE TABLE "site_settings" (
   	"id" serial PRIMARY KEY NOT NULL,
-  	"site_name" varchar DEFAULT '寻光数字科技' NOT NULL,
+  	"site_name" varchar DEFAULT '无锡寻光数字科技' NOT NULL,
   	"brand_description" varchar DEFAULT '专注软件定制、网站、APP、小程序与 AI 应用开发的技术服务品牌。' NOT NULL,
   	"contact_email" varchar DEFAULT 'chrisleo.yu.cn@gmail.com' NOT NULL,
   	"contact_wechat" varchar DEFAULT 'Chris_Leo_' NOT NULL,
   	"contact_wechat_q_r_code_id" integer,
   	"contact_service_area" varchar DEFAULT '面向全国企业客户提供远程与现场协作' NOT NULL,
-  	"default_s_e_o_title" varchar DEFAULT '寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3开发、项目二次开发' NOT NULL,
-  	"default_s_e_o_description" varchar DEFAULT '寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。' NOT NULL,
+  	"default_s_e_o_title" varchar DEFAULT '无锡寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3开发、项目二次开发' NOT NULL,
+  	"default_s_e_o_description" varchar DEFAULT '无锡寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。' NOT NULL,
   	"default_s_e_o_image_id" integer,
   	"updated_at" timestamp(3) with time zone,
   	"created_at" timestamp(3) with time zone

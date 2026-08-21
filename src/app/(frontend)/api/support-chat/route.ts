@@ -237,7 +237,7 @@ function buildEmailTemplate({
     replyTo: contacts.emails[0],
     subject,
     text: [
-      '寻光数字官网收到新的在线咨询',
+      '无锡寻光数字官网收到新的在线咨询',
       '',
       `本条消息：${currentMessage.content}`,
       `发送时间：${timestamp}`,
@@ -253,7 +253,7 @@ function buildEmailTemplate({
       `访客 IP：${clientIP}`,
       `浏览器：${userAgent}`,
     ].join('\n'),
-    html: `<!doctype html><html lang="zh-CN"><body style="margin:0;background:#f2f5f3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;color:#17201c"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f2f5f3;padding:28px 12px"><tr><td align="center"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#ffffff;border-radius:12px;overflow:hidden"><tr><td style="background:#0b553d;padding:24px 28px;color:#ffffff"><div style="font-size:12px;opacity:.76;margin-bottom:6px">寻光数字官网 · 在线咨询</div><div style="font-size:22px;font-weight:700">收到第 ${messageNumber} 条访客消息</div></td></tr><tr><td style="padding:26px 28px"><div style="font-size:12px;color:#68736d;margin-bottom:8px">本条消息</div><div style="font-size:17px;font-weight:600;line-height:1.75;white-space:pre-wrap">${escapeHTML(currentMessage.content)}</div><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:22px 0;background:#f7f9f8;border-radius:8px"><tr><td style="padding:15px 16px;font-size:13px;line-height:1.8;color:#4f5b55"><strong style="color:#17201c">已识别联系方式</strong><br>${contactRows.length ? contactRows.map(escapeHTML).join('<br>') : '暂未提供'}<br><strong style="color:#17201c">发送时间</strong>：${escapeHTML(timestamp)}<br><strong style="color:#17201c">来源页面</strong>：<a href="${escapeHTML(sourceUrl)}" style="color:#0b553d">${escapeHTML(sourceUrl)}</a></td></tr></table><div style="font-size:14px;font-weight:700;margin:0 0 12px">截至当前的完整对话</div><table role="presentation" width="100%" cellspacing="0" cellpadding="0">${transcriptHTML}</table><div style="border-top:1px solid #dfe4e1;margin-top:14px;padding-top:14px;font-size:11px;line-height:1.7;color:#7a847f">会话编号：${escapeHTML(sessionId)}<br>访客 IP：${escapeHTML(clientIP)}<br>浏览器：${escapeHTML(userAgent)}</div></td></tr></table></td></tr></table></body></html>`,
+    html: `<!doctype html><html lang="zh-CN"><body style="margin:0;background:#f2f5f3;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI','Noto Sans SC',sans-serif;color:#17201c"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="background:#f2f5f3;padding:28px 12px"><tr><td align="center"><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="max-width:640px;background:#ffffff;border-radius:12px;overflow:hidden"><tr><td style="background:#0b553d;padding:24px 28px;color:#ffffff"><div style="font-size:12px;opacity:.76;margin-bottom:6px">无锡寻光数字官网 · 在线咨询</div><div style="font-size:22px;font-weight:700">收到第 ${messageNumber} 条访客消息</div></td></tr><tr><td style="padding:26px 28px"><div style="font-size:12px;color:#68736d;margin-bottom:8px">本条消息</div><div style="font-size:17px;font-weight:600;line-height:1.75;white-space:pre-wrap">${escapeHTML(currentMessage.content)}</div><table role="presentation" width="100%" cellspacing="0" cellpadding="0" style="margin:22px 0;background:#f7f9f8;border-radius:8px"><tr><td style="padding:15px 16px;font-size:13px;line-height:1.8;color:#4f5b55"><strong style="color:#17201c">已识别联系方式</strong><br>${contactRows.length ? contactRows.map(escapeHTML).join('<br>') : '暂未提供'}<br><strong style="color:#17201c">发送时间</strong>：${escapeHTML(timestamp)}<br><strong style="color:#17201c">来源页面</strong>：<a href="${escapeHTML(sourceUrl)}" style="color:#0b553d">${escapeHTML(sourceUrl)}</a></td></tr></table><div style="font-size:14px;font-weight:700;margin:0 0 12px">截至当前的完整对话</div><table role="presentation" width="100%" cellspacing="0" cellpadding="0">${transcriptHTML}</table><div style="border-top:1px solid #dfe4e1;margin-top:14px;padding-top:14px;font-size:11px;line-height:1.7;color:#7a847f">会话编号：${escapeHTML(sessionId)}<br>访客 IP：${escapeHTML(clientIP)}<br>浏览器：${escapeHTML(userAgent)}</div></td></tr></table></td></tr></table></body></html>`,
   }
 }
 
@@ -315,7 +315,7 @@ export async function POST(request: Request) {
     .map((email) => email.trim())
     .filter(Boolean)
   const fromAddress = process.env.SMTP_FROM_EMAIL || process.env.SMTP_USER
-  const fromName = process.env.SMTP_FROM_NAME || '寻光数字在线接待'
+  const fromName = process.env.SMTP_FROM_NAME || '无锡寻光数字在线接待'
 
   if (!recipients.length || !fromAddress) {
     console.error('Support chat email recipient or sender is not configured')

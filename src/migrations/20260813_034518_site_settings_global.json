@@ -11249,7 +11249,7 @@
           "type": "varchar",
           "primaryKey": false,
           "notNull": true,
-          "default": "'寻光数字科技'"
+          "default": "'无锡寻光数字科技'"
         },
         "brand_description": {
           "name": "brand_description",
@@ -11290,14 +11290,14 @@
           "type": "varchar",
           "primaryKey": false,
           "notNull": true,
-          "default": "'寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3开发、项目二次开发'"
+          "default": "'无锡寻光数字科技｜软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3开发、项目二次开发'"
         },
         "default_s_e_o_description": {
           "name": "default_s_e_o_description",
           "type": "varchar",
           "primaryKey": false,
           "notNull": true,
-          "default": "'寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。'"
+          "default": "'无锡寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖IoT物联网、能源管理、企业管理、电商、医疗、Web3、金融等数字化场景。'"
         },
         "default_s_e_o_image_id": {
           "name": "default_s_e_o_image_id",
