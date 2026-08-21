@@ -7,8 +7,8 @@ FORM: 纵向品牌锁定，适合品牌分享图与方形封面。SEED: yunmanov
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md
 -->
 <svg xmlns="http://www.w3.org/2000/svg" width="1200" height="1200" viewBox="0 0 1200 1200" role="img" aria-labelledby="title desc">
-  <title id="title">无锡寻光数字科技正方形品牌组合</title>
-  <desc id="desc">用户提供的新代码猫头鹰原图位于上方，无锡寻光数字科技与软件开发、网络服务副标题依次居中排列</desc>
+  <title id="title">寻光数字科技正方形品牌组合</title>
+  <desc id="desc">用户提供的新代码猫头鹰原图位于上方，寻光数字科技与软件开发、网络服务副标题依次居中排列</desc>
   <defs>
     <linearGradient id="field" x1="64" y1="46" x2="1126" y2="1162" gradientUnits="userSpaceOnUse">
       <stop offset="0" stop-color="#060D19"/>
@@ -44,6 +44,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
   <rect width="1200" height="1200" fill="url(#field)"/>
   <rect width="1200" height="1200" fill="url(#blueAtmosphere)"/>
   <rect width="1200" height="1200" fill="url(#warmAtmosphere)"/>
+  <!-- Enlarge the complete foreground lockup by 25% and optically recenter it. -->
+  <g transform="translate(600 600) scale(1.25) translate(-600 -535)">
   <ellipse cx="600" cy="458" rx="322" ry="276" fill="url(#markField)"/>
 
   <image
@@ -64,7 +66,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     font-weight="600"
     letter-spacing="5"
     fill="#F3F5F7"
-  >无锡寻光数字科技</text>
+  >寻光数字科技</text>
 
   <rect x="352" y="806" width="496" height="1" fill="url(#horizon)"/>
 
@@ -78,4 +80,5 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
     letter-spacing="18"
     fill="#E6EBEF"
   >软件开发 · 网络服务</text>
+  </g>
 </svg>
