@@ -24,7 +24,7 @@ import { buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
 import { getServerSideURL } from '@/utilities/getURL'
 
 const seoDescription =
-  '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发服务，覆盖产品规划、设计、研发、测试、上线与运维。'
+  '软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发服务，覆盖能源管理、IOT物联网、AI数字人、娱乐交友、生活服务、企业管理、电商/金融、医疗、区块链等多个行业。'
 
 export const generateMetadata = () =>
   generateSiteMetadata({ title: '产品与服务', description: seoDescription, canonical: '/services' })
