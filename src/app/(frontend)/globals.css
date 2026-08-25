@@ -3954,7 +3954,15 @@ body {
   box-shadow: none;
 }
 
-.case-energy-composite {
+.case-stage-vpp {
+  min-height: auto;
+  aspect-ratio: 16 / 10;
+  background: #fff;
+  box-shadow: none;
+}
+
+.case-energy-composite,
+.case-vpp-composite {
   object-fit: contain;
   object-position: center;
 }

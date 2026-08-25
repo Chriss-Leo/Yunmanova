@@ -16,12 +16,13 @@ export const generateMetadata = () =>
   generateSiteMetadata({
     title: '案例',
     description:
-      '查看无锡无锡寻光数字科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
+      '查看无锡寻光数字科技在能源管理、虚拟电厂、物联网、CRM、AI应用、Web3金融与数据可视化场景中的产品实践。',
     canonical: '/cases',
   })
 
 const caseLinks = [
   { href: '#energy', label: '能源管理' },
+  { href: '#vpp', label: '虚拟电厂' },
   { href: '#iot', label: 'IoT 物联网' },
   { href: '#crm', label: 'CRM 系统' },
   { href: '#lifestyle', label: '娱乐与旅游' },
@@ -32,6 +33,7 @@ const caseLinks = [
 
 const caseEntities = [
   ['能源管理系统', '连接发电、储能、负载与充电设备数据的能源管理产品实践。'],
+  ['虚拟电厂运营平台', '聚合储能、光伏、充电桩与可调负荷，贯通预测、调度、电力交易与收益结算。'],
   ['IoT 物联网平台', '覆盖设备连接、实时状态、自动化与多端控制的物联网产品实践。'],
   ['CRM 系统', '围绕客户、商机与销售协作流程建设的客户关系管理产品实践。'],
   ['娱乐与旅游', '面向娱乐、旅行与社区服务场景的移动端产品实践。'],
@@ -72,7 +74,7 @@ export default async function CasesPage() {
       <JsonLd
         data={buildPageJsonLd({
           description:
-            '查看无锡寻光数字科技在能源管理、物联网、CRM、AI应用、Web3金融、数据大屏、企业软件场景中的产品实践。',
+            '查看无锡寻光数字科技在能源管理、虚拟电厂、物联网、CRM、AI应用、Web3金融与数据可视化场景中的产品实践。',
           mainEntity: {
             '@type': 'ItemList',
             itemListElement: caseEntities.map(([name, description], index) => ({
@@ -146,9 +148,33 @@ export default async function CasesPage() {
 
           <Separator className="case-showcase-separator" />
 
-          <article className="case-showcase-item" id="iot">
+          <article className="case-showcase-item" id="vpp">
             <CaseHeading
               index="02"
+              title="虚拟电厂运营平台"
+              description={[
+                '聚合储能、光伏、充电桩、可调负荷与微电网，统一管理分散资源。',
+                '连接负荷、光伏、电价与天气预测，为市场申报和调度决策提供依据。',
+                '从需求响应、辅助服务到现货交易，形成策略下发与执行反馈闭环。',
+                '覆盖客户签约、收益分成与交易结算，让资源运营价值清晰可核算。',
+              ]}
+            />
+            <div className="case-stage case-stage-vpp">
+              <Image
+                alt="虚拟电厂运营平台总览界面"
+                className="case-vpp-composite"
+                fill
+                sizes="(max-width: 767px) calc(100vw - 32px), 1200px"
+                src="/media/vpp-operations-platform-v1.png"
+              />
+            </div>
+          </article>
+
+          <Separator className="case-showcase-separator" />
+
+          <article className="case-showcase-item" id="iot">
+            <CaseHeading
+              index="03"
               title="IoT 物联网平台"
               description={[
                 '围绕家庭设备的连接、状态与自动化，统一组织多端使用路径。',
@@ -171,7 +197,7 @@ export default async function CasesPage() {
 
           <article className="case-showcase-item" id="crm">
             <CaseHeading
-              index="03"
+              index="04"
               title="CRM 系统"
               description={[
                 '围绕客户、商机与销售过程，建立统一的信息管理与协作路径。',
@@ -194,7 +220,7 @@ export default async function CasesPage() {
 
           <article className="case-showcase-item" id="lifestyle">
             <CaseHeading
-              index="04"
+              index="05"
               title="娱乐与旅游"
               description={[
                 '以兴趣内容和本地活动为入口，帮助用户发现并参与真实社交场景。',
@@ -217,7 +243,7 @@ export default async function CasesPage() {
 
           <article className="case-showcase-item" id="ai">
             <CaseHeading
-              index="05"
+              index="06"
               title="AI 应用"
               description={[
                 '将智能对话接入客服、学习与日常业务流程，形成可直接使用的能力。',
@@ -240,7 +266,7 @@ export default async function CasesPage() {
 
           <article className="case-showcase-item" id="data-screen">
             <CaseHeading
-              index="06"
+              index="07"
               title="数据可视化大屏"
               description={[
                 '把设备状态、运行趋势与关键告警集中呈现在同一视野。',
@@ -263,7 +289,7 @@ export default async function CasesPage() {
 
           <article className="case-showcase-item" id="web3">
             <CaseHeading
-              index="07"
+              index="08"
               title="Web3 金融"
               description={[
                 '以清晰的信息层级承载账户、资产与交易体验，降低信息理解成本。',

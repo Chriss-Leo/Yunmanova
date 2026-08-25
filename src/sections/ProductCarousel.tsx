@@ -16,6 +16,13 @@ type ProductSlide = {
 
 const productSlides: ProductSlide[] = [
   {
+    description: '聚合储能、光伏、充电桩与可调负荷，贯通预测、调度、交易和结算',
+    href: '/cases#vpp',
+    image: '/media/products/vpp-operations-workstation-v1.png',
+    imageAlt: '专业能源运营工作站展示虚拟电厂平台，周围配置储能柜、工业控制设备与光伏组件',
+    title: '虚拟电厂运营平台',
+  },
+  {
     description: '连接灵感、行程与智能推荐的移动旅行体验',
     href: '/cases#lifestyle',
     image: '/media/products/travel-assistant-app-cn.png',
