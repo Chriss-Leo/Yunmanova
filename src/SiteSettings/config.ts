@@ -23,7 +23,8 @@ export const SiteSettings: GlobalConfig = {
       name: 'brandDescription',
       type: 'textarea',
       label: '品牌简介',
-      defaultValue: '专注软件定制、网站、APP、小程序与 AI 应用开发的技术服务品牌。',
+      defaultValue:
+        '专注软件开发定制、承接网站建设、APP开发、小程序开发与AI应用开发的技术服务品牌。',
       required: true,
     },
     {
@@ -78,7 +79,7 @@ export const SiteSettings: GlobalConfig = {
           type: 'textarea',
           label: '默认描述',
           defaultValue:
-            '无锡寻光数字科技提供软件定制开发、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发，覆盖能源管理、IOT物联网、AI数字人、娱乐交友、生活服务、企业管理、电商/金融、医疗、区块链等多个场景。',
+            '无锡寻光数字科技提供软件定制开发，承接网站建设、APP开发、小程序开发、AI应用开发等项目定制。10年以上研发经验，覆盖能源管理、虚拟电厂、IOT物联网、AI数字人、娱乐交友、生活服务、企业管理、电商/金融、医疗、区块链等多个行业场景。',
           required: true,
         },
         {
