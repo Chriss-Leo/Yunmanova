@@ -24,7 +24,11 @@ export async function getSiteSettings(): Promise<SiteSetting> {
   return getCachedGlobal('site-settings', 1)()
 }
 
-export function getSiteImageURL(image?: number | Media | null) {
+export function getSiteImageURL(image?: number | Media | string | null) {
+  if (typeof image === 'string') {
+    return new URL(image, getServerSideURL()).toString()
+  }
+
   if (image && typeof image === 'object' && image.url) {
     return new URL(image.sizes?.og?.url || image.url, getServerSideURL()).toString()
   }

@@ -10,7 +10,7 @@ import { defaultSiteSettings, getSiteImageURL, getSiteSettings } from './siteSet
 export type SiteMetadataInput = {
   canonical?: string
   description?: string | null
-  image?: Media | number | null
+  image?: Media | number | string | null
   noIndex?: boolean
   title?: string | null
 }
@@ -136,7 +136,7 @@ type ArticleJsonLdInput = {
   dateModified: string
   datePublished?: string | null
   description?: string | null
-  image?: Media | number | null
+  image?: Media | number | string | null
   path: string
   settings: SiteSetting
   title: string

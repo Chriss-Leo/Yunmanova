@@ -15,8 +15,10 @@ import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
 import { LivePreviewListener } from '@/components/LivePreviewListener'
 import { JsonLd } from '@/components/site/JsonLd'
-import { buildArticleJsonLd, buildPageJsonLd } from '@/utilities/seo'
+import { buildArticleJsonLd, buildPageJsonLd, generateSiteMetadata } from '@/utilities/seo'
 import { getSiteSettings } from '@/utilities/siteSettings'
+import { caseArticleSlugs, getCaseArticle } from '@/data/caseArticles'
+import { CaseArticlePage } from '@/sections/CaseArticlePage'
 
 export async function generateStaticParams() {
   const payload = await getPayload({ config: configPromise })
@@ -35,7 +37,11 @@ export async function generateStaticParams() {
     return { slug }
   })
 
-  return params
+  return Array.from(
+    new Map(
+      [...params, ...caseArticleSlugs.map((slug) => ({ slug }))].map((item) => [item.slug, item]),
+    ).values(),
+  )
 }
 
 type Args = {
@@ -45,10 +51,14 @@ type Args = {
 }
 
 export default async function Post({ params: paramsPromise }: Args) {
-  const { isEnabled: draft } = await draftMode()
   const { slug = '' } = await paramsPromise
   // Decode to support slugs with special characters
   const decodedSlug = decodeURIComponent(slug)
+  const caseArticle = getCaseArticle(decodedSlug)
+
+  if (caseArticle) return <CaseArticlePage article={caseArticle} />
+
+  const { isEnabled: draft } = await draftMode()
   const url = '/posts/' + decodedSlug
   const post = await queryPostBySlug({ slug: decodedSlug })
 
@@ -110,6 +120,17 @@ export async function generateMetadata({ params: paramsPromise }: Args): Promise
   const { slug = '' } = await paramsPromise
   // Decode to support slugs with special characters
   const decodedSlug = decodeURIComponent(slug)
+  const caseArticle = getCaseArticle(decodedSlug)
+
+  if (caseArticle) {
+    return generateSiteMetadata({
+      canonical: `/posts/${decodedSlug}`,
+      description: caseArticle.description,
+      image: caseArticle.heroImage,
+      title: caseArticle.title,
+    })
+  }
+
   const post = await queryPostBySlug({ slug: decodedSlug })
 
   return generateMeta({ canonical: `/posts/${decodedSlug}`, doc: post })

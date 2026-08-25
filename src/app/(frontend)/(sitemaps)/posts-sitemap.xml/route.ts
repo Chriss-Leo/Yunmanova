@@ -3,6 +3,7 @@ import { getPayload } from 'payload'
 import config from '@payload-config'
 import { unstable_cache } from 'next/cache'
 import { getServerSideURL } from '@/utilities/getURL'
+import { caseArticles } from '@/data/caseArticles'
 
 const getPostsSitemap = unstable_cache(
   async () => {
@@ -27,7 +28,7 @@ const getPostsSitemap = unstable_cache(
       },
     })
 
-    const sitemap = results.docs
+    const cmsPosts = results.docs
       ? results.docs
           .filter((post) => Boolean(post?.slug))
           .map((post) => ({
@@ -36,7 +37,14 @@ const getPostsSitemap = unstable_cache(
           }))
       : []
 
-    return sitemap
+    const staticCaseArticles = caseArticles.map((article) => ({
+      loc: new URL(`/posts/${article.slug}`, SITE_URL).toString(),
+      lastmod: article.updatedAt,
+    }))
+
+    return Array.from(
+      new Map([...cmsPosts, ...staticCaseArticles].map((entry) => [entry.loc, entry])).values(),
+    )
   },
   ['posts-sitemap'],
   {
