@@ -73,6 +73,9 @@ export async function Footer() {
             © {new Date().getFullYear()} {siteName} 版权所有
           </span>
           <div>
+            <a href="https://beian.miit.gov.cn/" rel="noopener noreferrer" target="_blank">
+              苏ICP备2026061651号-1
+            </a>
             {footerLinks.map(({ href, id, link }) => (
               <Link
                 href={href}

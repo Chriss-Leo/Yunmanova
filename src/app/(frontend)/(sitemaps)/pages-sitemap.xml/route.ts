@@ -11,6 +11,7 @@ const staticRoutes = [
   '/faq',
   '/about',
   '/contact',
+  '/posts',
   '/privacy',
   '/terms',
 ]
@@ -20,45 +21,32 @@ const getPagesSitemap = unstable_cache(
     const payload = await getPayload({ config })
     const SITE_URL = getServerSideURL()
 
-    const [results, posts] = await Promise.all([
-      payload.find({
-        collection: 'pages',
-        overrideAccess: false,
-        draft: false,
-        depth: 0,
-        limit: 1000,
-        pagination: false,
-        where: {
-          _status: {
-            equals: 'published',
-          },
+    const results = await payload.find({
+      collection: 'pages',
+      overrideAccess: false,
+      draft: false,
+      depth: 0,
+      limit: 1000,
+      pagination: false,
+      where: {
+        _status: {
+          equals: 'published',
         },
-        select: {
-          meta: true,
-          slug: true,
-          updatedAt: true,
-        },
-      }),
-      payload.find({
-        collection: 'posts',
-        overrideAccess: false,
-        draft: false,
-        depth: 0,
-        limit: 1,
-        pagination: false,
-        select: { slug: true },
-      }),
-    ])
+      },
+      select: {
+        meta: true,
+        slug: true,
+        updatedAt: true,
+      },
+    })
 
-    const staticRouteURLs = new Set(staticRoutes.map((route) => new URL(route, SITE_URL).toString()))
+    const staticRouteURLs = new Set(
+      staticRoutes.map((route) => new URL(route, SITE_URL).toString()),
+    )
 
     const defaultSitemap = staticRoutes.map((route) => ({
       loc: new URL(route, SITE_URL).toString(),
     }))
-
-    if (posts.totalDocs > 0) {
-      defaultSitemap.push({ loc: new URL('/posts', SITE_URL).toString() })
-    }
 
     const sitemap = results.docs
       ? results.docs
