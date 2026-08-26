@@ -14,7 +14,7 @@ export async function Footer() {
   const qrCode =
     settings.contact?.wechatQRCode && typeof settings.contact.wechatQRCode === 'object'
       ? settings.contact.wechatQRCode.url
-      : '/media/wechat-qr-chris.jpg'
+      : '/media/wechat-qr-chris.png'
   const footerLinks = (footer.navItems || [])
     .map(({ id, link }) => ({ href: getCMSLinkHref(link), id, link }))
     .filter((item): item is typeof item & { href: string } => Boolean(item.href))
@@ -57,7 +57,7 @@ export async function Footer() {
           <figure className="ref-contact-qr">
             <div className="ref-contact-qr-image">
               <Image
-                src={qrCode || '/media/wechat-qr-chris.jpg'}
+                src={qrCode || '/media/wechat-qr-chris.png'}
                 alt={`微信二维码，添加 ${wechat}`}
                 fill
                 sizes="128px"

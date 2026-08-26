@@ -11263,7 +11263,7 @@
           "type": "varchar",
           "primaryKey": false,
           "notNull": true,
-          "default": "'chrisleo.yu.cn@gmail.com'"
+          "default": "'service@gleamseek.com'"
         },
         "contact_wechat": {
           "name": "contact_wechat",

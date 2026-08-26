@@ -225,7 +225,7 @@ export const seed = async ({
         brandDescription:
           '专注软件定制、网站、APP、小程序、AI应用、Web3、项目二次开发的技术服务品牌。',
         contact: {
-          email: 'chrisleo.yu.cn@gmail.com',
+          email: 'service@gleamseek.com',
           wechat: 'Chris_Leo_',
           serviceArea: '面向全国企业客户提供远程与现场协作',
         },

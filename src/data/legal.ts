@@ -6,7 +6,7 @@ export type LegalSection = {
   emphasis?: string
 }
 
-const defaultContactEmail = 'chrisleo.yu.cn@gmail.com'
+const defaultContactEmail = 'service@gleamseek.com'
 
 export function applyLegalContactEmail(sections: LegalSection[], email: string): LegalSection[] {
   const replaceEmail = (value: string) => value.replaceAll(defaultContactEmail, email)
@@ -97,7 +97,7 @@ export const privacySections: LegalSection[] = [
       '在法律规定的范围内，您可以请求查阅、复制、更正、补充或删除个人信息，撤回同意，限制或拒绝特定处理，并要求我们解释本政策。',
     ],
     bullets: [
-      '请通过 chrisleo.yu.cn@gmail.com 提交请求，并说明您的诉求和用于核验身份的必要信息。',
+      '请通过 service@gleamseek.com 提交请求，并说明您的诉求和用于核验身份的必要信息。',
       '为保护信息安全，我们可能在处理请求前核验您的身份。我们通常会在十五个工作日内回复；法律另有规定的，从其规定。',
       '如您认为我们的处理损害了您的合法权益，您也有权向有权机关投诉、举报或依法寻求其他救济。',
     ],
@@ -114,7 +114,7 @@ export const privacySections: LegalSection[] = [
     title: '政策更新与联系',
     paragraphs: [
       '我们可能因服务、技术或法律要求变化而更新本政策。涉及处理目的、方式、信息种类或您权利的重大变化时，我们会通过页面提示或其他适当方式告知。更新后的政策自页面标注的生效日期起适用。',
-      '如对本政策或个人信息处理有任何问题，请发送邮件至 chrisleo.yu.cn@gmail.com。',
+      '如对本政策或个人信息处理有任何问题，请发送邮件至 service@gleamseek.com。',
     ],
   },
 ]
@@ -218,7 +218,7 @@ export const termsSections: LegalSection[] = [
     id: 'contact',
     title: '联系我们',
     paragraphs: [
-      '如对本条款有任何问题，或需要获取具体项目的签约主体与合同信息，请发送邮件至 chrisleo.yu.cn@gmail.com，或通过网站公布的微信联系方式联系我们。',
+      '如对本条款有任何问题，或需要获取具体项目的签约主体与合同信息，请发送邮件至 service@gleamseek.com，或通过网站公布的微信联系方式联系我们。',
     ],
   },
 ]

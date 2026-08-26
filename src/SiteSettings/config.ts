@@ -36,7 +36,7 @@ export const SiteSettings: GlobalConfig = {
           name: 'email',
           type: 'email',
           label: '联系邮箱',
-          defaultValue: 'chrisleo.yu.cn@gmail.com',
+          defaultValue: 'service@gleamseek.com',
           required: true,
         },
         {

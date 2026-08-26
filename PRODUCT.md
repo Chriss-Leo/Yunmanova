@@ -29,7 +29,7 @@ web
 - 技术栈：Next.js App Router、Tailwind CSS、shadcn/ui、Framer Motion、Payload CMS Block 结构。
 - 页面：首页、产品与服务、案例、常见问题、关于我们、联系我们。
 - 搜索：支持百度 SEO、Google SEO 与 GEO 搜索优化，包含清晰标题层级、关键词布局、FAQ 与结构化数据 Schema。
-- 页脚固定联系方式：chrisleo.yu.cn@gmail.com，并预留微信二维码。
+- 页脚固定联系方式：service@gleamseek.com，并预留微信二维码。
 
 ## Brand Commitments
 

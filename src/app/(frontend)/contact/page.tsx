@@ -23,7 +23,7 @@ export default async function ContactPage() {
   const qrCode =
     settings.contact?.wechatQRCode && typeof settings.contact.wechatQRCode === 'object'
       ? settings.contact.wechatQRCode.url
-      : '/media/wechat-qr-chris.jpg'
+      : '/media/wechat-qr-chris.png'
   const brandID = `${new URL('/', getServerSideURL()).toString()}#brand`
 
   return (
@@ -84,7 +84,7 @@ export default async function ContactPage() {
             <figure className="inner-contact-qr">
               <div className="inner-contact-qr-image">
                 <Image
-                  src={qrCode || '/media/wechat-qr-chris.jpg'}
+                  src={qrCode || '/media/wechat-qr-chris.png'}
                   alt={`微信二维码，添加 ${wechat}`}
                   fill
                   sizes="112px"

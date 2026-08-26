@@ -8,7 +8,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   	"id" serial PRIMARY KEY NOT NULL,
   	"site_name" varchar DEFAULT '无锡寻光数字科技' NOT NULL,
   	"brand_description" varchar DEFAULT '专注软件定制、网站、APP、小程序与 AI 应用开发的技术服务品牌。' NOT NULL,
-  	"contact_email" varchar DEFAULT 'chrisleo.yu.cn@gmail.com' NOT NULL,
+  	"contact_email" varchar DEFAULT 'service@gleamseek.com' NOT NULL,
   	"contact_wechat" varchar DEFAULT 'Chris_Leo_' NOT NULL,
   	"contact_wechat_q_r_code_id" integer,
   	"contact_service_area" varchar DEFAULT '面向全国企业客户提供远程与现场协作' NOT NULL,
@@ -20,7 +20,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   );
 
   INSERT INTO "site_settings" ("contact_email", "contact_wechat_q_r_code_id")
-  SELECT COALESCE("contact_email", 'chrisleo.yu.cn@gmail.com'), "wechat_q_r_code_id"
+  SELECT COALESCE("contact_email", 'service@gleamseek.com'), "wechat_q_r_code_id"
   FROM "footer"
   LIMIT 1;
   
@@ -47,7 +47,7 @@ export async function down({ db, payload, req }: MigrateDownArgs): Promise<void>
   await db.execute(sql`
    ALTER TABLE "site_settings" DISABLE ROW LEVEL SECURITY;
   DROP TABLE "site_settings" CASCADE;
-  ALTER TABLE "footer" ADD COLUMN "contact_email" varchar DEFAULT 'chrisleo.yu.cn@gmail.com' NOT NULL;
+  ALTER TABLE "footer" ADD COLUMN "contact_email" varchar DEFAULT 'service@gleamseek.com' NOT NULL;
   ALTER TABLE "footer" ADD COLUMN "wechat_q_r_code_id" integer;
   ALTER TABLE "footer" ADD CONSTRAINT "footer_wechat_q_r_code_id_media_id_fk" FOREIGN KEY ("wechat_q_r_code_id") REFERENCES "public"."media"("id") ON DELETE set null ON UPDATE no action;
   CREATE INDEX "footer_wechat_q_r_code_idx" ON "footer" USING btree ("wechat_q_r_code_id");

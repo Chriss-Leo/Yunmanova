@@ -8,7 +8,7 @@ export const defaultSiteSettings = {
   brandDescription:
     '专注软件定制、网站开发、APP开发、小程序开发、AI应用开发、Web3区块链智能合约开发、项目二次开发的技术服务品牌。',
   contact: {
-    email: 'chrisleo.yu.cn@gmail.com',
+    email: 'service@gleamseek.com',
     wechat: 'Chris_Leo_',
     serviceArea: '面向全国企业客户提供远程与现场协作',
   },

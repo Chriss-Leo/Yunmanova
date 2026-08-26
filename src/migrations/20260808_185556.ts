@@ -1038,7 +1038,7 @@ export async function up({ db, payload, req }: MigrateUpArgs): Promise<void> {
   
   CREATE TABLE "footer" (
   	"id" serial PRIMARY KEY NOT NULL,
-  	"contact_email" varchar DEFAULT 'chrisleo.yu.cn@gmail.com' NOT NULL,
+  	"contact_email" varchar DEFAULT 'service@gleamseek.com' NOT NULL,
   	"wechat_q_r_code_id" integer,
   	"updated_at" timestamp(3) with time zone,
   	"created_at" timestamp(3) with time zone
