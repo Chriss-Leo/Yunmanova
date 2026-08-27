@@ -64,7 +64,7 @@ export async function CaseArticlePage({ article }: { article: CaseArticle }) {
       <header className="legal-hero case-article-document-hero">
         <Image
           src="/media/legal-hero-waves.png"
-          alt=""
+          alt={`${article.title}文章头图的绿色抽象波纹背景`}
           fill
           priority
           sizes="100vw"

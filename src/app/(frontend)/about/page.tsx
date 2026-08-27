@@ -103,7 +103,7 @@ export default async function AboutPage() {
                     </span>
                     <Image
                       src={`/media/process-icons/${processIcons[index]}.png`}
-                      alt=""
+                      alt={`${step.title}阶段示意图`}
                       width={48}
                       height={48}
                     />

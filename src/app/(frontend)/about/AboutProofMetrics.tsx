@@ -110,7 +110,7 @@ export function AboutProofMetrics() {
                 </span>
               </div>
               <Image
-                alt=""
+                alt={`${metric.label}指标图标`}
                 aria-hidden="true"
                 className="inner-about-proof-icon"
                 height={48}

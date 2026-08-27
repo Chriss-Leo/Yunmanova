@@ -25,9 +25,9 @@ import {
 export const generateMetadata = () =>
   generateSiteMetadata({
     title:
-      '软件定制、网站系统开发、APP开发、小程序开发，覆盖能源管理、IOT物联网、AI数字人、娱乐交友、生活服务、企业管理、电商/金融、医疗、区块链等多个行业.',
+      '软件定制开发，覆盖网站、APP、小程序。深耕能源、IOT物联网、AI、娱乐社交、生活服务、企业管理、电商金融、医疗及区块链等多个场景。',
     description:
-      '无锡寻光数字科技为中国企业提供软件定制、网站开发、APP开发、小程序开发，覆盖能源管理、IOT物联网、AI数字人、娱乐交友、生活服务、企业管理、电商/金融、医疗、区块链等多个行业.',
+      '无锡寻光数字科技为中国企业提供软件定制、网站开发、APP开发、小程序开发， 覆盖能源管理、IOT物联网、虚拟电厂、AI数字人、娱乐交友、生活服务、企业管理、电商/金融、医疗、区块链等多个行业.',
     canonical: '/',
   })
 
@@ -197,7 +197,7 @@ export default async function HomePage() {
                     <div className="ref-process-icon" aria-hidden="true">
                       <Image
                         src={processIconSources[index]}
-                        alt=""
+                        alt={`${step.title}阶段示意图`}
                         width={360}
                         height={360}
                         className="ref-process-icon-image"

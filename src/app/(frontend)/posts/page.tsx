@@ -86,7 +86,12 @@ function ArticleImage({
   }
 
   return (
-    <Image alt="" fill sizes="(max-width: 768px) 100vw, 50vw" src="/media/legal-hero-waves.png" />
+    <Image
+      alt={`${article.title}文章封面`}
+      fill
+      sizes="(max-width: 768px) 100vw, 50vw"
+      src="/media/legal-hero-waves.png"
+    />
   )
 }
 

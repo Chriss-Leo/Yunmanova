@@ -234,7 +234,7 @@ export function SupportChat() {
         <header className="support-chat-header">
           <div className="support-chat-identity">
             <div className="support-chat-brandmark" aria-hidden="true">
-              <Image alt="" fill sizes="40px" src="/brand.svg" />
+              <Image alt="无锡寻光数字科技品牌标志" fill sizes="40px" src="/brand.svg" />
             </div>
             <div>
               <h2 id="support-chat-title">无锡寻光数字接待</h2>
@@ -264,7 +264,7 @@ export function SupportChat() {
               <Message align={isVisitor ? 'end' : 'start'} key={message.id}>
                 {!isVisitor && (
                   <MessageAvatar aria-hidden="true">
-                    <Image alt="" fill sizes="28px" src="/brand.svg" />
+                    <Image alt="无锡寻光数字科技在线接待头像" fill sizes="28px" src="/brand.svg" />
                   </MessageAvatar>
                 )}
                 <MessageContent>
@@ -305,7 +305,7 @@ export function SupportChat() {
           {isTyping && (
             <Message align="start" aria-label="接待正在输入">
               <MessageAvatar aria-hidden="true">
-                <Image alt="" fill sizes="28px" src="/favicon.svg" />
+                <Image alt="无锡寻光数字科技在线接待头像" fill sizes="28px" src="/favicon.svg" />
               </MessageAvatar>
               <MessageContent>
                 <Bubble variant="assistant">
