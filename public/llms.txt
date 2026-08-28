@@ -1,0 +1,26 @@
+# 无锡寻光数字科技
+
+> 无锡寻光数字科技提供软件定制开发：网站开发、APP开发、小程序开发， 覆盖能源管理、IOT物联网、虚拟电厂、AI数字人、娱乐交友、生活服务、企业管理、电商/金融、医疗、区块链等多个行业。
+
+本站面向寻找软件开发合作方的企业与团队，主要内容包括服务能力、行业解决方案、项目案例、交付流程、常见问题和联系渠道。公开页面以简体中文为主。
+
+## 核心页面
+
+- [首页](https://gleamseek.com/): 品牌定位、主要产品方案、行业场景和项目交付流程概览。
+- [服务能力](https://gleamseek.com/services): 软件定制、网站、APP、小程序、AI、物联网及企业系统开发能力。
+- [项目案例](https://gleamseek.com/cases): 能源、AI、企业管理、金融与其他行业的软件项目案例。
+- [关于我们](https://gleamseek.com/about): 团队经验、合作方式和项目交付能力。
+- [常见问题](https://gleamseek.com/faq): 需求评估、报价、周期、源码交付和后续维护说明。
+- [联系我们](https://gleamseek.com/contact): 项目咨询表单、邮箱、微信和服务范围。
+
+## 内容与政策
+
+- [技术与行业文章](https://gleamseek.com/posts): 网站发布的技术、产品和行业内容。
+- [隐私政策](https://gleamseek.com/privacy): 网站收集和处理信息的说明。
+- [服务条款](https://gleamseek.com/terms): 网站及服务使用条款。
+
+## 站点发现
+
+- [完整文章资料](https://gleamseek.com/llms-full.txt): 自动汇总所有已发布文章的标题、摘要、日期、原文链接和正文。
+- [XML 网站地图](https://gleamseek.com/sitemap.xml): 可公开抓取页面和文章的网站地图索引。
+- [robots.txt](https://gleamseek.com/robots.txt): 搜索引擎和自动化抓取规则。

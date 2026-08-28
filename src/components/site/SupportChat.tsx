@@ -88,6 +88,17 @@ export function SupportChat() {
   )
 
   useEffect(() => {
+    const handleToolActivated = (event: Event) => {
+      if ((event as Event & { toolName?: string }).toolName === 'send_support_message') {
+        setIsOpen(true)
+      }
+    }
+
+    window.addEventListener('toolactivated', handleToolActivated)
+    return () => window.removeEventListener('toolactivated', handleToolActivated)
+  }, [])
+
+  useEffect(() => {
     if (!isOpen) return
     const timer = window.setTimeout(() => inputRef.current?.focus(), 180)
     return () => window.clearTimeout(timer)
@@ -322,7 +333,12 @@ export function SupportChat() {
           )}
         </MessageScroller>
 
-        <form className="support-chat-composer" onSubmit={handleSubmit}>
+        <form
+          className="support-chat-composer"
+          onSubmit={handleSubmit}
+          tooldescription="在当前页面打开在线咨询，并准备一条发给无锡寻光数字科技接待人员的需求消息。消息需要由用户确认后发送。"
+          toolname="send_support_message"
+        >
           <label className="sr-only" htmlFor="support-chat-message">
             输入咨询内容
           </label>
@@ -333,6 +349,7 @@ export function SupportChat() {
             name="website"
             onChange={(event) => setHoneypot(event.target.value)}
             tabIndex={-1}
+            toolparamdescription="反垃圾验证字段，必须保持为空。"
             value={honeypot}
           />
           <Textarea
@@ -340,11 +357,14 @@ export function SupportChat() {
             disabled={isSending}
             id="support-chat-message"
             maxLength={1500}
+            name="message"
             onChange={(event) => setDraft(event.target.value)}
             onKeyDown={handleKeyDown}
             placeholder={visitorMessageCount ? '继续补充…' : '请描述您的需求…'}
             ref={inputRef}
+            required
             rows={1}
+            toolparamdescription="需要咨询的产品、业务问题、预算、周期或联系方式，最多1500个字符。"
             value={draft}
           />
           <Button

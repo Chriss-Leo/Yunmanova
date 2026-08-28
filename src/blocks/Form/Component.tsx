@@ -126,7 +126,12 @@ export const FormBlock: React.FC<
           {isLoading && !hasSubmitted && <p>Loading, please wait...</p>}
           {error && <div>{`${error.status || '500'}: ${error.message || ''}`}</div>}
           {!hasSubmitted && (
-            <form id={formID} onSubmit={handleSubmit(onSubmit)}>
+            <form
+              id={formID}
+              onSubmit={handleSubmit(onSubmit)}
+              tooldescription="填写并准备提交当前页面展示的业务表单。提交前需要用户确认。"
+              toolname="submit_site_form"
+            >
               <div className="mb-4 last:mb-0">
                 {formFromProps &&
                   formFromProps.fields &&

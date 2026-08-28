@@ -11,6 +11,7 @@ export const revalidateSiteSettings: GlobalAfterChangeHook = ({
 
   payload.logger.info('Revalidating site settings')
   revalidateTag('global_site-settings', 'max')
+  revalidateTag('llms-full', 'max')
 
   return doc
 }

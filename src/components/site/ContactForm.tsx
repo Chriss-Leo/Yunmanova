@@ -33,8 +33,10 @@ export function ContactForm({ email }: { email: string }) {
     <form
       aria-labelledby="contact-form-title"
       className="contact-form"
-      onSubmit={submit}
       noValidate
+      onSubmit={submit}
+      tooldescription="填写项目目标、联系人和联系方式，准备向无锡寻光数字科技发送项目咨询。提交时会打开用户的默认邮件客户端，由用户确认后发送。"
+      toolname="prepare_project_consultation"
     >
       <div className="contact-form-heading">
         <span className="contact-form-heading-icon" aria-hidden="true">
@@ -50,14 +52,21 @@ export function ContactForm({ email }: { email: string }) {
           <span>姓名 *</span>
           <input
             aria-invalid={state === 'error'}
-            name="name"
             autoComplete="name"
+            name="name"
             placeholder="如何称呼你"
+            required
+            toolparamdescription="咨询人的姓名或称呼。"
           />
         </label>
         <label>
           <span>企业或团队</span>
-          <input name="company" autoComplete="organization" placeholder="企业或团队名称" />
+          <input
+            autoComplete="organization"
+            name="company"
+            placeholder="企业或团队名称"
+            toolparamdescription="咨询人所属的企业或团队名称；个人咨询时可以留空。"
+          />
         </label>
       </div>
       <label>
@@ -67,6 +76,8 @@ export function ContactForm({ email }: { email: string }) {
           name="contact"
           autoComplete="email"
           placeholder="邮箱、手机号或微信号"
+          required
+          toolparamdescription="用于后续沟通的邮箱、手机号或微信号，填写其中一种。"
         />
       </label>
       <label>
@@ -76,6 +87,8 @@ export function ContactForm({ email }: { email: string }) {
           name="need"
           rows={6}
           placeholder="请简单描述业务目标、当前阶段和希望解决的问题"
+          required
+          toolparamdescription="项目的业务目标、当前阶段、约束条件以及希望解决的问题。"
         />
       </label>
       {state === 'error' && (

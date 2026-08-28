@@ -1,3 +1,24 @@
+import 'react'
+
+declare module 'react' {
+  interface FormHTMLAttributes<T> {
+    tooldescription?: string
+    toolname?: string
+  }
+
+  interface InputHTMLAttributes<T> {
+    toolparamdescription?: string
+  }
+
+  interface SelectHTMLAttributes<T> {
+    toolparamdescription?: string
+  }
+
+  interface TextareaHTMLAttributes<T> {
+    toolparamdescription?: string
+  }
+}
+
 declare global {
   namespace NodeJS {
     interface ProcessEnv {
@@ -12,6 +33,7 @@ declare global {
       NEXT_PUBLIC_360_SITE_VERIFICATION?: string
       NEXT_PUBLIC_SOGOU_SITE_VERIFICATION?: string
       NEXT_PUBLIC_YANDEX_SITE_VERIFICATION?: string
+      WEBMCP_ORIGIN_TRIAL_TOKEN?: string
       VERCEL_PROJECT_PRODUCTION_URL: string
     }
   }

@@ -30,6 +30,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       suppressHydrationWarning
     >
       <head>
+        {process.env.WEBMCP_ORIGIN_TRIAL_TOKEN && (
+          <meta
+            content={process.env.WEBMCP_ORIGIN_TRIAL_TOKEN}
+            httpEquiv="origin-trial"
+          />
+        )}
         <link href="/favicon.ico?v=2" rel="icon" sizes="32x32" />
         <link href="/favicon.svg?v=2" rel="icon" type="image/svg+xml" />
       </head>
