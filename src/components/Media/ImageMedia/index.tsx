@@ -89,13 +89,13 @@ export const ImageMedia: React.FC<MediaProps> = (props) => {
       <NextImage
         alt={alt || ''}
         className={cn(imgClassName)}
+        fetchPriority={priority ? 'high' : undefined}
         fill={fill}
         height={!fill ? height : undefined}
         placeholder="blur"
         blurDataURL={placeholderBlur}
-        priority={priority}
-        quality={100}
-        loading={loading}
+        quality={80}
+        loading={priority ? 'eager' : loading}
         sizes={sizes}
         src={src}
         width={!fill ? width : undefined}

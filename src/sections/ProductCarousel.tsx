@@ -130,7 +130,7 @@ export function ProductCarousel() {
           const isActive = position === 'active'
 
           return (
-            <article
+            <div
               aria-hidden={!isActive}
               aria-label={`${index + 1} / ${productSlides.length}，${slide.title}`}
               aria-roledescription="幻灯片"
@@ -159,6 +159,7 @@ export function ProductCarousel() {
                     }
                     draggable={false}
                     fill
+                    quality={75}
                     sizes="(max-width: 767px) 88vw, (max-width: 1024px) 62vw, 680px"
                     src={slide.image}
                   />
@@ -171,7 +172,7 @@ export function ProductCarousel() {
                   </span>
                 </div>
               </a>
-            </article>
+            </div>
           )
         })}
       </div>

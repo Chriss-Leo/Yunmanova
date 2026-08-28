@@ -1048,7 +1048,8 @@
   height: 58px;
   transform: translateY(-50%);
   pointer-events: none;
-  font-family: 'Noto Sans SC Variable', var(--font-geist-sans), sans-serif;
+  font-family:
+    var(--font-geist-sans), 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
 }
 
 .support-chat-panel,
@@ -1767,7 +1768,8 @@ body {
 body {
   background: var(--ym-bg);
   color: var(--ym-ink);
-  font-family: 'Noto Sans SC Variable', var(--font-geist-sans), sans-serif;
+  font-family:
+    var(--font-geist-sans), 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   min-height: 100dvh;
   text-rendering: optimizeLegibility;
 }

@@ -70,8 +70,10 @@ export default async function HomePage() {
         <Image
           src="/media/homepage-team-energy-operations.png"
           alt="无锡寻光数字团队评审企业能源运营平台"
+          fetchPriority="high"
           fill
-          priority
+          loading="eager"
+          quality={80}
           sizes="(max-width: 767px) 100vw, 68vw"
           className="ref-hero-image"
         />
@@ -105,6 +107,7 @@ export default async function HomePage() {
           src="/media/development-team-dark.png"
           alt="软件工程团队在真实开发环境中协同交付"
           fill
+          quality={75}
           sizes="100vw"
           className="ref-delivery-film-image"
         />
@@ -138,6 +141,7 @@ export default async function HomePage() {
           src="/media/energy-scenario-platform-v2.png"
           alt="风电、光伏与储能协同的能源数字化场景"
           fill
+          quality={75}
           sizes="100vw"
           className="ref-scenarios-image"
         />
@@ -198,8 +202,10 @@ export default async function HomePage() {
                       <Image
                         src={processIconSources[index]}
                         alt={`${step.title}阶段示意图`}
-                        width={360}
-                        height={360}
+                        width={48}
+                        height={48}
+                        quality={70}
+                        sizes="48px"
                         className="ref-process-icon-image"
                       />
                     </div>

@@ -17,7 +17,6 @@ import { generateSiteMetadata } from '@/utilities/seo'
 import { draftMode } from 'next/headers'
 
 import './globals.css'
-import '@fontsource-variable/noto-sans-sc'
 
 export default async function RootLayout({ children }: { children: React.ReactNode }) {
   const { isEnabled } = await draftMode()
