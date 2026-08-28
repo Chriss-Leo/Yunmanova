@@ -111,8 +111,10 @@ export function ProductCarousel() {
       aria-label="产品方案轮播"
       aria-roledescription="轮播"
       onKeyDown={handleKeyDown}
+      role="region"
     >
       <div
+        aria-label="产品幻灯片，使用左右方向键切换"
         className="product-carousel-viewport"
         onPointerCancel={() => {
           pointerStartX.current = null
@@ -120,6 +122,7 @@ export function ProductCarousel() {
         onPointerDown={handlePointerDown}
         onPointerUp={handlePointerUp}
         onDragStart={(event) => event.preventDefault()}
+        role="group"
         tabIndex={0}
       >
         {productSlides.map((slide, index) => {
@@ -184,7 +187,7 @@ export function ProductCarousel() {
           </span>
         </div>
 
-        <div className="product-carousel-buttons" aria-label="轮播控制">
+        <div className="product-carousel-buttons" aria-label="轮播控制" role="group">
           <button aria-label="上一个产品方案" onClick={showPrevious} type="button">
             <ArrowLeft aria-hidden="true" size={20} />
           </button>

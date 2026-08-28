@@ -228,8 +228,8 @@ export function SupportChat() {
       <section
         className="support-chat-panel"
         data-open={isOpen}
-        aria-hidden={!isOpen}
         aria-labelledby="support-chat-title"
+        inert={!isOpen}
       >
         <header className="support-chat-header">
           <div className="support-chat-identity">
