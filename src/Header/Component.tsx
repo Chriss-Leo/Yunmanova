@@ -1,4 +1,5 @@
 import { HeaderClient } from './Component.client'
+import { getFeaturedSiteSearchResults } from '@/search/siteIndex'
 import { defaultSiteSettings, getSiteSettings } from '@/utilities/siteSettings'
 import { getCachedGlobal } from '@/utilities/getGlobals'
 
@@ -9,6 +10,7 @@ export async function Header() {
     <HeaderClient
       navItems={header.navItems || []}
       siteName={settings.siteName || defaultSiteSettings.siteName}
+      featuredSearchResults={getFeaturedSiteSearchResults()}
     />
   )
 }

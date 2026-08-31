@@ -1,88 +1,84 @@
-import { CollectionArchive } from '@/components/CollectionArchive'
-import configPromise from '@payload-config'
-import { getPayload } from 'payload'
-import React from 'react'
+import { ArrowUpRight, Search as SearchIcon } from 'lucide-react'
+import Link from 'next/link'
+
 import { Search } from '@/search/Component'
-import PageClient from './page.client'
-import { CardPostData } from '@/components/Card'
+import { searchResultTypeLabels } from '@/search/siteIndex'
+import { searchEntireSite } from '@/search/server'
 import { generateSiteMetadata } from '@/utilities/seo'
 
 type Args = {
   searchParams: Promise<{
-    q: string
+    q?: string
   }>
 }
-export default async function Page({ searchParams: searchParamsPromise }: Args) {
-  const { q: query } = await searchParamsPromise
-  const payload = await getPayload({ config: configPromise })
 
-  const posts = await payload.find({
-    collection: 'search',
-    depth: 1,
-    limit: 12,
-    select: {
-      title: true,
-      slug: true,
-      categories: true,
-      meta: true,
-    },
-    // pagination: false reduces overhead if you don't need totalDocs
-    pagination: false,
-    ...(query
-      ? {
-          where: {
-            or: [
-              {
-                title: {
-                  like: query,
-                },
-              },
-              {
-                'meta.description': {
-                  like: query,
-                },
-              },
-              {
-                'meta.title': {
-                  like: query,
-                },
-              },
-              {
-                slug: {
-                  like: query,
-                },
-              },
-            ],
-          },
-        }
-      : {}),
-  })
+export default async function Page({ searchParams }: Args) {
+  const query = (await searchParams).q?.trim().slice(0, 120) || ''
+  const results = query ? await searchEntireSite(query, 40) : []
 
   return (
-    <div className="pt-24 pb-24">
-      <PageClient />
-      <div className="container mb-16">
-        <div className="prose dark:prose-invert max-w-none text-center">
-          <h1 className="mb-8 lg:mb-16">Search</h1>
-
-          <div className="max-w-[50rem] mx-auto">
-            <Search />
+    <main className="site-search-page">
+      <section className="site-search-hero">
+        <div className="site-container site-search-hero-inner">
+          <div>
+            <h1>搜索整个官网</h1>
+            <p>查找无锡寻光数字科技的服务、行业解决方案、项目案例与公开文章。</p>
           </div>
+          <Search defaultValue={query} />
         </div>
-      </div>
+      </section>
 
-      {posts.totalDocs > 0 ? (
-        <CollectionArchive posts={posts.docs as CardPostData[]} />
-      ) : (
-        <div className="container">No results found.</div>
-      )}
-    </div>
+      <section className="site-container site-search-content" aria-live="polite">
+        {query ? (
+          <>
+            <header className="site-search-summary">
+              <div>
+                <span>搜索关键词</span>
+                <h2>“{query}”</h2>
+              </div>
+              <p>共找到 {results.length} 项相关内容</p>
+            </header>
+
+            {results.length > 0 ? (
+              <div className="site-search-result-list">
+                {results.map((result) => (
+                  <Link href={result.href} className="site-search-result" key={result.id}>
+                    <span>{searchResultTypeLabels[result.type]}</span>
+                    <div>
+                      <h3>{result.title}</h3>
+                      <p>{result.description}</p>
+                      <small>{result.section}</small>
+                    </div>
+                    <ArrowUpRight aria-hidden="true" />
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <div className="site-search-page-empty">
+                <SearchIcon aria-hidden="true" />
+                <h2>没有找到相关内容</h2>
+                <p>可以尝试“软件定制”“能源管理”“AI 应用”“项目周期”等关键词。</p>
+                <Link href="/services">浏览产品与服务</Link>
+              </div>
+            )}
+          </>
+        ) : (
+          <div className="site-search-page-empty">
+            <SearchIcon aria-hidden="true" />
+            <h2>从一个业务问题开始</h2>
+            <p>例如搜索“设备接入”“企业知识库”“APP 开发”或“费用评估”。</p>
+            <Link href="/services">浏览产品与服务</Link>
+          </div>
+        )}
+      </section>
+    </main>
   )
 }
 
 export function generateMetadata() {
   return generateSiteMetadata({
-    title: '站内搜索',
+    title: '全站',
+    description: '搜索无锡寻光数字科技官网中的服务、行业解决方案、案例与文章。',
     canonical: '/search',
     noIndex: true,
   })

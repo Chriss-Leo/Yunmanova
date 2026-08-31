@@ -8,14 +8,18 @@ import { useState } from 'react'
 import { Logo } from '@/components/Logo/Logo'
 import type { Header } from '@/payload-types'
 import { navigation } from '@/data/site'
+import { GlobalSiteSearch } from '@/search/GlobalSiteSearch'
+import type { SiteSearchResult } from '@/search/types'
 import { getCMSLinkHref } from '@/utilities/cmsLink'
 
 export function HeaderClient({
   navItems,
   siteName,
+  featuredSearchResults,
 }: {
   navItems: NonNullable<Header['navItems']>
   siteName: string
+  featuredSearchResults: SiteSearchResult[]
 }) {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
@@ -66,24 +70,28 @@ export function HeaderClient({
             ))}
         </nav>
 
-        <Link
-          href={contactItem?.href || '/contact'}
-          className="header-cta"
-          rel={contactItem?.newTab ? 'noopener noreferrer' : undefined}
-          target={contactItem?.newTab ? '_blank' : undefined}
-        >
-          {contactItem?.label || '联系我们'}
-        </Link>
+        <div className="header-controls">
+          <GlobalSiteSearch featuredResults={featuredSearchResults} />
 
-        <button
-          type="button"
-          className="menu-button"
-          aria-label={open ? '关闭菜单' : '打开菜单'}
-          aria-expanded={open}
-          onClick={() => setOpen((value) => !value)}
-        >
-          {open ? <X size={22} /> : <List size={22} />}
-        </button>
+          <Link
+            href={contactItem?.href || '/contact'}
+            className="header-cta"
+            rel={contactItem?.newTab ? 'noopener noreferrer' : undefined}
+            target={contactItem?.newTab ? '_blank' : undefined}
+          >
+            {contactItem?.label || '联系我们'}
+          </Link>
+
+          <button
+            type="button"
+            className="menu-button"
+            aria-label={open ? '关闭菜单' : '打开菜单'}
+            aria-expanded={open}
+            onClick={() => setOpen((value) => !value)}
+          >
+            {open ? <X size={22} /> : <List size={22} />}
+          </button>
+        </div>
       </div>
 
       {open && (
